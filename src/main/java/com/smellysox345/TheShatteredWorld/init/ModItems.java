@@ -37,6 +37,7 @@ public class ModItems {
 	//Armor Materials
 	public static final ArmorMaterial ARMOR_MATERIAL_CRYSTAL = EnumHelper.addArmorMaterial("armor_material_crystal", Reference.MOD_ID + ":crystal", 11, new int[] {1, 5, 6, 3}, 16, SoundEvents.ENTITY_EXPERIENCE_ORB_PICKUP, 0.0F);
 	public static final ArmorMaterial ARMOR_MATERIAL_REFRACTI = EnumHelper.addArmorMaterial("armor_material_refracti", Reference.MOD_ID + ":refracti", 11, new int[] {1, 4, 5, 2}, 16, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F);
+	public static final ArmorMaterial ARMOR_MATERIAL_TEMPLAR = EnumHelper.addArmorMaterial("armor_material_templar", Reference.MOD_ID + ":templar", 11, new int[] {2, 4, 6, 4}, 16, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F);
 	
 	//Materials
 	public static final ToolMaterial MATERIAL_CRYSTAL = EnumHelper.addToolMaterial("material_crystal", 2, 530, 6.5F, 2.2F, 13);
@@ -65,11 +66,18 @@ public class ModItems {
 	public static final Item CRYSTAL_BODY = new ArmorBase("crystal_chestplate", ARMOR_MATERIAL_CRYSTAL, 1, EntityEquipmentSlot.CHEST);
 	public static final Item CRYSTAL_LEGGINGS = new ArmorBase("crystal_leggings", ARMOR_MATERIAL_CRYSTAL, 2, EntityEquipmentSlot.LEGS);
 	public static final Item CRYSTAL_BOOTS = new ArmorBase("crystal_boots", ARMOR_MATERIAL_CRYSTAL, 2, EntityEquipmentSlot.FEET);
+	
 	public static final Item REFRACTI_HELMET = new ArmorBase("refracti_helmet", ARMOR_MATERIAL_REFRACTI, 1, EntityEquipmentSlot.HEAD);
 	public static final Item REFRACTI_BODY = new ArmorBase("refracti_chestplate", ARMOR_MATERIAL_REFRACTI, 1, EntityEquipmentSlot.CHEST);
 	public static final Item REFRACTI_LEGGINGS = new ArmorBase("refracti_leggings", ARMOR_MATERIAL_REFRACTI, 2, EntityEquipmentSlot.LEGS);
 	public static final Item REFRACTI_BOOTS = new ArmorBase("refracti_boots", ARMOR_MATERIAL_REFRACTI, 2, EntityEquipmentSlot.FEET);
+	
 	public static final Item CRYSTAL_SHIELD = new ItemShieldCrystal("crystal_shield");
+	
+	public static final Item TEMPLAR_HELMET = new ArmorBase("templar_helmet", ARMOR_MATERIAL_TEMPLAR, 1, EntityEquipmentSlot.HEAD);
+	public static final Item TEMPLAR_BODY = new ArmorBase("templar_chestplate", ARMOR_MATERIAL_TEMPLAR, 1, EntityEquipmentSlot.CHEST);
+	public static final Item TEMPLAR_LEGGINGS = new ArmorBase("templar_leggings", ARMOR_MATERIAL_TEMPLAR, 2, EntityEquipmentSlot.LEGS);
+	public static final Item TEMPLAR_BOOTS = new ArmorBase("templar_boots", ARMOR_MATERIAL_TEMPLAR, 2, EntityEquipmentSlot.FEET);
 	
 	
 	

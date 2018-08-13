@@ -42,6 +42,7 @@ public class ModItems {
 	//Materials
 	public static final ToolMaterial MATERIAL_CRYSTAL = EnumHelper.addToolMaterial("material_crystal", 2, 530, 6.5F, 2.2F, 13);
 	public static final ToolMaterial MATERIAL_CACTI = EnumHelper.addToolMaterial("material_cacti", 2, 260, 5.5F, 1.5F, 13);
+	public static final ToolMaterial MATERIAL_DARK = EnumHelper.addToolMaterial("material_dark", 4, 600, 7.0F, 3.5F, 13);
 	
 	//Items
 	public static final Item CRYSTAL = new ItemBase("crystal");
@@ -88,19 +89,23 @@ public class ModItems {
 	//Swords
 	public static final ItemSword CRYSTAL_SWORD = new ToolSword("crystal_sword", MATERIAL_CRYSTAL);
 	public static final ItemSword REFRACTI_SWORD = new ToolSword("refracti_sword", MATERIAL_CACTI);
+	public static final ItemSword DARK_SWORD = new ToolSword("dark_sword", MATERIAL_DARK);
 	
 	//Spades
 	public static final ItemSpade CRYSTAL_SHOVEL = new ToolSpade("crystal_shovel", MATERIAL_CRYSTAL);
 	public static final ItemSpade REFRACTI_SHOVEL = new ToolSpade("refracti_shovel", MATERIAL_CACTI);
+	public static final ItemSpade DARK_SHOVEL = new ToolSpade("dark_shovel", MATERIAL_DARK);
 	
 	
 	//Pickaxes
 	public static final ItemPickaxe CRYSTAL_PICKAXE = new ToolPickaxe("crystal_pickaxe", MATERIAL_CRYSTAL);
 	public static final ItemPickaxe REFRACTI_PICKAXE = new ToolPickaxe("refracti_pickaxe", MATERIAL_CACTI);
+	public static final ItemPickaxe DARK_PICKAXE = new ToolPickaxe("dark_pickaxe", MATERIAL_DARK);
 	
 	//Axes
 	public static final ItemAxe CRYSTAL_AXE = new ToolAxe("crystal_axe", MATERIAL_CRYSTAL);
 	public static final ItemAxe REFRACTI_AXE = new ToolAxe("refracti_axe", MATERIAL_CACTI);
+	public static final ItemAxe DARK_AXE = new ToolAxe("dark_axe", MATERIAL_DARK);
 	
 	
 }

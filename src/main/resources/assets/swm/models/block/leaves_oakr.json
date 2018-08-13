@@ -1,0 +1,6 @@
+{
+    "parent": "block/leaves",
+    "textures": {
+        "all": "swm:blocks/leaves_oakr"
+    }
+}

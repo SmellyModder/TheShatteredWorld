@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "check_decay=true,decayable=true,variant=oakr": { "model": "swm:leaves_oakr" },
+        "check_decay=true,decayable=false,variant=oakr": { "model": "swm:leaves_oakr" },
+        "check_decay=false,decayable=true,variant=oakr": { "model": "swm:leaves_oakr" },
+        "check_decay=false,decayable=false,variant=oakr": { "model": "swm:leaves_oakr" },
+        
+        "check_decay=true,decayable=true,variant=birchr": { "model": "swm:leaves_birchr" },
+        "check_decay=true,decayable=false,variant=birchr": { "model": "swm:leaves_birchr" },
+        "check_decay=false,decayable=true,variant=birchr": { "model": "swm:leaves_birchr" },
+        "check_decay=false,decayable=false,variant=birchr": { "model": "swm:leaves_birchr" }
+    }
+}

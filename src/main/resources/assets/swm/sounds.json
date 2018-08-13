@@ -1,0 +1,35 @@
+{
+    "entity.slimewolf.hurt":
+    {
+        "category": "entity",
+        "subtitle": "entity.slimewolf.hurt",
+        "sounds": [{ "name": "swm:entity/slimewolf/hurt", "stream": true}]
+    },
+    
+    "entity.slimewolf.death":
+    {
+        "category": "entity",
+        "subtitle": "entity.slimewolf.death",
+        "sounds": [{ "name": "swm:entity/slimewolf/death", "stream": true}]
+    },
+    
+    "entity.shroomwiz.hit_shroomwiz":
+    {
+        "category": "entity",
+        "subtitle": "Shroom Wizard Hurt",
+        "sounds": [{ "name": "swm:entity/shroomwiz/death_shroomwiz", "stream": true}]
+    },
+    
+    "entity.shroomwiz.haggle_shroomwiz":
+    {
+        "category": "entity",
+        "subtitle": "Shroom Wizard Haggle",
+        "sounds": [{ "name": "swm:entity/shroomwiz/haggle_shroomwiz", "stream": true}]
+    },
+    "entity.shroomwiz.death_shroomwiz":
+    {
+        "category": "entity",
+        "subtitle": "Shroom Wizard Death",
+        "sounds": [{ "name": "swm:entity/shroomwiz/hit_shroomwiz", "stream": true}]
+    }
+}

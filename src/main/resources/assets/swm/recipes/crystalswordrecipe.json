@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shaped",
+   
+    "pattern":
+    [
+        " R ",
+        " R ",
+        " S "
+    ],
+   
+    "key":
+    {
+        "R":
+        {
+            "item": "swm:crystal"
+        },
+    
+        "S":
+        {
+            "item": "minecraft:stick"
+        }
+    },
+    
+    "result":
+    {
+        "item": "swm:crystal_sword",
+        "count": 1
+    }
+}

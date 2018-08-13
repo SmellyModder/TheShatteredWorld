@@ -1,0 +1,7 @@
+{
+    "variants": 
+    {
+        "variant=oakr": { "model": "swm:dirt_oakr" },
+        "variant=birchr": { "model": "swm:dirt_birchr" }
+    }
+}

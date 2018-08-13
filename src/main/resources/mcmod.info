@@ -1,0 +1,16 @@
+[
+{
+  "modid": "swm",
+  "name": "The Shattered World",
+  "description": "A new realm awaits in a land plagued with a crystal that mutates,refract's,and combines. How will you spare?",
+  "version": "1.0",
+  "mcversion": "1.12.2",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["SmellyModder", "Ubalube"],
+  "credits": "Thx to Finemanderby and Ubalube for some models and textures.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

@@ -1,0 +1,262 @@
+package com.smellysox345.TheShatteredWorld.entity.model;
+
+import net.minecraft.client.model.ModelBase;
+import net.minecraft.client.model.ModelRenderer;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
+
+/**
+ * ArachnoShroomQueen - SmellyModder
+ * Created using Tabula 7.0.0
+ */
+public class ModelArachnoShroomQueen extends ModelBase {
+    public ModelRenderer MAINBACK;
+    public ModelRenderer MIDDLE;
+    public ModelRenderer FLL;
+    public ModelRenderer FRL;
+    public ModelRenderer BRL;
+    public ModelRenderer BLL;
+    public ModelRenderer BBLL;
+    public ModelRenderer BBBLL;
+    public ModelRenderer BBRL;
+    public ModelRenderer BBBRL;
+    public ModelRenderer RSBACK;
+    public ModelRenderer LSBACK;
+    public ModelRenderer TSBACK;
+    public ModelRenderer BBACK;
+    public ModelRenderer BSBACK;
+    public ModelRenderer RSPINNER;
+    public ModelRenderer LSPINNER;
+    public ModelRenderer HEAD;
+    public ModelRenderer RJAW;
+    public ModelRenderer LJAW;
+    public ModelRenderer LEYE;
+    public ModelRenderer REYE;
+    public ModelRenderer SPIKERHAIR;
+    public ModelRenderer FLL_CHILD;
+    public ModelRenderer FRL_CHILD;
+    public ModelRenderer BRL_CHILD;
+    public ModelRenderer BLL_CHILD;
+    public ModelRenderer BBLL_CHILD;
+    public ModelRenderer BBBLL_CHILD;
+    public ModelRenderer BBRL_CHILD;
+    public ModelRenderer BBBRL_CHILD;
+
+    public ModelArachnoShroomQueen() {
+        this.textureWidth = 128;
+        this.textureHeight = 128;
+        this.BBLL_CHILD = new ModelRenderer(this, 61, 113);
+        this.BBLL_CHILD.setRotationPoint(16.4F, 11.3F, 0.5F);
+        this.BBLL_CHILD.addBox(-18.3F, 0.0F, 0.0F, 28, 4, 4, 0.0F);
+        this.setRotateAngle(BBLL_CHILD, 0.0F, 0.05201081170943102F, -1.6390387005478748F);
+        this.LEYE = new ModelRenderer(this, 70, 0);
+        this.LEYE.setRotationPoint(11.0F, 2.6F, 2.6F);
+        this.LEYE.addBox(0.0F, 0.0F, 0.0F, 1, 3, 3, 0.0F);
+        this.BBBRL = new ModelRenderer(this, 80, 100);
+        this.BBBRL.setRotationPoint(-4.6F, 8.0F, -6.5F);
+        this.BBBRL.addBox(-18.0F, 0.0F, 0.0F, 18, 4, 4, 0.0F);
+        this.setRotateAngle(BBBRL, 0.0F, 0.7976154681614086F, 0.5759586531581287F);
+        this.BBBRL_CHILD = new ModelRenderer(this, 61, 113);
+        this.BBBRL_CHILD.setRotationPoint(-16.5F, 18.1F, 9.4F);
+        this.BBBRL_CHILD.addBox(-18.3F, 0.0F, 0.0F, 23, 4, 4, 0.0F);
+        this.setRotateAngle(BBBRL_CHILD, 0.0F, -0.5462880558742251F, 1.6231562043547265F);
+        this.BSBACK = new ModelRenderer(this, 0, 0);
+        this.BSBACK.setRotationPoint(1.0F, 0.9F, 4.3F);
+        this.BSBACK.addBox(0.0F, 0.0F, 0.0F, 16, 10, 18, 0.0F);
+        this.LSBACK = new ModelRenderer(this, 0, 0);
+        this.LSBACK.setRotationPoint(7.0F, 0.9F, 1.0F);
+        this.LSBACK.addBox(0.0F, 0.0F, 0.0F, 13, 10, 18, 0.0F);
+        this.setRotateAngle(LSBACK, 0.0F, -0.012703945400896935F, 0.0F);
+        this.BRL_CHILD = new ModelRenderer(this, 61, 113);
+        this.BRL_CHILD.setRotationPoint(-16.5F, 19.8F, -1.7F);
+        this.BRL_CHILD.addBox(-18.3F, 0.0F, 0.0F, 28, 4, 4, 0.0F);
+        this.setRotateAngle(BRL_CHILD, 0.0F, 0.091106186954104F, 1.6406094968746698F);
+        this.FRL = new ModelRenderer(this, 80, 100);
+        this.FRL.setRotationPoint(-4.6F, 8.0F, -6.5F);
+        this.FRL.addBox(-18.0F, 0.0F, 0.0F, 18, 4, 4, 0.0F);
+        this.setRotateAngle(FRL, 0.0F, -0.7853981633974483F, 0.7853981633974483F);
+        this.LSPINNER = new ModelRenderer(this, 80, 0);
+        this.LSPINNER.setRotationPoint(9.0F, 3.2F, 18.0F);
+        this.LSPINNER.addBox(0.0F, 0.0F, 0.0F, 7, 4, 6, 0.0F);
+        this.FLL_CHILD = new ModelRenderer(this, 61, 113);
+        this.FLL_CHILD.setRotationPoint(15.9F, 8.0F, 2.5F);
+        this.FLL_CHILD.addBox(-5.9F, 0.0F, 1.8F, 28, 4, 4, 0.0F);
+        this.setRotateAngle(FLL_CHILD, 0.0F, 2.600540585471551F, -1.4660765716752369F);
+        this.BBBLL = new ModelRenderer(this, 80, 100);
+        this.BBBLL.setRotationPoint(4.6F, 8.0F, -6.5F);
+        this.BBBLL.addBox(0.0F, 0.0F, 0.0F, 18, 4, 4, 0.0F);
+        this.setRotateAngle(BBBLL, 0.0F, -0.7993607974134028F, -0.5759586531581287F);
+        this.BBRL_CHILD = new ModelRenderer(this, 61, 113);
+        this.BBRL_CHILD.setRotationPoint(-16.5F, 19.8F, -0.5F);
+        this.BBRL_CHILD.addBox(-18.3F, 0.0F, 0.0F, 28, 4, 4, 0.0F);
+        this.setRotateAngle(BBRL_CHILD, 0.0F, 0.024085543677521744F, 1.6231562043547265F);
+        this.FRL_CHILD = new ModelRenderer(this, 61, 113);
+        this.FRL_CHILD.setRotationPoint(-15.9F, 10.4F, -0.9F);
+        this.FRL_CHILD.addBox(-18.3F, 0.0F, 0.0F, 28, 4, 4, 0.0F);
+        this.setRotateAngle(FRL_CHILD, 0.12304571226560024F, -2.600540585471551F, 1.4660765716752369F);
+        this.BBBLL_CHILD = new ModelRenderer(this, 61, 113);
+        this.BBBLL_CHILD.setRotationPoint(16.5F, 7.5F, 1.5F);
+        this.BBBLL_CHILD.addBox(-18.5F, 0.0F, 1.4F, 23, 4, 4, 0.0F);
+        this.setRotateAngle(BBBLL_CHILD, 0.0F, 0.5462880558742251F, -1.635548042043886F);
+        this.MIDDLE = new ModelRenderer(this, 73, 21);
+        this.MIDDLE.setRotationPoint(-7.6F, 2.3F, -9.0F);
+        this.MIDDLE.addBox(0.0F, 0.0F, 0.0F, 16, 10, 12, 0.0F);
+        this.BLL = new ModelRenderer(this, 80, 100);
+        this.BLL.setRotationPoint(4.6F, 8.0F, -6.5F);
+        this.BLL.addBox(0.0F, 0.0F, 0.0F, 18, 4, 4, 0.0F);
+        this.setRotateAngle(BLL, 0.0F, 0.3839724354387525F, -0.5759586531581287F);
+        this.BLL_CHILD = new ModelRenderer(this, 61, 113);
+        this.BLL_CHILD.setRotationPoint(16.4F, 11.3F, -0.9F);
+        this.BLL_CHILD.addBox(-18.3F, 0.0F, 0.0F, 28, 4, 4, 0.0F);
+        this.setRotateAngle(BLL_CHILD, 0.0F, -0.091106186954104F, -1.6390387005478748F);
+        this.BBACK = new ModelRenderer(this, 0, 0);
+        this.BBACK.setRotationPoint(1.0F, 3.0F, 1.0F);
+        this.BBACK.addBox(0.0F, 0.0F, 0.0F, 16, 10, 18, 0.0F);
+        this.LJAW = new ModelRenderer(this, 0, 100);
+        this.LJAW.mirror = true;
+        this.LJAW.setRotationPoint(7.8F, 4.8F, -10.0F);
+        this.LJAW.addBox(0.0F, 0.0F, 0.0F, 1, 3, 12, 0.0F);
+        this.setRotateAngle(LJAW, 0.0F, 0.17453292519943295F, 0.0F);
+        this.SPIKERHAIR = new ModelRenderer(this, 0, 0);
+        this.SPIKERHAIR.setRotationPoint(4.5F, -3.5F, 1.4F);
+        this.SPIKERHAIR.addBox(0.0F, 0.0F, 0.0F, 2, 4, 6, 0.0F);
+        this.setRotateAngle(SPIKERHAIR, -0.27314402793711257F, 0.0F, 0.0F);
+        this.RSBACK = new ModelRenderer(this, 0, 0);
+        this.RSBACK.setRotationPoint(-2.0F, 0.9F, 1.0F);
+        this.RSBACK.addBox(0.0F, 0.0F, 0.0F, 13, 10, 18, 0.0F);
+        this.BBLL = new ModelRenderer(this, 80, 100);
+        this.BBLL.setRotationPoint(4.6F, 8.0F, -6.5F);
+        this.BBLL.addBox(0.0F, 0.0F, 0.0F, 18, 4, 4, 0.0F);
+        this.setRotateAngle(BBLL, 0.0F, -0.3839724354387525F, -0.5811946409141118F);
+        this.MAINBACK = new ModelRenderer(this, 0, 51);
+        this.MAINBACK.setRotationPoint(-8.5F, 1.1F, -4.0F);
+        this.MAINBACK.addBox(0.0F, 0.0F, 0.0F, 18, 12, 20, 0.0F);
+        this.setRotateAngle(MAINBACK, 0.32009338481576005F, 0.0F, 0.0F);
+        this.FLL = new ModelRenderer(this, 80, 100);
+        this.FLL.setRotationPoint(5.6F, 8.0F, -6.5F);
+        this.FLL.addBox(0.0F, 0.0F, 0.0F, 18, 4, 4, 0.0F);
+        this.setRotateAngle(FLL, 0.0F, 0.7853981633974483F, -0.7853981633974483F);
+        this.RSPINNER = new ModelRenderer(this, 80, 0);
+        this.RSPINNER.setRotationPoint(0.1F, 3.2F, 18.0F);
+        this.RSPINNER.addBox(0.0F, 0.0F, 0.0F, 7, 4, 6, 0.0F);
+        this.HEAD = new ModelRenderer(this, 73, 45);
+        this.HEAD.setRotationPoint(2.6F, 0.8F, -7.3F);
+        this.HEAD.addBox(0.0F, 0.0F, 0.0F, 11, 8, 8, 0.0F);
+        this.RJAW = new ModelRenderer(this, 0, 100);
+        this.RJAW.setRotationPoint(2.2F, 5.0F, -10.0F);
+        this.RJAW.addBox(0.0F, 0.0F, 0.0F, 1, 3, 12, 0.0F);
+        this.setRotateAngle(RJAW, 0.0F, -0.17453292519943295F, 0.0F);
+        this.TSBACK = new ModelRenderer(this, 0, 2);
+        this.TSBACK.setRotationPoint(1.0F, -1.0F, 1.0F);
+        this.TSBACK.addBox(0.0F, 0.0F, 0.0F, 16, 10, 18, 0.0F);
+        this.REYE = new ModelRenderer(this, 70, 0);
+        this.REYE.setRotationPoint(-1.0F, 2.6F, 2.6F);
+        this.REYE.addBox(0.0F, 0.0F, 0.0F, 1, 3, 3, 0.0F);
+        this.BBRL = new ModelRenderer(this, 80, 100);
+        this.BBRL.setRotationPoint(-4.6F, 8.0F, -6.5F);
+        this.BBRL.addBox(-18.0F, 0.0F, 0.0F, 18, 4, 4, 0.0F);
+        this.setRotateAngle(BBRL, 0.0F, 0.3839724354387525F, 0.5759586531581287F);
+        this.BRL = new ModelRenderer(this, 80, 100);
+        this.BRL.setRotationPoint(-4.6F, 8.0F, -6.5F);
+        this.BRL.addBox(-18.0F, 0.0F, 0.0F, 18, 4, 4, 0.0F);
+        this.setRotateAngle(BRL, 0.0F, -0.3839724354387525F, 0.5759586531581287F);
+        this.BBLL.addChild(this.BBLL_CHILD);
+        this.HEAD.addChild(this.LEYE);
+        this.BBBRL.addChild(this.BBBRL_CHILD);
+        this.MAINBACK.addChild(this.BSBACK);
+        this.MAINBACK.addChild(this.LSBACK);
+        this.BRL.addChild(this.BRL_CHILD);
+        this.BSBACK.addChild(this.LSPINNER);
+        this.FLL.addChild(this.FLL_CHILD);
+        this.BBRL.addChild(this.BBRL_CHILD);
+        this.FRL.addChild(this.FRL_CHILD);
+        this.BBBLL.addChild(this.BBBLL_CHILD);
+        this.BLL.addChild(this.BLL_CHILD);
+        this.MAINBACK.addChild(this.BBACK);
+        this.HEAD.addChild(this.LJAW);
+        this.HEAD.addChild(this.SPIKERHAIR);
+        this.MAINBACK.addChild(this.RSBACK);
+        this.BSBACK.addChild(this.RSPINNER);
+        this.MIDDLE.addChild(this.HEAD);
+        this.HEAD.addChild(this.RJAW);
+        this.MAINBACK.addChild(this.TSBACK);
+        this.HEAD.addChild(this.REYE);
+    }
+
+    @Override
+    public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) { 
+        this.BBBRL.render(f5);
+        this.FRL.render(f5);
+        this.BBBLL.render(f5);
+        this.MIDDLE.render(f5);
+        this.BLL.render(f5);
+        this.BBLL.render(f5);
+        this.MAINBACK.render(f5);
+        this.FLL.render(f5);
+        this.BBRL.render(f5);
+        this.BRL.render(f5);
+    }
+
+    /**
+     * This is a helper function from Tabula to set the rotation of model parts
+     */
+    public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
+        modelRenderer.rotateAngleX = x;
+        modelRenderer.rotateAngleY = y;
+        modelRenderer.rotateAngleZ = z;
+    }
+    
+    public void setRotationAngles(float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scaleFactor, Entity entityIn)
+    {
+    	this.HEAD.rotateAngleY = netHeadYaw * 0.0017453292F;
+        this.HEAD.rotateAngleX = headPitch * 0.0017453292F;
+        float f = ((float)Math.PI / 2F);
+        this.FLL.rotateAngleZ = -0.7853981633974483F;
+        this.FRL.rotateAngleZ = 0.7853981633974483F;
+        this.BLL.rotateAngleZ = -0.5759586531581287F;
+        this.BRL.rotateAngleZ = 0.5759586531581287F;
+        this.BBLL.rotateAngleZ = -0.5811946409141118F;
+        this.BBRL.rotateAngleZ =  0.5759586531581287F;
+        this.BBBLL.rotateAngleZ = -0.5759586531581287F;
+        this.BBBRL.rotateAngleZ = 0.5759586531581287F;
+        float f1 = -0.0F;
+        float f2 = 0.3926991F;
+        float f20 = MathHelper.sin(this.swingProgress * (float)Math.PI);
+        float f21 = MathHelper.sin((1.0F - (1.0F - this.swingProgress) * (1.0F - this.swingProgress)) * (float)Math.PI);
+        this.FLL.rotateAngleY = ((float)Math.PI / 4F);
+        this.FRL.rotateAngleY = -((float)Math.PI / 4F);
+        this.BLL.rotateAngleY = 0.3839724354387525F;
+        this.BRL.rotateAngleY = -0.3839724354387525F;
+        this.BBLL.rotateAngleY = -0.3839724354387525F;
+        this.BBRL.rotateAngleY = 0.3839724354387525F;
+        this.BBBLL.rotateAngleY = -((float)Math.PI / 4F);
+        this.BBBRL.rotateAngleY = ((float)Math.PI / 4F);
+        float f3 = -(MathHelper.cos(limbSwing * 0.6662F * 2.0F + 0.0F) * 0.4F) * limbSwingAmount;
+        float f4 = -(MathHelper.cos(limbSwing * 0.6662F * 2.0F + (float)Math.PI) * 0.4F) * limbSwingAmount;
+        float f5 = -(MathHelper.cos(limbSwing * 0.6662F * 2.0F + ((float)Math.PI / 2F)) * 0.4F) * limbSwingAmount;
+        float f6 = -(MathHelper.cos(limbSwing * 0.6662F * 2.0F + ((float)Math.PI * 3F / 2F)) * 0.4F) * limbSwingAmount;
+        float f7 = Math.abs(MathHelper.sin(limbSwing * 0.6662F + 0.0F) * 0.4F) * limbSwingAmount;
+        float f8 = Math.abs(MathHelper.sin(limbSwing * 0.6662F + (float)Math.PI) * 0.4F) * limbSwingAmount;
+        float f9 = Math.abs(MathHelper.sin(limbSwing * 0.6662F + ((float)Math.PI / 2F)) * 0.4F) * limbSwingAmount;
+        float f10 = Math.abs(MathHelper.sin(limbSwing * 0.6662F + ((float)Math.PI * 3F / 2F)) * 0.4F) * limbSwingAmount;
+        this.FLL.rotateAngleY += f3;
+        this.FRL.rotateAngleY += -f3;
+        this.BLL.rotateAngleY += f4;
+        this.BRL.rotateAngleY += -f4;
+        this.BBLL.rotateAngleY += f5;
+        this.BBRL.rotateAngleY += -f5;
+        this.BBBLL.rotateAngleY += f6;
+        this.BBBRL.rotateAngleY += -f6;
+        this.FLL.rotateAngleZ += f7;
+        this.FRL.rotateAngleZ += -f7;
+        this.BLL.rotateAngleZ += f8;
+        this.BRL.rotateAngleZ += -f8;
+        this.BBLL.rotateAngleZ += f9;
+        this.BBRL.rotateAngleZ += -f9;
+        this.BBBLL.rotateAngleZ += f10;
+        this.BBBRL.rotateAngleZ += -f10;
+        this.MAINBACK.rotateAngleX = 0.32009338481576005F;
+        this.MAINBACK.rotateAngleX += MathHelper.sin(ageInTicks * 0.09F) * 0.05F + 0.05F;
+        this.MAINBACK.rotateAngleZ = MathHelper.sin(limbSwing * 0.2662F) * 0.2F * limbSwingAmount;
+    }
+}

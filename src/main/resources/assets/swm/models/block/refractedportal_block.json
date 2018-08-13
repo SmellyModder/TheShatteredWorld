@@ -1,0 +1,22 @@
+{
+    "parent": "block/block",
+    "__comment": "Model generated using MrCrayfish's Model Creator (http://mrcrayfish.com/modelcreator/)",
+    "textures": {
+        "0": "swm:blocks/prismbeam"
+    },
+    "elements": [
+        {
+            "name": "Cube",
+            "from": [ 1.0, 0.0, 1.0 ], 
+            "to": [ 15.0, 80.0, 15.0 ], 
+            "faces": {
+                "north": { "texture": "#0", "uv": [ 0.0, 0.0, 16.0, 50.0 ] },
+                "east": { "texture": "#0", "uv": [ 0.0, 0.0, 16.0, 50.0 ] },
+                "south": { "texture": "#0", "uv": [ 0.0, 0.0, 16.0, 50.0 ] },
+                "west": { "texture": "#0", "uv": [ 0.0, 0.0, 16.0, 50.0 ] },
+                "up": { "texture": "#0", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "down": { "texture": "#0", "uv": [ 0.0, 0.0, 16.0, 16.0 ] }
+            }
+        }
+    ]
+}

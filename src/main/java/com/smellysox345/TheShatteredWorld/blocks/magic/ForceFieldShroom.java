@@ -109,7 +109,7 @@ public class ForceFieldShroom extends BlockBase {
         if (entity instanceof EntityPlayer) {
             return;
         }
-        int Knockback = 2;
+        int Knockback = 1;
         entity.addVelocity(MathHelper.sin(entity.rotationYaw * 3.141593F / 180.0F) * Knockback * 0.1F, 0.08D, -MathHelper.cos(entity.rotationYaw * 3.141593F / 180.0F) * Knockback * 0.1F);
         entity.attackEntityFrom(DamageSource.MAGIC, 1);
     }

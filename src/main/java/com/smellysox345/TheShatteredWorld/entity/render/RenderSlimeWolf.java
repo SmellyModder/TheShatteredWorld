@@ -30,7 +30,6 @@ public class RenderSlimeWolf extends RenderLiving<EntitySlimeWolf>{
 
 	@Override
 	protected ResourceLocation getEntityTexture(EntitySlimeWolf entity) {
-		// TODO Auto-generated method stub
 		return TEXTURES;
 	}
 	

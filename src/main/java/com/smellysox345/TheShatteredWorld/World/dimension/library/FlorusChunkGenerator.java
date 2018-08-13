@@ -116,14 +116,12 @@ public class FlorusChunkGenerator implements IChunkGenerator {
 	@Override
 	public BlockPos getNearestStructurePos(World worldIn, String structureName, BlockPos position,
 			boolean findUnexplored) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 
 	@Override
 	public boolean isInsideStructure(World worldIn, String structureName, BlockPos pos) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 

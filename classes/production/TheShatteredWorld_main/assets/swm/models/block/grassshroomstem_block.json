@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "swm:blocks/grassshroomstem_block",
+        "side": "swm:blocks/grassshroomstem_side_block"
+    }
+}

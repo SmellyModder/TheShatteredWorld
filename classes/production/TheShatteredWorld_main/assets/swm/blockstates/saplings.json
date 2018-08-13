@@ -1,0 +1,10 @@
+{
+    "variants": 
+    {
+        "stage=0,variant=oakr": { "model": "swm:sapling_oakr" },
+        "stage=1,variant=oakr": { "model": "swm:sapling_oakr" },
+        
+        "stage=0,variant=birchr": { "model": "swm:sapling_birchr" },
+        "stage=1,variant=birchr": { "model": "swm:sapling_birchr" }                
+    }
+}

@@ -1,0 +1,18 @@
+{ 
+    "type": "minecraft:crafting_shapeless",
+
+    "ingredients": 
+    [
+
+    {
+      "item": "swm:refractedcactus_block"
+    }
+
+    ],
+
+    "result": 
+    {
+        "item": "swm:refractedcactusbud",
+        "count": 6
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "variants": 
+    {
+        "variant=oakr": { "model": "swm:planks_oakr" },
+        "variant=birchr": { "model": "swm:planks_birchr" }
+    }
+}

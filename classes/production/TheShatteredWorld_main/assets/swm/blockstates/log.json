@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "axis=y,variant=oakr": { "model": "swm:log_oakr" },
+        "axis=z,variant=oakr": { "model": "swm:log_oakr", "x": 90 },
+        "axis=x,variant=oakr": { "model": "swm:log_oakr", "x": 90, "y": 90 },
+        "axis=none,variant=oakr": { "model": "swm:log_oakr" },
+        
+        "axis=y,variant=birchr": { "model": "swm:log_birchr" },
+        "axis=z,variant=birchr": { "model": "swm:log_birchr", "x": 90 },
+        "axis=x,variant=birchr": { "model": "swm:log_birchr", "x": 90, "y": 90 },
+        "axis=none,variant=birchr": { "model": "swm:log_birchr" }
+    }
+}

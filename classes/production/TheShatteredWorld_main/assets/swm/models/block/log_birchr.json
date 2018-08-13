@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "swm:blocks/log_birchr_top",
+        "side": "swm:blocks/log_birchr"
+    }
+}

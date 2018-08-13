@@ -1,0 +1,105 @@
+# Items
+item.crystal.name=Crystal
+item.crystallizationcore.name=Crystallization core
+item.prism.name=Prism
+tile.saplings_oakr.name=Refracted Oak Sapling
+tile.saplings_birchr.name=Refracted Birch Sapling
+
+
+# Foods
+item.corruptedbeef.name=Corrupted Beef
+item.corruptedpigbeef.name=Corrupted Pig Beef
+item.corruptedcookedbeef.name=Corrupted Steak
+item.corruptedcookedpork.name=Corrupted Cooked Porkchop
+item.refractedcactusbud.name=Refracti
+
+
+# Armors
+item.crystal_helmet.name=Crystal Helmet
+item.crystal_chestplate.name=Crystal Chestplate
+item.crystal_leggings.name=Crystal Leggings
+item.crystal_boots.name=Crystal Boots
+item.refracti_helmet.name=Refracti Helmet
+item.refracti_chestplate.name=Refracti Chestplate
+item.refracti_leggings.name=Refracti Leggings
+item.refracti_boots.name=Refracti Boots
+item.crystalshield.name=Crystal Shield
+
+
+
+
+# Weapons
+item.crystal_sword.name=Crystal Sword
+item.refracti_sword.name=Refracti Sword
+
+# Tools
+item.crystal_shovel.name=Crystal Shovel
+item.crystal_axe.name=Crystal Axe
+item.crystal_pickaxe.name=Crystal Pickaxe
+item.refracti_pickaxe.name=Refracti Pickaxe
+item.refracti_axe.name=Refracti axe
+item.refracti_shovel.name=Refracti Shovel
+
+
+# ItemsCustomModels
+item.crystalgun.name=Crystal Gun
+
+# Entities
+entity.slimewolf.name=Slime Wolf
+entity.slimewolfbaby.name=Slime Wolf Baby
+entity.shroomzombie.name=Shroom Zombie
+entity.nightshroom.name=Night Shroom
+entity.shroomite.name=Shroomite
+entity.arachnoshroom.name=Arachno Shroom
+
+# Boss
+entity.arachnoshroomqueen.name=§bArachno Shroom Queen§r
+
+# Sounds
+entity.slimewolf.death=SlimeWolf death
+
+# Tabs
+itemGroup.refracteditems=Refracted Items
+itemGroup.refractedblocks=Refracted Blocks
+itemGroup.refractedweapons=Refracted Weapons
+itemGroup.refractedtools=Refracted Tools
+itemGroup.refractedarmors=Refracted Armors
+itemGroup.refractedfoods=Refracted Foods
+itemGroup.refractedplants=Refracted Plants
+
+# Blocks
+tile.crystal_block.name=Crystal Block
+tile.refractedsand_block.name=Refracted sand
+tile.refractedstone_block.name=Refracted Stone
+tile.refractedcobblestone_block.name=Refracted Cobblestone
+tile.shroom_web.name=Shroom Web
+tile.r_mycelium.name=Refracted Mycelium
+tile.rd_mycelium.name=Refracted Silt
+tile.nightcrawlershroomstem_block.name=Night Shroom Stem
+tile.refractistem_block.name=Refracta Shroom Stem
+tile.refractishroom_block.name=Refracta Shroom Block
+tile.r_shroom.name=Refracta Shroom
+tile.night_shroom.name=Night Shroom
+tile.g_shroom.name=Grass Shroom
+tile.p_shroom.name=Pinki Shroom
+tile.pinkshroom_block.name=Pinki Shroom Block
+tile.pinkshroomstem_block.name=Pinki Shroom Stem
+tile.grassshroom_block.name=Grass Shroom Block
+tile.grassshroomstem_block.name=Grass Shroom Stem
+tile.nightcrawlershroom_block.name=Night Shroom Block
+tile.bouncyshroom_block.name=Bouncy Shroom
+tile.bouncyshroomstem_block.name=Bouncy Shroom Stem
+tile.leaves_oakr.name=Refracted Oak Leaves
+tile.leaves_birchr.name=Refracted Birch Leaves
+tile.planks_oakr.name=Refracted Oak Planks
+tile.planks_birchr.name=Refracted Birch Planks
+tile.log_oakr.name=Refracted Oak Log
+tile.log_birchr.name=Refracted Birch Log
+tile.refractedcactus_block.name=Refracti Cactus
+
+
+# Summoner
+tile.spider_egg.name=§bArachno Queen Egg§r
+tile.spider_eggsack.name=Spider Eggsack
+
+

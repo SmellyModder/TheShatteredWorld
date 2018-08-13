@@ -1,0 +1,24 @@
+{
+    "type": "minecraft:crafting_shaped",
+   
+    "pattern":
+    [
+        "RRR",
+        "R R",
+        "   "
+    ],
+   
+    "key":
+    {
+        "R":
+        {
+            "item": "swm:refractedcactusbud"
+        }
+    },
+   
+    "result":
+    {
+        "item": "swm:refracti_helmet",
+        "count": 1
+    }
+}

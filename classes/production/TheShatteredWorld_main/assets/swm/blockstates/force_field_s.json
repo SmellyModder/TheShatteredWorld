@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "normal": { "model": "swm:force_field_s" }
+    }
+}

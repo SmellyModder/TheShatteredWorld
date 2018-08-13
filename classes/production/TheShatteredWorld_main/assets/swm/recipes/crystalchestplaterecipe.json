@@ -1,0 +1,24 @@
+{
+    "type": "minecraft:crafting_shaped",
+   
+    "pattern":
+    [
+        "R R",
+        "RRR",
+        "RRR"
+    ],
+   
+    "key":
+    {
+        "R":
+        {
+            "item": "swm:crystal"
+        }
+    },
+   
+    "result":
+    {
+        "item": "swm:crystal_chestplate",
+        "count": 1
+    }
+}

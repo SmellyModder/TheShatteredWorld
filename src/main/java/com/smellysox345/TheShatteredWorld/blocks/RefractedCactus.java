@@ -30,8 +30,6 @@ import net.minecraftforge.common.IPlantable;
 public class RefractedCactus extends BlockBase implements IHasModel
 {
 	public static final AxisAlignedBB REFRACTED_CACTUS_AABB = new AxisAlignedBB(0.1875D, 0, 0.1875D, 0.9125D, 0.925D, 0.9125D );
-	private static Object block;
-	
 	public RefractedCactus(String name, Material material) 
 	{
 		super(name, material);

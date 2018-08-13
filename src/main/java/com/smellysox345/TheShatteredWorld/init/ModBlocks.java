@@ -3,7 +3,6 @@ package com.smellysox345.TheShatteredWorld.init;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.smellysox345.TheShatteredWorld.blocks.BlockBase;
 import com.smellysox345.TheShatteredWorld.blocks.CrystalBlock;
 import com.smellysox345.TheShatteredWorld.blocks.RefractedCactus;
 import com.smellysox345.TheShatteredWorld.blocks.RefractedSandBlock;
@@ -16,7 +15,7 @@ import com.smellysox345.TheShatteredWorld.blocks.TreeStuff.BlockLeaf;
 import com.smellysox345.TheShatteredWorld.blocks.TreeStuff.BlockLogs;
 import com.smellysox345.TheShatteredWorld.blocks.TreeStuff.BlockPlanks;
 import com.smellysox345.TheShatteredWorld.blocks.TreeStuff.BlockSaplings;
-import com.smellysox345.TheShatteredWorld.blocks.magic.BlockField;
+import com.smellysox345.TheShatteredWorld.blocks.magic.ForceFieldShroom;
 import com.smellysox345.TheShatteredWorld.blocks.shroom.BouncyShroom;
 import com.smellysox345.TheShatteredWorld.blocks.shroom.BouncyShroomStem;
 import com.smellysox345.TheShatteredWorld.blocks.shroom.RefractedMycelium;
@@ -28,7 +27,6 @@ import com.smellysox345.TheShatteredWorld.blocks.shroom.nightcrawler.BaseShroomS
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
-import net.minecraft.block.BlockSapling;
 import net.minecraft.block.material.Material;
 
 public class ModBlocks {
@@ -57,7 +55,7 @@ public class ModBlocks {
 	
 	//Portals
 	public static final Block R_PORTAL = new BlockTeleporter("refractedportal_block", Material.PORTAL);
-	public static final Block SHROOM_SHIELD = new BlockField("force_field_s", Material.ICE);
+	public static final Block SHROOM_SHIELD = new ForceFieldShroom("force_field_s", Material.ICE);
 	
 	//Spawner's
 	public static final Block SPIDEREGG_BLOCK = new SpiderQueenEgg("spider_egg", Material.DRAGON_EGG);

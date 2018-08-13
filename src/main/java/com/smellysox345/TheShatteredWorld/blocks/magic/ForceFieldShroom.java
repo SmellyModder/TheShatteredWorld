@@ -1,5 +1,7 @@
 package com.smellysox345.TheShatteredWorld.blocks.magic;
 
+import java.util.Random;
+
 import javax.annotation.Nullable;
 
 import com.smellysox345.TheShatteredWorld.blocks.BlockBase;
@@ -7,12 +9,14 @@ import com.smellysox345.TheShatteredWorld.init.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -49,6 +53,35 @@ public class ForceFieldShroom extends BlockBase {
     {
         return NULL_AABB;
     }
+    
+    @SideOnly(Side.CLIENT)
+    @Override
+	public void randomDisplayTick(IBlockState state, World world, BlockPos pos, Random random) {
+		EntityPlayer entity = Minecraft.getMinecraft().player;
+		int x = pos.getX();
+		int y = pos.getY();
+		int z = pos.getZ();
+		World par1World = world;
+		int par2 = x;
+		int par3 = y;
+		int par4 = z;
+		Random par5Random = random;
+		if (true)
+			for (int l = 0; l < 1; ++l) {
+				double d0 = (double) ((float) par2 + par5Random.nextFloat());
+				double d1 = (double) ((float) par3 + par5Random.nextFloat());
+				double d2 = (double) ((float) par4 + par5Random.nextFloat());
+				double d3 = 0.0D;
+				double d4 = 0.0D;
+				double d5 = 0.0D;
+				int i1 = par5Random.nextInt(2) * 2 - 1;
+				d3 = ((double) par5Random.nextFloat() - 0.5D) * 0.2D;
+				d4 = ((double) par5Random.nextFloat() - 0.5D) * 0.2D;
+				d5 = ((double) par5Random.nextFloat() - 0.5D) * 0.2D;
+				par1World.spawnParticle(EnumParticleTypes.CRIT_MAGIC, d0, d1, d2, d3, d4, d5);
+			}
+
+	}
 
     @SideOnly(Side.CLIENT)
     public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side)

@@ -27,17 +27,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ForceFieldShroom extends BlockBase {
 
-
     public ForceFieldShroom(String name, Material material) {
         super(name, material);
 
     }
-
-    @SideOnly(Side.CLIENT)
-    public BlockRenderLayer getBlockLayer() {
-        return BlockRenderLayer.TRANSLUCENT;
-    }
-
+    
     @Override
     public boolean isFullCube(IBlockState state) {
         return false;
@@ -46,6 +40,11 @@ public class ForceFieldShroom extends BlockBase {
     @Override
     public boolean isOpaqueCube(IBlockState state) {
         return false;
+    }
+    
+    @SideOnly(Side.CLIENT)
+    public BlockRenderLayer getBlockLayer() {
+        return BlockRenderLayer.TRANSLUCENT;
     }
     
     @Nullable

@@ -1,5 +1,7 @@
 package com.smellysox345.TheShatteredWorld.blocks.magic;
 
+import javax.annotation.Nullable;
+
 import com.smellysox345.TheShatteredWorld.blocks.BlockBase;
 import com.smellysox345.TheShatteredWorld.init.ModBlocks;
 import net.minecraft.block.Block;
@@ -11,6 +13,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockAccess;
@@ -39,6 +42,12 @@ public class ForceFieldShroom extends BlockBase {
     @Override
     public boolean isOpaqueCube(IBlockState state) {
         return false;
+    }
+    
+    @Nullable
+    public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos)
+    {
+        return NULL_AABB;
     }
 
     @SideOnly(Side.CLIENT)

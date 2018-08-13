@@ -15,6 +15,7 @@ import com.smellysox345.TheShatteredWorld.blocks.TreeStuff.BlockLeaf;
 import com.smellysox345.TheShatteredWorld.blocks.TreeStuff.BlockLogs;
 import com.smellysox345.TheShatteredWorld.blocks.TreeStuff.BlockPlanks;
 import com.smellysox345.TheShatteredWorld.blocks.TreeStuff.BlockSaplings;
+import com.smellysox345.TheShatteredWorld.blocks.TreeStuff.magic.EyeTree;
 import com.smellysox345.TheShatteredWorld.blocks.magic.ForceFieldShroom;
 import com.smellysox345.TheShatteredWorld.blocks.shroom.BouncyShroom;
 import com.smellysox345.TheShatteredWorld.blocks.shroom.BouncyShroomStem;
@@ -52,6 +53,7 @@ public class ModBlocks {
 	public static final Block SAPLING = new BlockSaplings("saplings");
 	public static final Block DIRT = new BlockDirts("dirts");
 	public static final Block PLANKS = new BlockPlanks("planks");
+	public static final Block EYE_TREE = new EyeTree("eye_tree", Material.WOOD);
 	
 	//Portals
 	public static final Block R_PORTAL = new BlockTeleporter("refractedportal_block", Material.PORTAL);

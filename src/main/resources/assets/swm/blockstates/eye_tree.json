@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "axis=y":  { "model": "swm:eye_tree" },
+        "axis=z":   { "model": "swm:eye_tree", "x": 90 },
+        "axis=x":   { "model": "swm:eye_tree", "x": 90, "y": 90 },
+        "axis=none": { "model": "swm:eye_tree" }
+    }
+}

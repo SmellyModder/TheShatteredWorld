@@ -37,12 +37,12 @@ public class ModItems {
 	//Armor Materials
 	public static final ArmorMaterial ARMOR_MATERIAL_CRYSTAL = EnumHelper.addArmorMaterial("armor_material_crystal", Reference.MOD_ID + ":crystal", 11, new int[] {1, 5, 6, 3}, 16, SoundEvents.ENTITY_EXPERIENCE_ORB_PICKUP, 0.0F);
 	public static final ArmorMaterial ARMOR_MATERIAL_REFRACTI = EnumHelper.addArmorMaterial("armor_material_refracti", Reference.MOD_ID + ":refracti", 11, new int[] {1, 4, 5, 2}, 16, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F);
-	public static final ArmorMaterial ARMOR_MATERIAL_TEMPLAR = EnumHelper.addArmorMaterial("armor_material_templar", Reference.MOD_ID + ":templar", 11, new int[] {2, 4, 6, 4}, 16, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F);
+	public static final ArmorMaterial ARMOR_MATERIAL_DARKNUT = EnumHelper.addArmorMaterial("armor_material_templar", Reference.MOD_ID + ":templar", 11, new int[] {2, 4, 6, 4}, 16, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F);
 	
 	//Materials
 	public static final ToolMaterial MATERIAL_CRYSTAL = EnumHelper.addToolMaterial("material_crystal", 2, 530, 6.5F, 2.2F, 13);
 	public static final ToolMaterial MATERIAL_CACTI = EnumHelper.addToolMaterial("material_cacti", 2, 260, 5.5F, 1.5F, 13);
-	public static final ToolMaterial MATERIAL_DARK = EnumHelper.addToolMaterial("material_dark", 4, 600, 7.0F, 3.5F, 13);
+	public static final ToolMaterial MATERIAL_DARKNUT = EnumHelper.addToolMaterial("material_darknut", 4, 600, 7.0F, 3.5F, 13);
 	
 	//Items
 	public static final Item CRYSTAL = new ItemBase("crystal");
@@ -75,10 +75,10 @@ public class ModItems {
 	
 	public static final Item CRYSTAL_SHIELD = new ItemShieldCrystal("crystal_shield");
 	
-	public static final Item TEMPLAR_HELMET = new ArmorBase("templar_helmet", ARMOR_MATERIAL_TEMPLAR, 1, EntityEquipmentSlot.HEAD);
-	public static final Item TEMPLAR_BODY = new ArmorBase("templar_chestplate", ARMOR_MATERIAL_TEMPLAR, 1, EntityEquipmentSlot.CHEST);
-	public static final Item TEMPLAR_LEGGINGS = new ArmorBase("templar_leggings", ARMOR_MATERIAL_TEMPLAR, 2, EntityEquipmentSlot.LEGS);
-	public static final Item TEMPLAR_BOOTS = new ArmorBase("templar_boots", ARMOR_MATERIAL_TEMPLAR, 2, EntityEquipmentSlot.FEET);
+	public static final Item DARKNUT_HELMET = new ArmorBase("templar_helmet", ARMOR_MATERIAL_DARKNUT, 1, EntityEquipmentSlot.HEAD);
+	public static final Item DARKNUT_BODY = new ArmorBase("templar_chestplate", ARMOR_MATERIAL_DARKNUT, 1, EntityEquipmentSlot.CHEST);
+	public static final Item DARKNUT_LEGGINGS = new ArmorBase("templar_leggings", ARMOR_MATERIAL_DARKNUT, 2, EntityEquipmentSlot.LEGS);
+	public static final Item DARKNUT_BOOTS = new ArmorBase("templar_boots", ARMOR_MATERIAL_DARKNUT, 2, EntityEquipmentSlot.FEET);
 	
 	
 	
@@ -89,23 +89,23 @@ public class ModItems {
 	//Swords
 	public static final ItemSword CRYSTAL_SWORD = new ToolSword("crystal_sword", MATERIAL_CRYSTAL);
 	public static final ItemSword REFRACTI_SWORD = new ToolSword("refracti_sword", MATERIAL_CACTI);
-	public static final ItemSword DARK_SWORD = new ToolSword("dark_sword", MATERIAL_DARK);
+	public static final ItemSword DARK_SWORD = new ToolSword("darknut_sword", MATERIAL_DARKNUT);
 	
 	//Spades
 	public static final ItemSpade CRYSTAL_SHOVEL = new ToolSpade("crystal_shovel", MATERIAL_CRYSTAL);
 	public static final ItemSpade REFRACTI_SHOVEL = new ToolSpade("refracti_shovel", MATERIAL_CACTI);
-	public static final ItemSpade DARK_SHOVEL = new ToolSpade("dark_shovel", MATERIAL_DARK);
+	public static final ItemSpade DARK_SHOVEL = new ToolSpade("darknut_shovel", MATERIAL_DARKNUT);
 	
 	
 	//Pickaxes
 	public static final ItemPickaxe CRYSTAL_PICKAXE = new ToolPickaxe("crystal_pickaxe", MATERIAL_CRYSTAL);
 	public static final ItemPickaxe REFRACTI_PICKAXE = new ToolPickaxe("refracti_pickaxe", MATERIAL_CACTI);
-	public static final ItemPickaxe DARK_PICKAXE = new ToolPickaxe("dark_pickaxe", MATERIAL_DARK);
+	public static final ItemPickaxe DARK_PICKAXE = new ToolPickaxe("darknut_pickaxe", MATERIAL_DARKNUT);
 	
 	//Axes
 	public static final ItemAxe CRYSTAL_AXE = new ToolAxe("crystal_axe", MATERIAL_CRYSTAL);
 	public static final ItemAxe REFRACTI_AXE = new ToolAxe("refracti_axe", MATERIAL_CACTI);
-	public static final ItemAxe DARK_AXE = new ToolAxe("dark_axe", MATERIAL_DARK);
+	public static final ItemAxe DARK_AXE = new ToolAxe("darknut_axe", MATERIAL_DARKNUT);
 	
 	
 }

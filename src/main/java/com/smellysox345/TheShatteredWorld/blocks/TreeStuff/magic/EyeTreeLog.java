@@ -10,17 +10,25 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import scala.util.Random;
 
-public class EyeTree extends BlockRotatedPillar implements IHasModel {
-
-    public EyeTree(String name, Material materialIn) {
+public class EyeTreeLog extends BlockRotatedPillar implements IHasModel {
+	
+	
+    public EyeTreeLog(String name, Material materialIn) {
         super(materialIn);
         setUnlocalizedName(name);
         setRegistryName(name);
         setCreativeTab(Main.refractedblocks);
+        setLightLevel(0.9F);
+        setHarvestLevel("axe", 2);
+        setHardness(2.0F);
         ModBlocks.BLOCKS.add(this);
         ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
         this.setDefaultState(this.getDefaultState().withProperty(AXIS, EnumFacing.Axis.Y));

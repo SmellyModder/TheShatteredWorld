@@ -1,0 +1,6 @@
+{
+   "parent": "block/leaves",
+   "textures": {
+       "all": "swm:blocks/eye_tree_leaves_default"
+   }
+}

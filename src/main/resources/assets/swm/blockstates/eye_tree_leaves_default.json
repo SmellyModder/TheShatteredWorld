@@ -1,0 +1,8 @@
+{
+    "variants": {
+         "check_decay=true,decayable=true": { "model": "swm:eye_tree_leaves_default" },
+        "check_decay=true,decayable=false": { "model": "swm:eye_tree_leaves_default" },
+        "check_decay=false,decayable=true": { "model": "swm:eye_tree_leaves_default" },
+        "check_decay=false,decayable=false": { "model": "swm:eye_tree_leaves_default" }
+}
+}

@@ -15,6 +15,7 @@ import com.smellysox345.TheShatteredWorld.blocks.TreeStuff.BlockLeaf;
 import com.smellysox345.TheShatteredWorld.blocks.TreeStuff.BlockLogs;
 import com.smellysox345.TheShatteredWorld.blocks.TreeStuff.BlockPlanks;
 import com.smellysox345.TheShatteredWorld.blocks.TreeStuff.BlockSaplings;
+import com.smellysox345.TheShatteredWorld.blocks.TreeStuff.magic.EyeTreeLeavesDefault;
 import com.smellysox345.TheShatteredWorld.blocks.TreeStuff.magic.EyeTreeLog;
 import com.smellysox345.TheShatteredWorld.blocks.TreeStuff.magic.EyeTreeLogDefault;
 import com.smellysox345.TheShatteredWorld.blocks.magic.ForceFieldShroom;
@@ -48,6 +49,7 @@ public class ModBlocks {
 	public static final Block EYE_TREE_DEFAULT = new EyeTreeLogDefault("eye_tree_default", Material.WOOD);
 	public static final Block PLANKS = new BlockPlanks("planks");
 	public static final Block LEAVES = new BlockLeaf("leaves");
+	public static final Block EYE_LEAVES_DEFAULT = new EyeTreeLeavesDefault("eye_tree_leaves_default", Material.LEAVES);
 	public static final Block SAPLING = new BlockSaplings("saplings");
 	
 	//Portals

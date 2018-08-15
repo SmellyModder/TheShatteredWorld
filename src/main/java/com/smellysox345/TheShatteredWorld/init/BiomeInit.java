@@ -1,6 +1,7 @@
 package com.smellysox345.TheShatteredWorld.init;
 
 import com.smellysox345.TheShatteredWorld.World.Biomes.BiomeRForest;
+import com.smellysox345.TheShatteredWorld.World.Biomes.BiomeRefractedRoofedForest;
 import com.smellysox345.TheShatteredWorld.World.Biomes.ShroomValley;
 
 import net.minecraft.world.biome.Biome;
@@ -18,10 +19,14 @@ public class BiomeInit {
 	
 	public static final Biome RF_SHROOM = new ShroomValley();
 	
+	public static final Biome R_ROOFED_FOREST = new BiomeRefractedRoofedForest();
+	
+	
 	public static void registerBiomes() {
 	
 		//initBiome(REFRACTED_FOREST, "RForest", BiomeType.WARM, Type.MAGICAL, Type.FOREST);
 		initBiome(RF_SHROOM, "RShroom", BiomeType.COOL, Type.MAGICAL, Type.DEAD);
+		initBiome(R_ROOFED_FOREST, "RRoofedForest", BiomeType.WARM, Type.FOREST, Type.DEAD);
 	}
 	
 	public static Biome initBiome(Biome biome, String name, BiomeType biometype, Type... types)

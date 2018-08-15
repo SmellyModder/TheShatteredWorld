@@ -9,7 +9,7 @@ import com.smellysox345.TheShatteredWorld.init.DimensionInit;
 import com.smellysox345.TheShatteredWorld.init.EntityInit;
 import com.smellysox345.TheShatteredWorld.init.ModBlocks;
 import com.smellysox345.TheShatteredWorld.init.ModItems;
-import com.smellysox345.TheShatteredWorld.util.InterFaces.IHasModel;
+import com.smellysox345.TheShatteredWorld.util.interfaces.IHasModel;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.EntityRenderer;

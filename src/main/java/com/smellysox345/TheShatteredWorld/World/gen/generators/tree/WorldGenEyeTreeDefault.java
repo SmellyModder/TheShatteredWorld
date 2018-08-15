@@ -2,7 +2,8 @@ package com.smellysox345.TheShatteredWorld.World.gen.generators.tree;
 
 import java.util.Random;
 
-import com.smellysox345.TheShatteredWorld.blocks.TreeStuff.BlockSaplings;
+import com.smellysox345.TheShatteredWorld.blocks.plants.EyeTreeLeavesDefault;
+import com.smellysox345.TheShatteredWorld.blocks.variant.BlockSaplings;
 import com.smellysox345.TheShatteredWorld.init.ModBlocks;
 
 import net.minecraft.block.Block;
@@ -18,7 +19,7 @@ public class WorldGenEyeTreeDefault extends WorldGenAbstractTree{
 
 	public static final Block LOG = ModBlocks.EYE_TREE_DEFAULT;
 	public static final Block LOG_EYE = ModBlocks.EYE_TREE;
-	public static final IBlockState LEAVES = ModBlocks.EYE_LEAVES_DEFAULT.getDefaultState();
+	public static final IBlockState LEAVES = ModBlocks.EYE_LEAVES_DEFAULT.getDefaultState().withProperty(EyeTreeLeavesDefault.DECAYABLE, false);
 	
 	public WorldGenEyeTreeDefault() {
 		super(false);
@@ -225,7 +226,7 @@ public class WorldGenEyeTreeDefault extends WorldGenAbstractTree{
 			int length = rand.nextInt(13) + 4;
 			for (int yy = y; yy > y - length; --yy)
 				if (world.isAirBlock(new BlockPos(x, yy, z)))
-					world.setBlockState(new BlockPos(x, yy, z), ModBlocks.EYE_LEAVES_DEFAULT.getDefaultState(), 2);
+					world.setBlockState(new BlockPos(x, yy, z), ModBlocks.EYE_LEAVES_DEFAULT.getDefaultState().withProperty(EyeTreeLeavesDefault.DECAYABLE, false), 2);
 				else
 					break;
 		}

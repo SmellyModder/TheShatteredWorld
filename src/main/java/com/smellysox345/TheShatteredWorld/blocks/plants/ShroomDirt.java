@@ -1,4 +1,4 @@
-package com.smellysox345.TheShatteredWorld.blocks.shroom;
+package com.smellysox345.TheShatteredWorld.blocks.plants;
 
 import java.util.Random;
 

@@ -2,7 +2,7 @@ package com.smellysox345.TheShatteredWorld.items.tools;
 
 import com.smellysox345.TheShatteredWorld.Main;
 import com.smellysox345.TheShatteredWorld.init.ModItems;
-import com.smellysox345.TheShatteredWorld.util.InterFaces.IHasModel;
+import com.smellysox345.TheShatteredWorld.util.interfaces.IHasModel;
 
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.Item.ToolMaterial;

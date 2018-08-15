@@ -2,7 +2,7 @@ package com.smellysox345.TheShatteredWorld.blocks;
 
 import com.smellysox345.TheShatteredWorld.Main;
 import com.smellysox345.TheShatteredWorld.init.ModBlocks;
-import com.smellysox345.TheShatteredWorld.util.InterFaces.IHasModel;
+import com.smellysox345.TheShatteredWorld.util.interfaces.IHasModel;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockCactus;

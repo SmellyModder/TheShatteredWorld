@@ -1,8 +1,8 @@
-package com.smellysox345.TheShatteredWorld.blocks.DimensionStuff;
+package com.smellysox345.TheShatteredWorld.blocks.magic;
 
 import com.smellysox345.TheShatteredWorld.World.commands.util.TP;
 import com.smellysox345.TheShatteredWorld.blocks.BlockBase;
-import com.smellysox345.TheShatteredWorld.util.InterFaces.IHasModel;
+import com.smellysox345.TheShatteredWorld.util.interfaces.IHasModel;
 
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;

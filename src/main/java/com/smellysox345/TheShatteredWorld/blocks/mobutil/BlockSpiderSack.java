@@ -1,4 +1,4 @@
-package com.smellysox345.TheShatteredWorld.blocks.Summoner;
+package com.smellysox345.TheShatteredWorld.blocks.mobutil;
 
 import java.util.Random;
 

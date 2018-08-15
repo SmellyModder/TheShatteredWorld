@@ -1,4 +1,4 @@
-package com.smellysox345.TheShatteredWorld.blocks.TreeStuff;
+package com.smellysox345.TheShatteredWorld.blocks.variant;
 
 import javax.annotation.Nullable;
 
@@ -7,9 +7,9 @@ import com.smellysox345.TheShatteredWorld.Main;
 import com.smellysox345.TheShatteredWorld.blocks.Item.ItemBlockVariants;
 import com.smellysox345.TheShatteredWorld.init.ModBlocks;
 import com.smellysox345.TheShatteredWorld.init.ModItems;
-import com.smellysox345.TheShatteredWorld.util.InterFaces.IHasModel;
-import com.smellysox345.TheShatteredWorld.util.InterFaces.IMetaName;
 import com.smellysox345.TheShatteredWorld.util.handlers.EnumHandler;
+import com.smellysox345.TheShatteredWorld.util.interfaces.IHasModel;
+import com.smellysox345.TheShatteredWorld.util.interfaces.IMetaName;
 
 import net.minecraft.block.BlockLog;
 import net.minecraft.block.SoundType;

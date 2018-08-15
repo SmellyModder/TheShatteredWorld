@@ -1,4 +1,4 @@
-package com.smellysox345.TheShatteredWorld.util.InterFaces;
+package com.smellysox345.TheShatteredWorld.util.interfaces;
 
 import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;

@@ -1,8 +1,8 @@
-package com.smellysox345.TheShatteredWorld.blocks.shroom.nightcrawler;
+package com.smellysox345.TheShatteredWorld.blocks.plants;
 
 import com.smellysox345.TheShatteredWorld.Main;
 import com.smellysox345.TheShatteredWorld.blocks.BlockBase;
-import com.smellysox345.TheShatteredWorld.util.InterFaces.IHasModel;
+import com.smellysox345.TheShatteredWorld.util.interfaces.IHasModel;
 
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;

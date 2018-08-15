@@ -1,4 +1,4 @@
-package com.smellysox345.TheShatteredWorld.blocks.Summoner;
+package com.smellysox345.TheShatteredWorld.blocks.mobutil;
 
 import com.smellysox345.TheShatteredWorld.World.commands.util.TP;
 import com.smellysox345.TheShatteredWorld.blocks.BlockBase;

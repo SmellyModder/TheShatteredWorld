@@ -1,4 +1,4 @@
-package com.smellysox345.TheShatteredWorld.blocks.TreeStuff.magic;
+package com.smellysox345.TheShatteredWorld.blocks.plants;
 
 import java.util.List;
 import java.util.Random;
@@ -8,8 +8,8 @@ import com.smellysox345.TheShatteredWorld.blocks.BlockBase;
 import com.smellysox345.TheShatteredWorld.blocks.Item.ItemBlockVariants;
 import com.smellysox345.TheShatteredWorld.init.ModBlocks;
 import com.smellysox345.TheShatteredWorld.init.ModItems;
-import com.smellysox345.TheShatteredWorld.util.InterFaces.IHasModel;
 import com.smellysox345.TheShatteredWorld.util.handlers.EnumHandler;
+import com.smellysox345.TheShatteredWorld.util.interfaces.IHasModel;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
@@ -36,12 +36,12 @@ public class EyeTreeLeavesDefault extends BlockLeaves implements IHasModel{
 		setUnlocalizedName(name);
 		setRegistryName(name);
 		setSoundType(SoundType.PLANT);
-		setDefaultState(this.blockState.getBaseState().withProperty(CHECK_DECAY, Boolean.valueOf(true)).withProperty(DECAYABLE, Boolean.valueOf(true)));
 		setCreativeTab(Main.refractedblocks);
 		Blocks.FIRE.setFireInfo(this, 30, 60);
 		
 		ModBlocks.BLOCKS.add(this);
 		ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
+		setDefaultState(blockState.getBaseState().withProperty(CHECK_DECAY, true).withProperty(DECAYABLE, true));
 	}
 	
 	@Override

@@ -6,9 +6,14 @@ import java.util.Random;
 
 import com.smellysox345.TheShatteredWorld.World.Biomes.BiomeRForest;
 import com.smellysox345.TheShatteredWorld.World.gen.WorldGenCustomTrees;
+import com.smellysox345.TheShatteredWorld.World.gen.generators.shroomGens.ShroomPatchN;
+import com.smellysox345.TheShatteredWorld.init.BiomeInit;
 
+import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeForest;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.IChunkGenerator;
@@ -35,7 +40,7 @@ public class WorldGenSpookyTrees implements IWorldGenerator{
 			
 		case 0:
 			
-			runGenerator(EYE_TREE_NORMAL, world, random, chunkX, chunkZ, 3, -1, 0, BiomeForest.class);
+			generateSurfaceForSpookyEyeTree(world, random, chunkX * 16, chunkZ * 16, chunkZ * 16);
 			
 			break;
 			
@@ -62,6 +67,36 @@ public class WorldGenSpookyTrees implements IWorldGenerator{
 			if(classesList.contains(biome) || classes.length == 0) generator.generate(world, random, pos);
 		}
 	}
+	
+	private void generateSurfaceForSpookyEyeTree(World world, Random rand, int chunkX, int chunkZ, int chunkY) {
+
+        WorldGenerator genNShroomType = new WorldGenEyeTreeDefault();
+        final int Chance = 1;
+        
+        
+        if (rand.nextInt(Chance) <= 1) {
+        	Biome biomeBase = world.getBiome(new BlockPos(chunkX, chunkY, chunkZ));
+    		if (biomeBase == BiomeInit.R_ROOFED_FOREST) {
+            int randX = chunkX + rand.nextInt(16);
+            int randZ = chunkZ + rand.nextInt(16);
+            int groundY = getGroundFromAbove(world, randX, randZ);
+            genNShroomType.generate(world, rand, new BlockPos(randX, groundY + 1, randZ));
+        }
+        }
+    }
+	
+
+	public static int getGroundFromAbove(World world, int x, int z) {
+        int y = 255;
+        boolean foundGround = false;
+        while (!foundGround && y-- >= 0) {
+            Block blockAt = world.getBlockState(new BlockPos(x, y, z)).getBlock();
+
+            foundGround = blockAt != Blocks.AIR && blockAt != Blocks.WATER && blockAt != Blocks.FLOWING_WATER;
+            
+        }
+        return y;
+    }
 	
 	public static void register() {
 		GameRegistry.registerWorldGenerator(new WorldGenSpookyTrees(), 0);

@@ -2,9 +2,9 @@ package com.smellysox345.TheShatteredWorld.World.gen.generators.tree;
 
 import java.util.Random;
 
-import com.smellysox345.TheShatteredWorld.blocks.TreeStuff.BlockLeaf;
-import com.smellysox345.TheShatteredWorld.blocks.TreeStuff.BlockLogs;
-import com.smellysox345.TheShatteredWorld.blocks.TreeStuff.BlockSaplings;
+import com.smellysox345.TheShatteredWorld.blocks.variant.BlockLeaf;
+import com.smellysox345.TheShatteredWorld.blocks.variant.BlockLogs;
+import com.smellysox345.TheShatteredWorld.blocks.variant.BlockSaplings;
 import com.smellysox345.TheShatteredWorld.init.ModBlocks;
 import com.smellysox345.TheShatteredWorld.util.handlers.EnumHandler;
 

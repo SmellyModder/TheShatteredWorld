@@ -1,12 +1,12 @@
-package com.smellysox345.TheShatteredWorld.blocks.TreeStuff;
+package com.smellysox345.TheShatteredWorld.blocks.variant;
 
 import com.smellysox345.TheShatteredWorld.Main;
 import com.smellysox345.TheShatteredWorld.blocks.Item.ItemBlockVariants;
 import com.smellysox345.TheShatteredWorld.init.ModBlocks;
 import com.smellysox345.TheShatteredWorld.init.ModItems;
-import com.smellysox345.TheShatteredWorld.util.InterFaces.IHasModel;
-import com.smellysox345.TheShatteredWorld.util.InterFaces.IMetaName;
 import com.smellysox345.TheShatteredWorld.util.handlers.EnumHandler;
+import com.smellysox345.TheShatteredWorld.util.interfaces.IHasModel;
+import com.smellysox345.TheShatteredWorld.util.interfaces.IMetaName;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -19,26 +19,25 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
-import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraftforge.common.IPlantable;
 
-public class BlockDirts extends Block implements IMetaName, IHasModel{
-
+public class BlockPlanks extends Block implements IMetaName, IHasModel
+{
 	public static final PropertyEnum<EnumHandler.EnumType> VARIANT = PropertyEnum.<EnumHandler.EnumType>create("variant", EnumHandler.EnumType.class);
 	
 	private String name;
 	
-	public BlockDirts(String name) 
+	public BlockPlanks(String name) 
 	{
-		super(Material.GROUND);
+		super(Material.WOOD);
 		setUnlocalizedName(name);
 		setRegistryName(name);
-		setSoundType(SoundType.GROUND);
+		setSoundType(SoundType.WOOD);
+		setResistance(1.0F);
+		setHardness(2.0F);
 		setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, EnumHandler.EnumType.OAKR));
 		setCreativeTab(Main.refractedblocks);
 		
@@ -99,16 +98,7 @@ public class BlockDirts extends Block implements IMetaName, IHasModel{
 	{
 		for(int i = 0; i < EnumHandler.EnumType.values().length; i++)
 		{
-			Main.proxy.registerVariantRenderer(Item.getItemFromBlock(this), i, "dirt_" + EnumHandler.EnumType.values()[i].getName(), "inventory");
+			Main.proxy.registerVariantRenderer(Item.getItemFromBlock(this), i, "planks_" + EnumHandler.EnumType.values()[i].getName(), "inventory");
 		}
 	}
-	
-	@Override
-	public boolean canSustainPlant(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing direction, IPlantable plantable) 
-	{
-		return true;
-	}
-	
-	
-	
 }

@@ -21,7 +21,6 @@ public class BiomeInit {
 	
 	public static final Biome R_ROOFED_FOREST = new BiomeRefractedRoofedForest();
 	
-	
 	public static void registerBiomes() {
 	
 		//initBiome(REFRACTED_FOREST, "RForest", BiomeType.WARM, Type.MAGICAL, Type.FOREST);

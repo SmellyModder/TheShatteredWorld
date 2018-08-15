@@ -71,7 +71,7 @@ public class WorldGenSpookyTrees implements IWorldGenerator{
 	private void generateSurfaceForSpookyEyeTree(World world, Random rand, int chunkX, int chunkZ, int chunkY) {
 
         WorldGenerator genNShroomType = new WorldGenEyeTreeDefault();
-        final int Chance = 1;
+        final int Chance = 15;
         
         
         if (rand.nextInt(Chance) <= 1) {

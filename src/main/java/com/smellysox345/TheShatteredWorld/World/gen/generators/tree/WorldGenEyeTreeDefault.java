@@ -49,8 +49,11 @@ public class WorldGenEyeTreeDefault extends WorldGenAbstractTree{
 					double dSq = i * i + j * j;
 					if (Math.round(Math.sqrt(dSq)) <= radius && yy <= y + height - 2)
 						world.setBlockState(new BlockPos(x + i, yy, z + j), LOG.getStateFromMeta(0), 2);
+					if (Math.round(Math.sqrt(dSq)) <= radius && yy >= y + height - 2)
+						world.setBlockState(new BlockPos(x + i, yy, z + j), LOG_EYE.getStateFromMeta(15), 2);
 					if (Math.round(Math.sqrt(dSq)) <= radius && yy == y || Math.round(Math.sqrt(dSq)) <= radius && yy == y + height - 1)
 						world.setBlockState(new BlockPos(x + i, yy, z + j), LOG.getStateFromMeta(15), 2);
+					
 				}
 
 			if (yy == y + height - 1) {
@@ -100,7 +103,6 @@ public class WorldGenEyeTreeDefault extends WorldGenAbstractTree{
 						createLeaves(world, rand, x + i, y - 1, z, 1);
 				} else {
 					world.setBlockState(new BlockPos(x + i, y, z), LOG.getStateFromMeta(15), 2);
-					world.setBlockState(new BlockPos(x + i - 5, y - 1, z + 2), LOG_EYE.getStateFromMeta(15), 2);
 				}
 
 			if (dir == 2)
@@ -112,7 +114,6 @@ public class WorldGenEyeTreeDefault extends WorldGenAbstractTree{
 						createLeaves(world, rand, x - i, y - 1, z, 1);
 				} else {
 					world.setBlockState(new BlockPos(x - i, y, z), LOG.getStateFromMeta(15), 2);
-					world.setBlockState(new BlockPos(x - i, y - 1, z), LOG_EYE.getStateFromMeta(15), 2);
 				}
 
 			if (dir == 3)
@@ -208,10 +209,10 @@ public class WorldGenEyeTreeDefault extends WorldGenAbstractTree{
 	}
 	
 	public void createEyes(World world, Random rand, int x, int y, int z, int radius) {
-		int height = 1;
+		int height = 5;
 		for (int xx = x - radius; xx <= x + radius; xx++)
 			for (int zz = z - radius; zz <= z + radius; zz++)
-				for (int yy = y; yy > y - height; yy--) {
+				for (int yy = y; yy > y + height; yy--) {
 					double dSq = Math.pow(xx - x, 2.0D) + Math.pow(zz - z, 2.0D) + Math.pow(yy - y, 2.0D);
 					if (Math.round(Math.sqrt(dSq)) <= radius)
 						if (Math.round(Math.sqrt(dSq)) == 0)

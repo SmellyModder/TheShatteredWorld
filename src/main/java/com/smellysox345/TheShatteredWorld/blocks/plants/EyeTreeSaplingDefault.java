@@ -43,6 +43,7 @@ import net.minecraft.world.gen.feature.WorldGenTrees;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.event.terraingen.TerrainGen;
 
+
 public class EyeTreeSaplingDefault extends BlockBush implements IHasModel, IGrowable{
 
 	public static final PropertyInteger STAGE = PropertyInteger.create("stage", 0, 1);
@@ -86,7 +87,7 @@ public class EyeTreeSaplingDefault extends BlockBush implements IHasModel, IGrow
 		
 		gen = new WorldGenEyeTreeDefault();
 		
-		IBlockState iblockstate = Blocks.AIR.getDefaultState();
+		IBlockState iblockstate = ModBlocks.SAPLING_EYE_DEFAULT.getDefaultState();
 		if(flag)
 		{
 			world.setBlockState(pos.add(i, 0, j), iblockstate, 4);

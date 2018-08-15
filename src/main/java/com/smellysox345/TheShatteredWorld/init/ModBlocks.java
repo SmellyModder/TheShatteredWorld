@@ -52,7 +52,7 @@ public class ModBlocks {
 	public static final Block LEAVES = new BlockLeaf("leaves");
 	public static final Block EYE_LEAVES_DEFAULT = new EyeTreeLeavesDefault("eye_tree_leaves_default", Material.LEAVES);
 	public static final Block SAPLING = new BlockSaplings("saplings");
-	public static final Block SAPLING_EYE_DEFAULT = new EyeTreeSaplingDefault("eye_sapling_default");
+	public static final Block SAPLING_EYE_DEFAULT = new EyeTreeSaplingDefault("eye_sapling_default", Material.PLANTS);
 	
 	//Portals
 	public static final Block R_PORTAL = new BlockTeleporter("refractedportal_block", Material.PORTAL);

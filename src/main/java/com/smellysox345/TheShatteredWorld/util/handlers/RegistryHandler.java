@@ -28,6 +28,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 @EventBusSubscriber
 public class RegistryHandler {
+	
 	@SubscribeEvent
 	public static void onItemRegister(RegistryEvent.Register<Item> event)
 	{

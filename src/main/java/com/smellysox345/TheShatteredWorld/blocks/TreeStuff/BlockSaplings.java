@@ -6,8 +6,8 @@ import javax.annotation.Nullable;
 
 import com.google.common.base.Predicate;
 import com.smellysox345.TheShatteredWorld.Main;
-import com.smellysox345.TheShatteredWorld.World.gen.generators.WorldGenBirchRefracted;
-import com.smellysox345.TheShatteredWorld.World.gen.generators.WorldGenOakRefracted;
+import com.smellysox345.TheShatteredWorld.World.gen.generators.tree.WorldGenBirchRefracted;
+import com.smellysox345.TheShatteredWorld.World.gen.generators.tree.WorldGenOakRefracted;
 import com.smellysox345.TheShatteredWorld.blocks.Item.ItemBlockVariants;
 import com.smellysox345.TheShatteredWorld.init.ModBlocks;
 import com.smellysox345.TheShatteredWorld.init.ModItems;

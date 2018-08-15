@@ -1,28 +1,24 @@
-package com.smellysox345.TheShatteredWorld.World.gen;
+package com.smellysox345.TheShatteredWorld.World.gen.generators.tree;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
 import com.smellysox345.TheShatteredWorld.World.Biomes.BiomeRForest;
-import com.smellysox345.TheShatteredWorld.World.gen.generators.tree.WorldGenBirchRefracted;
-import com.smellysox345.TheShatteredWorld.World.gen.generators.tree.WorldGenOakRefracted;
-import com.smellysox345.TheShatteredWorld.init.DimensionInit;
+import com.smellysox345.TheShatteredWorld.World.gen.WorldGenCustomTrees;
 
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeForest;
-import net.minecraft.world.biome.BiomePlains;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.fml.common.IWorldGenerator;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-public class WorldGenCustomTrees implements IWorldGenerator{
+public class WorldGenSpookyTrees implements IWorldGenerator{
 
-	private final WorldGenerator OAK_REFRACTED = new WorldGenOakRefracted();
-	private final WorldGenerator BIRCH_REFRACTED = new WorldGenBirchRefracted();
+	private final WorldGenerator EYE_TREE_NORMAL = new WorldGenEyeTreeDefault();
 	
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) 
@@ -31,10 +27,6 @@ public class WorldGenCustomTrees implements IWorldGenerator{
 		{
 		
 		case 123321:
-			
-			runGenerator(OAK_REFRACTED, world, random, chunkX, chunkZ, 3, -1, 0, BiomeRForest.class);
-			runGenerator(BIRCH_REFRACTED, world, random, chunkX, chunkZ, 3, -1, 0, BiomeRForest.class);
-			
 			break;
 			
 		case 1:
@@ -43,8 +35,7 @@ public class WorldGenCustomTrees implements IWorldGenerator{
 			
 		case 0:
 			
-			runGenerator(OAK_REFRACTED, world, random, chunkX, chunkZ, 3, -1, 0, BiomeRForest.class);
-			runGenerator(BIRCH_REFRACTED, world, random, chunkX, chunkZ, 3, -1, 0, BiomeRForest.class);
+			runGenerator(EYE_TREE_NORMAL, world, random, chunkX, chunkZ, 3, -1, 0, BiomeForest.class);
 			
 			break;
 			
@@ -73,10 +64,6 @@ public class WorldGenCustomTrees implements IWorldGenerator{
 	}
 	
 	public static void register() {
-		GameRegistry.registerWorldGenerator(new WorldGenCustomTrees(), 0);
+		GameRegistry.registerWorldGenerator(new WorldGenSpookyTrees(), 0);
 	}
-	
-	
-	
-	
 }

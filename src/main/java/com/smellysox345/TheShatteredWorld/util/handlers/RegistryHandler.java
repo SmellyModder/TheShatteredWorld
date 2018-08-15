@@ -2,6 +2,7 @@ package com.smellysox345.TheShatteredWorld.util.handlers;
 
 import com.smellysox345.TheShatteredWorld.World.commands.CommandDimensionTP;
 import com.smellysox345.TheShatteredWorld.World.gen.WorldGenCustomTrees;
+import com.smellysox345.TheShatteredWorld.World.gen.generators.tree.WorldGenSpookyTrees;
 import com.smellysox345.TheShatteredWorld.World.gen.structures.WorldGenCustomStructures;
 import com.smellysox345.TheShatteredWorld.init.BiomeInit;
 import com.smellysox345.TheShatteredWorld.init.DimensionInit;
@@ -85,6 +86,7 @@ public class RegistryHandler {
 	public static void otherRegistries() {
 		
 		GameRegistry.registerWorldGenerator(new WorldGenCustomTrees(), 0);
+		GameRegistry.registerWorldGenerator(new WorldGenSpookyTrees(), 0);
 		BiomeInit.registerBiomes();
 	}
 	

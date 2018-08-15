@@ -1,4 +1,4 @@
-package com.smellysox345.TheShatteredWorld.World.gen.generators;
+package com.smellysox345.TheShatteredWorld.World.gen.generators.tree;
 
 import java.util.Random;
 

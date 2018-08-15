@@ -42,13 +42,14 @@ public class ModItems {
 	//Materials
 	public static final ToolMaterial MATERIAL_CRYSTAL = EnumHelper.addToolMaterial("material_crystal", 2, 530, 6.5F, 2.2F, 13);
 	public static final ToolMaterial MATERIAL_CACTI = EnumHelper.addToolMaterial("material_cacti", 2, 260, 5.5F, 1.5F, 13);
-	public static final ToolMaterial MATERIAL_DARKNUT = EnumHelper.addToolMaterial("material_darknut", 4, 600, 7.0F, 3.5F, 13);
+	public static final ToolMaterial MATERIAL_DARKNUT = EnumHelper.addToolMaterial("material_darknut", 3, 595, 8.0F, 3.8F, 12);
 	
 	//Items
 	public static final Item CRYSTAL = new ItemBase("crystal");
 	public static final Item CRYSTALLIZATIONCORE = new ItemGlinting("crystallizationcore");
 	public static final Item PRISM = new ItemBase("prism");
 	public static final Item R_STRING = new ItemBase("r_string");
+	public static final Item WATCHER_STICK = new ItemBase("watcher_stick");
 	
 	//Foods
 	public static final Item REFRACTEDCACTUSBUD = new ItemCustomFoodNausea("refractedcactusbud", 3, false);

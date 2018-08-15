@@ -89,23 +89,23 @@ public class ModItems {
 	//Swords
 	public static final ItemSword CRYSTAL_SWORD = new ToolSword("crystal_sword", MATERIAL_CRYSTAL);
 	public static final ItemSword REFRACTI_SWORD = new ToolSword("refracti_sword", MATERIAL_CACTI);
-	public static final ItemSword DARK_SWORD = new ToolSword("darknut_sword", MATERIAL_DARKNUT);
+	public static final ItemSword WATCHER_SWORD = new ToolSword("watcher_sword", MATERIAL_DARKNUT);
 	
 	//Spades
 	public static final ItemSpade CRYSTAL_SHOVEL = new ToolSpade("crystal_shovel", MATERIAL_CRYSTAL);
 	public static final ItemSpade REFRACTI_SHOVEL = new ToolSpade("refracti_shovel", MATERIAL_CACTI);
-	public static final ItemSpade DARK_SHOVEL = new ToolSpade("darknut_shovel", MATERIAL_DARKNUT);
+	public static final ItemSpade WATCHER_SPADE = new ToolSpade("watcher_shovel", MATERIAL_DARKNUT);
 	
 	
 	//Pickaxes
 	public static final ItemPickaxe CRYSTAL_PICKAXE = new ToolPickaxe("crystal_pickaxe", MATERIAL_CRYSTAL);
 	public static final ItemPickaxe REFRACTI_PICKAXE = new ToolPickaxe("refracti_pickaxe", MATERIAL_CACTI);
-	public static final ItemPickaxe DARK_PICKAXE = new ToolPickaxe("darknut_pickaxe", MATERIAL_DARKNUT);
+	public static final ItemPickaxe WATCHER_PICKAXE = new ToolPickaxe("watcher_pickaxe", MATERIAL_DARKNUT);
 	
 	//Axes
 	public static final ItemAxe CRYSTAL_AXE = new ToolAxe("crystal_axe", MATERIAL_CRYSTAL);
 	public static final ItemAxe REFRACTI_AXE = new ToolAxe("refracti_axe", MATERIAL_CACTI);
-	public static final ItemAxe DARK_AXE = new ToolAxe("darknut_axe", MATERIAL_DARKNUT);
+	public static final ItemAxe WATCHER_AXE = new ToolAxe("watcher_axe", MATERIAL_DARKNUT);
 	
 	
 }

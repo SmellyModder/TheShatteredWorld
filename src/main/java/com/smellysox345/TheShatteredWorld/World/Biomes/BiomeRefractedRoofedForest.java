@@ -20,7 +20,7 @@ import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 public class BiomeRefractedRoofedForest extends Biome{
 
 	public BiomeRefractedRoofedForest() {
-		super(new BiomeProperties("Refracted Roofed Forest").setTemperature(0.8F).setRainfall(0.8F).setBaseHeight(0.2F));
+		super(new BiomeProperties("Refracted Roofed Forest").setTemperature(0.8F).setRainfall(0.8F).setBaseHeight(0.2F).setWaterColor(8983040));
 		
 		this.decorator.treesPerChunk = -999;
 		this.spawnableCaveCreatureList.clear();

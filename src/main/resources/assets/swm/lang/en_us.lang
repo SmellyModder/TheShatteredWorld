@@ -35,6 +35,7 @@ item.crystalshield.name=Crystal Shield
 # Weapons
 item.crystal_sword.name=Crystal Sword
 item.refracti_sword.name=Refracti Sword
+item.watcher_sword.name=Watcher Sword
 
 # Tools
 item.crystal_shovel.name=Crystal Shovel
@@ -43,7 +44,9 @@ item.crystal_pickaxe.name=Crystal Pickaxe
 item.refracti_pickaxe.name=Refracti Pickaxe
 item.refracti_axe.name=Refracti axe
 item.refracti_shovel.name=Refracti Shovel
-
+item.watcher_pickaxe.name=Watcher Pickaxe
+item.watcher_axe.name=Watcher Axe
+item.watcher_shovel.name=Watcher Shovel
 
 # ItemsCustomModels
 item.crystalgun.name=Crystal Gun
@@ -103,7 +106,10 @@ tile.refractedcactus_block.name=Refracti Cactus
 tile.eye_tree.name=Watcher Block
 tile.eye_tree_default.name=Watcher Log
 tile.force_field_s.name=Magic Shroom Field
+tile.eye_tree_leaves_default.name=Watcher Leaves
 
+# Plants
+tile.eye_sapling_default.name=Watcher Sapling
 
 # Summoner
 tile.spider_egg.name=§bArachno Queen Egg§r

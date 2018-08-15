@@ -1,6 +1,7 @@
 package com.smellysox345.TheShatteredWorld.blocks.TreeStuff.magic;
 
 import java.util.List;
+import java.util.Random;
 
 import com.smellysox345.TheShatteredWorld.Main;
 import com.smellysox345.TheShatteredWorld.blocks.BlockBase;
@@ -112,6 +113,11 @@ public class EyeTreeLeavesDefault extends BlockLeaves implements IHasModel{
 	@Override
 	public void registerModels() {
 		 Main.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");
+	}
+	@Override
+	public Item getItemDropped(IBlockState state, Random rand, int fortune) 
+	{
+		return null;
 	}
 
 }

@@ -3,11 +3,14 @@ package com.smellysox345.TheShatteredWorld.init;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.smellysox345.TheShatteredWorld.blocks.BlockBase;
 import com.smellysox345.TheShatteredWorld.blocks.CrystalBlock;
 import com.smellysox345.TheShatteredWorld.blocks.RefractedCactus;
 import com.smellysox345.TheShatteredWorld.blocks.RefractedSandBlock;
 import com.smellysox345.TheShatteredWorld.blocks.RefractedStone;
+import com.smellysox345.TheShatteredWorld.blocks.magic.BlockSpookyWood;
 import com.smellysox345.TheShatteredWorld.blocks.magic.BlockTeleporter;
+import com.smellysox345.TheShatteredWorld.blocks.magic.BlockWoodGlow;
 import com.smellysox345.TheShatteredWorld.blocks.magic.ForceFieldShroom;
 import com.smellysox345.TheShatteredWorld.blocks.mobutil.BlockSpiderSack;
 import com.smellysox345.TheShatteredWorld.blocks.mobutil.SpiderQueenEgg;
@@ -49,6 +52,8 @@ public class ModBlocks {
 	public static final Block EYE_TREE = new EyeTreeLog("eye_tree", Material.WOOD);
 	public static final Block EYE_TREE_DEFAULT = new EyeTreeLogDefault("eye_tree_default", Material.WOOD);
 	public static final Block PLANKS = new BlockPlanks("planks");
+	public static final Block WATCHER_PLANKS_D = new BlockSpookyWood("watcher_planks_default", Material.WOOD);
+	public static final Block WATCHER_PLANKS = new BlockWoodGlow("watcher_planks", Material.WOOD);
 	public static final Block LEAVES = new BlockLeaf("leaves");
 	public static final Block EYE_LEAVES_DEFAULT = new EyeTreeLeavesDefault("eye_tree_leaves_default", Material.LEAVES);
 	public static final Block SAPLING = new BlockSaplings("saplings");

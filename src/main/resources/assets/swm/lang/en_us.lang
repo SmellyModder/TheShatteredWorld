@@ -107,6 +107,8 @@ tile.eye_tree.name=Watcher Block
 tile.eye_tree_default.name=Watcher Log
 tile.force_field_s.name=Magic Shroom Field
 tile.eye_tree_leaves_default.name=Watcher Leaves
+tile.watcher_planks.name=Cursed Watcher Planks 
+tile.watcher_planks_default.name=Watcher Planks
 
 # Plants
 tile.eye_sapling_default.name=Watcher Sapling

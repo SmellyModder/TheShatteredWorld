@@ -21,6 +21,5 @@ public class PotionTypeRegistry extends PotionType{
 	public static void registerPotionTypes() {
 		ForgeRegistries.POTION_TYPES.register(D);
 		ForgeRegistries.POTION_TYPES.register(SHROOM_BOUNCE);
-		PotionHelper.addMix(PotionTypes.WEAKNESS, Item.getItemFromBlock(ModBlocks.BOUNCYSHROOM_BLOCK), SHROOM_BOUNCE);
 	}
 }

@@ -2,7 +2,7 @@ package com.smellysox345.TheShatteredWorld.items.food;
 
 import com.smellysox345.TheShatteredWorld.Main;
 import com.smellysox345.TheShatteredWorld.init.ModItems;
-import com.smellysox345.TheShatteredWorld.util.InterFaces.IHasModel;
+import com.smellysox345.TheShatteredWorld.util.interfaces.IHasModel;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;

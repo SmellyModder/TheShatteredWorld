@@ -5,8 +5,8 @@ import java.util.Arrays;
 import java.util.Random;
 
 import com.smellysox345.TheShatteredWorld.World.Biomes.BiomeRForest;
-import com.smellysox345.TheShatteredWorld.World.gen.generators.WorldGenBirchRefracted;
-import com.smellysox345.TheShatteredWorld.World.gen.generators.WorldGenOakRefracted;
+import com.smellysox345.TheShatteredWorld.World.gen.generators.tree.WorldGenBirchRefracted;
+import com.smellysox345.TheShatteredWorld.World.gen.generators.tree.WorldGenOakRefracted;
 import com.smellysox345.TheShatteredWorld.init.DimensionInit;
 
 import net.minecraft.util.math.BlockPos;

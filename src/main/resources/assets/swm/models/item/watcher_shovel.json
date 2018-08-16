@@ -1,0 +1,6 @@
+{
+   "parent": "item/handheld",
+   "textures": {
+       "layer0": "swm:animated/watcher_shovel"
+   }
+}

@@ -2,7 +2,7 @@ package com.smellysox345.TheShatteredWorld.World.Biomes;
 
 import java.util.Random;
 
-import com.smellysox345.TheShatteredWorld.World.gen.generators.WorldGenOakRefracted;
+import com.smellysox345.TheShatteredWorld.World.gen.generators.tree.WorldGenOakRefracted;
 import com.smellysox345.TheShatteredWorld.entity.EntitySlimeWolf;
 import com.smellysox345.TheShatteredWorld.init.ModBlocks;
 
@@ -23,7 +23,7 @@ public class BiomeRForest extends Biome{
 		topBlock = Blocks.GRASS.getDefaultState();
 		fillerBlock = ModBlocks.REFRACTEDSTONE_BLOCK.getDefaultState();
 		
-		this.decorator.treesPerChunk = 8;
+		this.decorator.treesPerChunk = 1;
 		this.decorator.clayPerChunk = 1;
 		
 		this.spawnableCaveCreatureList.clear();

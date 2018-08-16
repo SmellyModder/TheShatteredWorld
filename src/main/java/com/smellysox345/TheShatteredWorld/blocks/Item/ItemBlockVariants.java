@@ -1,6 +1,6 @@
 package com.smellysox345.TheShatteredWorld.blocks.Item;
 
-import com.smellysox345.TheShatteredWorld.util.InterFaces.IMetaName;
+import com.smellysox345.TheShatteredWorld.util.interfaces.IMetaName;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;

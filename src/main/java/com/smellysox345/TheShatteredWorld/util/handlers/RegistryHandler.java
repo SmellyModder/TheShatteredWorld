@@ -2,13 +2,14 @@ package com.smellysox345.TheShatteredWorld.util.handlers;
 
 import com.smellysox345.TheShatteredWorld.World.commands.CommandDimensionTP;
 import com.smellysox345.TheShatteredWorld.World.gen.WorldGenCustomTrees;
+import com.smellysox345.TheShatteredWorld.World.gen.generators.tree.WorldGenSpookyTrees;
 import com.smellysox345.TheShatteredWorld.World.gen.structures.WorldGenCustomStructures;
 import com.smellysox345.TheShatteredWorld.init.BiomeInit;
 import com.smellysox345.TheShatteredWorld.init.DimensionInit;
 import com.smellysox345.TheShatteredWorld.init.EntityInit;
 import com.smellysox345.TheShatteredWorld.init.ModBlocks;
 import com.smellysox345.TheShatteredWorld.init.ModItems;
-import com.smellysox345.TheShatteredWorld.util.InterFaces.IHasModel;
+import com.smellysox345.TheShatteredWorld.util.interfaces.IHasModel;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.EntityRenderer;
@@ -27,6 +28,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 @EventBusSubscriber
 public class RegistryHandler {
+	
 	@SubscribeEvent
 	public static void onItemRegister(RegistryEvent.Register<Item> event)
 	{
@@ -85,6 +87,7 @@ public class RegistryHandler {
 	public static void otherRegistries() {
 		
 		GameRegistry.registerWorldGenerator(new WorldGenCustomTrees(), 0);
+		GameRegistry.registerWorldGenerator(new WorldGenSpookyTrees(), 0);
 		BiomeInit.registerBiomes();
 	}
 	

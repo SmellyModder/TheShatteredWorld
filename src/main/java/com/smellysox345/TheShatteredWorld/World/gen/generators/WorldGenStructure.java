@@ -3,7 +3,7 @@ package com.smellysox345.TheShatteredWorld.World.gen.generators;
 import java.util.Random;
 
 import com.smellysox345.TheShatteredWorld.util.Reference;
-import com.smellysox345.TheShatteredWorld.util.InterFaces.IStructure;
+import com.smellysox345.TheShatteredWorld.util.interfaces.IStructure;
 
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.server.MinecraftServer;

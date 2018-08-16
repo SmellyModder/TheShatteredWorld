@@ -2,6 +2,7 @@ package com.smellysox345.TheShatteredWorld.util.handlers;
 
 import com.smellysox345.TheShatteredWorld.entity.EntityArachnoShroom;
 import com.smellysox345.TheShatteredWorld.entity.EntityArachnoShroomQueen;
+import com.smellysox345.TheShatteredWorld.entity.EntityFlyingEye;
 import com.smellysox345.TheShatteredWorld.entity.EntityNightShroom;
 import com.smellysox345.TheShatteredWorld.entity.EntityShroomCreeper;
 import com.smellysox345.TheShatteredWorld.entity.EntityShroomSkeleton;
@@ -15,6 +16,7 @@ import com.smellysox345.TheShatteredWorld.entity.projectiles.EntityWebProjectile
 import com.smellysox345.TheShatteredWorld.entity.projectiles.render.RenderWebProjectile;
 import com.smellysox345.TheShatteredWorld.entity.render.RenderArachnoShroom;
 import com.smellysox345.TheShatteredWorld.entity.render.RenderArachnoShroomQueen;
+import com.smellysox345.TheShatteredWorld.entity.render.RenderFlyingEye;
 import com.smellysox345.TheShatteredWorld.entity.render.RenderNightShroom;
 import com.smellysox345.TheShatteredWorld.entity.render.RenderShroomCreeper;
 import com.smellysox345.TheShatteredWorld.entity.render.RenderShroomSkeleton;
@@ -174,6 +176,18 @@ public class RenderHandler {
 			public Render<? super NPCShroomWizard> createRenderFor(RenderManager manager){
 				
 				return new RenderShroomWizard(manager);
+				
+			}
+			
+		});
+		
+		RenderingRegistry.registerEntityRenderingHandler(EntityFlyingEye.class, new IRenderFactory<EntityFlyingEye>()
+		{
+			
+			@Override
+			public Render<? super EntityFlyingEye> createRenderFor(RenderManager manager){
+				
+				return new RenderFlyingEye(manager);
 				
 			}
 			

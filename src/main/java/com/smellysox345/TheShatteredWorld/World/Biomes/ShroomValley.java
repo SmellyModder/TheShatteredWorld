@@ -2,8 +2,8 @@ package com.smellysox345.TheShatteredWorld.World.Biomes;
 
 import java.util.Random;
 
-import com.smellysox345.TheShatteredWorld.World.gen.generators.WorldGenOakRefracted;
 import com.smellysox345.TheShatteredWorld.World.gen.generators.WorldGenStructure;
+import com.smellysox345.TheShatteredWorld.World.gen.generators.tree.WorldGenOakRefracted;
 import com.smellysox345.TheShatteredWorld.World.gen.structures.WorldGenCustomStructures;
 import com.smellysox345.TheShatteredWorld.entity.EntityArachnoShroom;
 import com.smellysox345.TheShatteredWorld.entity.EntityNightShroom;

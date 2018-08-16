@@ -1,5 +1,6 @@
 package com.smellysox345.TheShatteredWorld.util.handlers;
 
+import com.smellysox345.TheShatteredWorld.Main;
 import com.smellysox345.TheShatteredWorld.World.commands.CommandDimensionTP;
 import com.smellysox345.TheShatteredWorld.World.gen.WorldGenCustomTrees;
 import com.smellysox345.TheShatteredWorld.World.gen.generators.tree.WorldGenSpookyTrees;
@@ -19,6 +20,7 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.EntityRegistry.EntityRegistration;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -39,6 +41,7 @@ public class RegistryHandler {
 	public static void onBlockRegister(RegistryEvent.Register<Block> event)
 	{
 		event.getRegistry().registerAll(ModBlocks.BLOCKS.toArray(new Block[0]));
+		TileEntityHandler.registerTileEntities();
 	}
 	
 	
@@ -81,6 +84,7 @@ public class RegistryHandler {
 	public static void initRegistries() {
 		
 		SoundHandler.registerSounds();
+		NetworkRegistry.INSTANCE.registerGuiHandler(Main.instance, new GuiHandler());
 		
 	}
 	

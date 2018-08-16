@@ -2,6 +2,7 @@ package com.smellysox345.TheShatteredWorld.util.handlers;
 
 import com.smellysox345.TheShatteredWorld.blocks.container.ContainerShroomChest;
 import com.smellysox345.TheShatteredWorld.tileentity.TileEntityShroomChest;
+import com.smellysox345.TheShatteredWorld.tileentity.gui.GuiShroomChest;
 import com.smellysox345.TheShatteredWorld.util.Reference;
 
 import net.minecraft.entity.player.EntityPlayer;
@@ -21,7 +22,7 @@ public class GuiHandler implements IGuiHandler{
 	@Override
 	public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) 
 	{
-		if(ID == Reference.GUI_SHROOM_CHEST) return new GuiShroomChest();
+		if(ID == Reference.GUI_SHROOM_CHEST) return new GuiShroomChest(player.inventory, (TileEntityShroomChest)world.getTileEntity(new BlockPos(x, y, z)), player);
 		return null;
 	}
 	

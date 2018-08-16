@@ -13,10 +13,10 @@ public class ContainerShroomChest extends Container{
 	private final int numRows;
 	private final TileEntityShroomChest chestInventory;
 	
-	public ContainerShroomChest(InventoryPlayer playerInv, TileEntityShroomChest chestInventory, EntityPlayer player) {
+	public ContainerShroomChest(InventoryPlayer playerInv, TileEntityShroomChest tileEntityShroomChest, EntityPlayer player) {
 		
-		this.chestInventory = chestInventory;
-		this.numRows = chestInventory / 9;
+		this.chestInventory = tileEntityShroomChest;
+		this.numRows = tileEntityShroomChest.getSizeInventory() / 9;
 		chestInventory.openInventory(player);
 		
 		for(int i = 0; i < this.numRows; ++i) 

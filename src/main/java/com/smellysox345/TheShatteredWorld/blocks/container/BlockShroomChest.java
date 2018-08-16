@@ -3,6 +3,7 @@ package com.smellysox345.TheShatteredWorld.blocks.container;
 import com.smellysox345.TheShatteredWorld.Main;
 import com.smellysox345.TheShatteredWorld.init.ModBlocks;
 import com.smellysox345.TheShatteredWorld.init.ModItems;
+import com.smellysox345.TheShatteredWorld.tileentity.TileEntityShroomChest;
 import com.smellysox345.TheShatteredWorld.util.Reference;
 
 import net.minecraft.block.BlockContainer;
@@ -33,12 +34,11 @@ public class BlockShroomChest extends BlockContainer{
 	}
 
 	@Override
-	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-		
-		if(!worldIn.isRemote) {
-			
+	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) 
+	{
+		if(!worldIn.isRemote)
+		{
 			playerIn.openGui(Main.instance, Reference.GUI_SHROOM_CHEST, worldIn, pos.getX(), pos.getY(), pos.getZ());
-			
 		}
 		
 		return true;
@@ -53,15 +53,16 @@ public class BlockShroomChest extends BlockContainer{
 	}
 	
 	@Override
-	public void onBlockPlaceBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack) {
-		
-		if(stack.hasDisplayName()) {
+	public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack)
+	{
+		if(stack.hasDisplayName())
+		{
 			TileEntity tileentity = worldIn.getTileEntity(pos);
 			
 			if(tileentity instanceof TileEntityShroomChest)
 			{
 				((TileEntityShroomChest)tileentity).setCustomName(stack.getDisplayName());
-			}
+			}	
 		}
 	}
 	

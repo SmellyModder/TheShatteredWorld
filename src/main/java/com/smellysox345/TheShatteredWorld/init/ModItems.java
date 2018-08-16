@@ -37,7 +37,7 @@ public class ModItems {
 	//Armor Materials
 	public static final ArmorMaterial ARMOR_MATERIAL_CRYSTAL = EnumHelper.addArmorMaterial("armor_material_crystal", Reference.MOD_ID + ":crystal", 11, new int[] {1, 5, 6, 3}, 16, SoundEvents.ENTITY_EXPERIENCE_ORB_PICKUP, 0.0F);
 	public static final ArmorMaterial ARMOR_MATERIAL_REFRACTI = EnumHelper.addArmorMaterial("armor_material_refracti", Reference.MOD_ID + ":refracti", 11, new int[] {1, 4, 5, 2}, 16, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F);
-	public static final ArmorMaterial ARMOR_MATERIAL_DARKNUT = EnumHelper.addArmorMaterial("armor_material_templar", Reference.MOD_ID + ":templar", 11, new int[] {2, 4, 6, 4}, 16, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F);
+	public static final ArmorMaterial ARMOR_MATERIAL_DARKNUT = EnumHelper.addArmorMaterial("armor_material_watcher", Reference.MOD_ID + ":watcher", 11, new int[] {2, 4, 6, 4}, 16, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F);
 	
 	//Materials
 	public static final ToolMaterial MATERIAL_CRYSTAL = EnumHelper.addToolMaterial("material_crystal", 2, 530, 6.5F, 2.2F, 13);

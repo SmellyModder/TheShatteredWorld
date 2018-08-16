@@ -8,6 +8,7 @@ import com.smellysox345.TheShatteredWorld.blocks.CrystalBlock;
 import com.smellysox345.TheShatteredWorld.blocks.RefractedCactus;
 import com.smellysox345.TheShatteredWorld.blocks.RefractedSandBlock;
 import com.smellysox345.TheShatteredWorld.blocks.RefractedStone;
+import com.smellysox345.TheShatteredWorld.blocks.container.BlockShroomChest;
 import com.smellysox345.TheShatteredWorld.blocks.magic.BlockSpookyWood;
 import com.smellysox345.TheShatteredWorld.blocks.magic.BlockTeleporter;
 import com.smellysox345.TheShatteredWorld.blocks.magic.BlockWoodGlow;
@@ -85,4 +86,7 @@ public class ModBlocks {
 	public static final Block BOUNCYSHROOM_BLOCK = new BouncyShroom("bouncyshroom_block", Material.GOURD);
 	public static final Block BOUNCYSHROOMSTEM_BLOCK = new BouncyShroomStem("bouncyshroomstem_block", Material.GOURD);
 	public static final Block SHROOM_SHIELD = new ForceFieldShroom("force_field_s", Material.ICE);
+	
+	//Containers
+	public static final Block SHROOM_CHEST = new BlockShroomChest("shroom_chest");
 }

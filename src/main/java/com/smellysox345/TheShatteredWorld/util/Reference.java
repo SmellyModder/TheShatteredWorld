@@ -9,6 +9,9 @@ public class Reference {
 	public static final String CLIENT_PROXY_CLASS = "com.smellysox345.TheShatteredWorld.proxy.ClientProxy";
 	public static final String COMMON_PROXY_CLASS = "com.smellysox345.TheShatteredWorld.proxy.CommonProxy";
 	
+	//Container
+	public static final int GUI_SHROOM_CHEST = 2;
+	
 	//Wolf
 	public static final int ENTITY_SLIMEWOLF = 110;
 	public static final int ENTITY_SLIMEWOLF_BABY = 111;

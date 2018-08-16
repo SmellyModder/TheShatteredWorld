@@ -40,10 +40,11 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeDesert;
 
+
 public class EntityFlyingEye extends EntityMob{
 	
 	private static final DataParameter<Byte> HANGING = EntityDataManager.<Byte>createKey(EntityFlyingEye.class, DataSerializers.BYTE);
-	private static final DataParameter<Integer> EYE_TYPE = EntityDataManager.<Integer>createKey(EntityFlyingEye.class, DataSerializers.VARINT);
+	private static final DataParameter<Integer> VARIANT = EntityDataManager.<Integer>createKey(EntityFlyingEye.class, DataSerializers.VARINT);
 	
     private BlockPos spawnPosition;
     
@@ -53,12 +54,29 @@ public class EntityFlyingEye extends EntityMob{
         this.setSize(0.5F, 1.0F);
         this.setIsBatHanging(true);
     }
+    
+    @Nullable
+    public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata)
+    {
+        this.setVariant(this.rand.nextInt(5));
+        return super.onInitialSpawn(difficulty, livingdata);
+    }
+    
+    public int getVariant()
+    {
+        return MathHelper.clamp(((Integer)this.dataManager.get(VARIANT)).intValue(), 0, 4);
+    }
+
+    public void setVariant(int p_191997_1_)
+    {
+        this.dataManager.set(VARIANT, Integer.valueOf(p_191997_1_));
+    }
 
     protected void entityInit()
     {
         super.entityInit();
         this.dataManager.register(HANGING, Byte.valueOf((byte)0));
-        this.dataManager.register(EYE_TYPE, Integer.valueOf(0));
+        this.dataManager.register(VARIANT, Integer.valueOf(0));
     }
     
     @Override
@@ -268,9 +286,12 @@ public class EntityFlyingEye extends EntityMob{
         EntityLiving.registerFixesMob(fixer, EntityFlyingEye.class);
     }
     
-    public int getEyeType()
+    
+    public void writeEntityToNBT(NBTTagCompound compound)
     {
-        return ((Integer)this.dataManager.get(EYE_TYPE)).intValue();
+        super.writeEntityToNBT(compound);
+        compound.setByte("EyeFlags", ((Byte)this.dataManager.get(HANGING)).byteValue());
+        compound.setInteger("Variant", this.getVariant());
     }
 
     
@@ -278,80 +299,12 @@ public class EntityFlyingEye extends EntityMob{
     {
         super.readEntityFromNBT(compound);
         this.dataManager.set(HANGING, Byte.valueOf(compound.getByte("EyeFlags")));
-        compound.setInteger("EyeType", this.getEyeType());
+        this.setVariant(compound.getInteger("Variant"));
     }
     
-    public void writeEntityToNBT(NBTTagCompound compound)
-    {
-        super.writeEntityToNBT(compound);
-        compound.setByte("EyeFlags", ((Byte)this.dataManager.get(HANGING)).byteValue());
-        this.setEyeType(compound.getInteger("RabbitType"));
-    }
-
     public float getEyeHeight()
     {
         return this.height / 1.0F;
-    }
-    
-    public void setEyeType(int eyeTypeId)
-    {
-    	 this.dataManager.set(EYE_TYPE, Integer.valueOf(eyeTypeId));
-    }
-    
-    @Nullable
-    public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata)
-    {
-        livingdata = super.onInitialSpawn(difficulty, livingdata);
-        int i = this.getRandomEyeType();
-        boolean flag = false;
-
-        if (livingdata instanceof EntityFlyingEye.EyeTypeData)
-        {
-            i = ((EntityFlyingEye.EyeTypeData)livingdata).typeData;
-            flag = true;
-        }
-        else
-        {
-            livingdata = new EntityFlyingEye.EyeTypeData(i);
-        }
-
-        this.setEyeType(i);
-
-        if (flag)
-        {
-        }
-
-        return livingdata;
-    }
-    
-    private int getRandomEyeType()
-    {
-        Biome biome = this.world.getBiome(new BlockPos(this));
-        int i = this.rand.nextInt(100);
-
-        if (biome.isSnowyBiome())
-        {
-            return i < 80 ? 1 : 3;
-        }
-        else if (biome instanceof BiomeDesert)
-        {
-            return 4;
-        }
-        else
-        {
-            return i < 50 ? 0 : (i < 90 ? 5 : 2);
-        }
-    }
-    
-    
-    public static class EyeTypeData implements IEntityLivingData
-    {
-        public int typeData;
-
-        public EyeTypeData(int type)
-        {
-            this.typeData = type;
-        }
     }
     
     

@@ -6,9 +6,9 @@ import net.minecraft.world.World;
 
 public class EntityTurnedVillager extends EntityVindicator{
 
-	public EntityTurnedVillager(World worldIn) {
+	public EntityTurnedVillager(World worldIn) 
+	{
 		super(worldIn);
-		
 	}
 
 	@Override

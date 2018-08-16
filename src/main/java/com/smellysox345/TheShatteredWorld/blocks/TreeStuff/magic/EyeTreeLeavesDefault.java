@@ -114,6 +114,7 @@ public class EyeTreeLeavesDefault extends BlockLeaves implements IHasModel{
 	public void registerModels() {
 		 Main.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");
 	}
+	
 	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int fortune) 
 	{

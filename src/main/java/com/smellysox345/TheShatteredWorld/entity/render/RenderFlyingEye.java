@@ -36,5 +36,4 @@ public class RenderFlyingEye extends RenderLiving<EntityFlyingEye>{
     {
         return TEXTURES[entity.getVariant()];
     }
-
 }

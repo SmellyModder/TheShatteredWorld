@@ -31,6 +31,7 @@ import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.datafix.DataFixer;
 import net.minecraft.util.math.BlockPos;
@@ -142,6 +143,7 @@ public class EntityFlyingEye extends EntityMob{
         super.applyEntityAttributes();
         this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(8.0D);
         this.getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(4.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3.0D);
     }
 
     public boolean getIsBatHanging()
@@ -169,7 +171,7 @@ public class EntityFlyingEye extends EntityMob{
     public void onUpdate()
     {
         super.onUpdate();
-
+        makeTrail();
         if (this.getIsBatHanging())
         {
             this.motionX = 0.0D;
@@ -182,6 +184,15 @@ public class EntityFlyingEye extends EntityMob{
             this.motionY *= 0.6000000238418579D;
         }
     }
+    
+    private void makeTrail() {
+		for (int i = 0; i < 2; i++) {
+			double dx = posX + 0.5 * (rand.nextDouble() - rand.nextDouble());
+			double dy = posY + 0.5 * (rand.nextDouble() - rand.nextDouble());
+			double dz = posZ + 0.5 * (rand.nextDouble() - rand.nextDouble());
+			world.spawnParticle(EnumParticleTypes.REDSTONE, dx, dy, dz, 0.0D, 0.0D, 0.0D);
+		}
+	}
 
     protected void updateAITasks()
     {

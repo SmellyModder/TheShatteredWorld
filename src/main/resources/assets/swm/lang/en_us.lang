@@ -58,6 +58,7 @@ entity.shroomzombie.name=Shroom Zombie
 entity.nightshroom.name=Night Shroom
 entity.shroomite.name=Shroomite
 entity.arachnoshroom.name=Arachno Shroom
+entity.flying_eye.name=Cy-bat
 
 # Boss
 entity.arachnoshroomqueen.name=§bArachno Shroom Queen§r

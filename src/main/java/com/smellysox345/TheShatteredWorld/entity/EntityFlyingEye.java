@@ -103,7 +103,7 @@ public class EntityFlyingEye extends EntityMob{
      */
     protected float getSoundPitch()
     {
-        return super.getSoundPitch() * 0.95F;
+        return super.getSoundPitch() * 0.0090F;
     }
 
     @Nullable

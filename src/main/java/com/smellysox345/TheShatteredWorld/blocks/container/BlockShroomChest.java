@@ -5,6 +5,7 @@ import com.smellysox345.TheShatteredWorld.init.ModBlocks;
 import com.smellysox345.TheShatteredWorld.init.ModItems;
 import com.smellysox345.TheShatteredWorld.tileentity.TileEntityShroomChest;
 import com.smellysox345.TheShatteredWorld.util.Reference;
+import com.smellysox345.TheShatteredWorld.util.interfaces.IHasModel;
 
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -12,6 +13,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.InventoryHelper;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -21,7 +23,7 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class BlockShroomChest extends BlockContainer{
+public class BlockShroomChest extends BlockContainer implements IHasModel{
 
 	public BlockShroomChest(String name) {
 		super(Material.GOURD);
@@ -94,9 +96,10 @@ public class BlockShroomChest extends BlockContainer{
 	public boolean isOpaqueCube(IBlockState state) {
 		return false;
 	}
-	
-	
-	
-	
+
+	@Override
+	public void registerModels() {
+		Main.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");
+	}
 	
 }

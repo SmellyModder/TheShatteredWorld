@@ -112,7 +112,7 @@ public class Main {
 	{
 		RegistryHandler.initRegistries();
 		RegistryHandler.otherRegistries();
-		MinecraftForge.EVENT_BUS.register(WizardRightHandler.class);
+		
 	}
 	
 	@EventHandler

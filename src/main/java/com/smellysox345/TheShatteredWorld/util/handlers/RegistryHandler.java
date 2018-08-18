@@ -11,6 +11,7 @@ import com.smellysox345.TheShatteredWorld.util.interfaces.IHasModel;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
@@ -80,6 +81,7 @@ public class RegistryHandler {
         GameRegistry.registerWorldGenerator(new WorldGenCustomTrees(), 0);
         GameRegistry.registerWorldGenerator(new WorldGenSpookyTrees(), 0);
         BiomeInit.registerBiomes();
+        MinecraftForge.EVENT_BUS.register(WizardRightHandler.class);
     }
 
     public static void serverRegistries(FMLServerStartingEvent event) {

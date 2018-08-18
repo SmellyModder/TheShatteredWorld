@@ -36,7 +36,7 @@ public class GuideGui extends GuiScreen {
 
         switch (tempX) {
             case 0:
-                bookPageTextures[0] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book.png");
+                bookPageTextures[0] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/questing/book.png");
 
                 stringPageText[0] = "";
                 break;

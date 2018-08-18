@@ -36,6 +36,7 @@ public class Reference {
 	//Dark Forest
 	public static final int ENTITY_TURNED_VILLAGER = 120;
 	public static final int ENTITY_FLYING_EYE = 122;
+	public static final int ENTITY_WATCHER = 123;
 	
 	//Questing
 	public static final int ENTITY_SHROOM_WIZ = 121;

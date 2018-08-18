@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.smellysox345.TheShatteredWorld.items.ItemBase;
 import com.smellysox345.TheShatteredWorld.items.ItemGlinting;
+import com.smellysox345.TheShatteredWorld.items.ItemShroomCurrency;
 import com.smellysox345.TheShatteredWorld.items.armor.ArmorBase;
 import com.smellysox345.TheShatteredWorld.items.food.ItemCustomFood;
 import com.smellysox345.TheShatteredWorld.items.food.ItemCustomFoodNausea;
@@ -50,6 +51,7 @@ public class ModItems {
 	public static final Item PRISM = new ItemBase("prism");
 	public static final Item R_STRING = new ItemBase("r_string");
 	public static final Item WATCHER_STICK = new ItemBase("watcher_stick");
+	public static final Item SHROOM_EMERALD = new ItemShroomCurrency("shroom_currency");
 	
 	//Foods
 	public static final Item REFRACTEDCACTUSBUD = new ItemCustomFoodNausea("refractedcactusbud", 3, false);

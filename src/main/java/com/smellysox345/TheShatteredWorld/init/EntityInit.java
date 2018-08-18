@@ -12,6 +12,7 @@ import com.smellysox345.TheShatteredWorld.entity.EntityShroomite;
 import com.smellysox345.TheShatteredWorld.entity.EntitySlimeWolf;
 import com.smellysox345.TheShatteredWorld.entity.EntitySlimeWolfBaby;
 import com.smellysox345.TheShatteredWorld.entity.EntityTurnedVillager;
+import com.smellysox345.TheShatteredWorld.entity.EntityWatcherBlock;
 import com.smellysox345.TheShatteredWorld.entity.NPCShroomWizard;
 import com.smellysox345.TheShatteredWorld.entity.projectiles.EntityWebProjectile;
 import com.smellysox345.TheShatteredWorld.entity.projectiles.EntityWebProjectileEgg;
@@ -44,6 +45,7 @@ public class EntityInit {
 		//Dark Mobs
 		registerEntity("turnedvillager", EntityTurnedVillager.class, Reference.ENTITY_TURNED_VILLAGER, 50, 1638400, 16759452);
 		registerEntity("flying_eye", EntityFlyingEye.class, Reference.ENTITY_FLYING_EYE, 50, 1638400, 12845114);
+		registerEntity("watcher_block_entity", EntityWatcherBlock.class, Reference.ENTITY_WATCHER, 50, 1638400, 15118080);
 	}
 	
 	//Registers stuff that has no egg

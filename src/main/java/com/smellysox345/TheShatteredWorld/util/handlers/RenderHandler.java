@@ -11,6 +11,7 @@ import com.smellysox345.TheShatteredWorld.entity.EntityShroomite;
 import com.smellysox345.TheShatteredWorld.entity.EntitySlimeWolf;
 import com.smellysox345.TheShatteredWorld.entity.EntitySlimeWolfBaby;
 import com.smellysox345.TheShatteredWorld.entity.EntityTurnedVillager;
+import com.smellysox345.TheShatteredWorld.entity.EntityWatcherBlock;
 import com.smellysox345.TheShatteredWorld.entity.NPCShroomWizard;
 import com.smellysox345.TheShatteredWorld.entity.projectiles.EntityWebProjectile;
 import com.smellysox345.TheShatteredWorld.entity.projectiles.render.RenderWebProjectile;
@@ -26,6 +27,7 @@ import com.smellysox345.TheShatteredWorld.entity.render.RenderShroomite;
 import com.smellysox345.TheShatteredWorld.entity.render.RenderSlimeWolf;
 import com.smellysox345.TheShatteredWorld.entity.render.RenderSlimeWolfBaby;
 import com.smellysox345.TheShatteredWorld.entity.render.RenderTurnedVillager;
+import com.smellysox345.TheShatteredWorld.entity.render.RenderWatcherBlock;
 import com.smellysox345.TheShatteredWorld.init.EntityInit;
 
 import net.minecraft.client.renderer.entity.Render;
@@ -188,6 +190,18 @@ public class RenderHandler {
 			public Render<? super EntityFlyingEye> createRenderFor(RenderManager manager){
 				
 				return new RenderFlyingEye(manager);
+				
+			}
+			
+		});
+		
+		RenderingRegistry.registerEntityRenderingHandler(EntityWatcherBlock.class, new IRenderFactory<EntityWatcherBlock>()
+		{
+			
+			@Override
+			public Render<? super EntityWatcherBlock> createRenderFor(RenderManager manager){
+				
+				return new RenderWatcherBlock(manager);
 				
 			}
 			

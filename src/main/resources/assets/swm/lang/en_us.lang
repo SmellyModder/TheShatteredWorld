@@ -6,6 +6,8 @@ tile.saplings_oakr.name=Refracted Oak Sapling
 tile.saplings_birchr.name=Refracted Birch Sapling
 item.r_string.name=Shroom String
 
+# Currency
+item.shroom_currency.name=Shroom Emerald
 
 # Foods
 item.corruptedbeef.name=Corrupted Beef

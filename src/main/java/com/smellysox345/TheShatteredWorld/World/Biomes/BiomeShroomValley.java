@@ -31,10 +31,10 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 
-public class ShroomValley extends Biome{
+public class BiomeShroomValley extends Biome{
 	
 	
-	public ShroomValley() {
+	public BiomeShroomValley() {
 		super(new BiomeProperties("Refracted Mushroom").setTemperature(0.8F).setRainfall(0.8F).setBaseHeight(0.15F).setHeightVariation(0.2F).setWaterColor(165));
 	
 		

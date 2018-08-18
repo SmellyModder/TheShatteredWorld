@@ -16,7 +16,6 @@ import net.minecraft.world.biome.Biome.SpawnListEntry;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
-
 public class BiomeRefractedRoofedForest extends Biome{
 
 	public BiomeRefractedRoofedForest() {

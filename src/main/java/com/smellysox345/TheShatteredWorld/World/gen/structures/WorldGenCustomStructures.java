@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
-import com.smellysox345.TheShatteredWorld.World.Biomes.ShroomValley;
+import com.smellysox345.TheShatteredWorld.World.Biomes.BiomeShroomValley;
 import com.smellysox345.TheShatteredWorld.World.gen.generators.WorldGenStructure;
 import com.smellysox345.TheShatteredWorld.World.gen.generators.shroomGens.ShroomPatchG;
 import com.smellysox345.TheShatteredWorld.World.gen.generators.shroomGens.ShroomPatchN;
@@ -55,7 +55,7 @@ public class WorldGenCustomStructures implements IWorldGenerator{
 	            generateSurfaceForNShrooms(world, random, chunkX * 16, chunkZ * 16, chunkZ * 16);
 	            generateSurfaceForPinkShrooms(world, random, chunkX * 16, chunkZ * 16, chunkZ * 16);
 	            generateSurfaceForGrassShrooms(world, random, chunkX * 16, chunkZ * 16, chunkZ * 16);
-	            generateStructure(SHROOM_BIG_R, world, random, chunkX, chunkZ, 20, ModBlocks.MYCELIUM_REFRACTED_BLOCK, ShroomValley.class);
+	            generateStructure(SHROOM_BIG_R, world, random, chunkX, chunkZ, 20, ModBlocks.MYCELIUM_REFRACTED_BLOCK, BiomeShroomValley.class);
 	            
 			
 			break;

@@ -80,6 +80,11 @@ public class NPCShroomWizard extends EntityLiving{
 	public float getSoundVolume() {
 		return 5.0F;
 	}
+	
+	@Override
+	public float getSoundPitch() {
+		return 0.40F;
+	}
 	    
 	@Override
 	protected SoundEvent getHurtSound(DamageSource damage) {

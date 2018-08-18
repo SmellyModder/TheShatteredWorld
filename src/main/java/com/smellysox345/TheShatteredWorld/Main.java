@@ -12,9 +12,11 @@ import com.smellysox345.TheShatteredWorld.proxy.CommonProxy;
 import com.smellysox345.TheShatteredWorld.util.Reference;
 import com.smellysox345.TheShatteredWorld.util.handlers.RegistryHandler;
 
+import com.smellysox345.TheShatteredWorld.util.handlers.WizardRightHandler;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -110,6 +112,7 @@ public class Main {
 	{
 		RegistryHandler.initRegistries();
 		RegistryHandler.otherRegistries();
+		MinecraftForge.EVENT_BUS.register(WizardRightHandler.class);
 	}
 	
 	@EventHandler

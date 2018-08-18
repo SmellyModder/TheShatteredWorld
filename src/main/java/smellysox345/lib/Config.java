@@ -14,6 +14,7 @@ public class Config {
 	private static Configuration config;
 	
 	public static int ShatteredWorldDimId;
+	public static int QuestGuiID;
 
 	public static void load(FMLPreInitializationEvent event) {
 		config = new Configuration(event.getSuggestedConfigurationFile());
@@ -25,6 +26,7 @@ public class Config {
 	private static void reloadConfig() {
 		//Basics
 		ShatteredWorldDimId = config.getInt("ShatteredWorldDimId", Configuration.CATEGORY_GENERAL, -9, -150, 150, " Use for compatibility purposes.", LANG_PREFIX + "ShatteredWorldDimId");
+		QuestGuiID = config.getInt("QuestGuiID", Configuration.CATEGORY_GENERAL, 33, 15, 150, " Use for compatibility purposes.", LANG_PREFIX + "QuestGuiID");
 		if (config.hasChanged()) {
 			config.save();
 		}

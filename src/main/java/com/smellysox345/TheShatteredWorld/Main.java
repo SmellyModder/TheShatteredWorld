@@ -1,5 +1,6 @@
 package com.smellysox345.TheShatteredWorld;
 
+import com.smellysox345.TheShatteredWorld.QuestGui.GuiHandlerRegistry;
 import com.smellysox345.TheShatteredWorld.World.gen.structures.WorldGenCustomStructures;
 import com.smellysox345.TheShatteredWorld.init.ModBlocks;
 import com.smellysox345.TheShatteredWorld.init.ModItems;
@@ -25,6 +26,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -119,6 +121,9 @@ public class Main {
 	public static void Postinit(FMLPostInitializationEvent event)
 	{
 		GameRegistry.registerWorldGenerator(new WorldGenCustomStructures(), 0);
+        NetworkRegistry.INSTANCE.registerGuiHandler(instance, GuiHandlerRegistry.getInstance());
+		MinecraftForge.EVENT_BUS.register(WizardRightHandler.class);
+
 	}
 	
 	@EventHandler

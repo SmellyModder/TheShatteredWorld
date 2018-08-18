@@ -81,7 +81,6 @@ public class RegistryHandler {
         GameRegistry.registerWorldGenerator(new WorldGenCustomTrees(), 0);
         GameRegistry.registerWorldGenerator(new WorldGenSpookyTrees(), 0);
         BiomeInit.registerBiomes();
-        MinecraftForge.EVENT_BUS.register(WizardRightHandler.class);
     }
 
     public static void serverRegistries(FMLServerStartingEvent event) {

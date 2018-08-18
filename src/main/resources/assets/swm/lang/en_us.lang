@@ -120,4 +120,12 @@ tile.eye_sapling_default.name=Watcher Sapling
 tile.spider_egg.name=§bArachno Queen Egg§r
 tile.spider_eggsack.name=Spider Eggsack
 
+# Gui
+theshatteredworld.gui.home=Home
+theshatteredworld.gui.done=Done
+theshatteredworld.gui.quest1=Spider Queen
+theshatteredworld.gui.quest2=WIP
+theshatteredworld.gui.quest3=WIP
+theshatteredworld.gui.quest4=WIP
+
 

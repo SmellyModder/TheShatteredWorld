@@ -29,7 +29,6 @@ public class NPCShroomWizard extends EntityVillager {
 
     public NPCShroomWizard(World worldIn) {
         this(worldIn, 5);
-
     }
     public NPCShroomWizard(World worldIn, int professionId) {
         super(worldIn, 5);

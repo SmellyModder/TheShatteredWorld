@@ -1,4 +1,4 @@
-package com.smellysox345.TheShatteredWorld.QuestGui;
+package com.smellysox345.TheShatteredWorld.quest;
 
 
 import net.minecraft.entity.player.EntityPlayer;

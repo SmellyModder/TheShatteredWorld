@@ -42,7 +42,7 @@ public class NPCShroomWizard extends EntityVillager {
         super.applyEntityAttributes();
         this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(35.0D);
         this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.23000000417232513D);
-        this.getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(200.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(250.0D);
         this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(200.0D);
     }
 

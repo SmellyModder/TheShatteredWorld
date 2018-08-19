@@ -1,7 +1,8 @@
 package com.smellysox345.TheShatteredWorld.util.handlers;
 
-import com.smellysox345.TheShatteredWorld.QuestGui.GuideGui;
 import com.smellysox345.TheShatteredWorld.entity.NPCShroomWizard;
+import com.smellysox345.TheShatteredWorld.quest.GuideGui;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.entity.passive.EntityVillager;

@@ -1,5 +1,6 @@
 package com.smellysox345.TheShatteredWorld.util.handlers;
 
+import com.smellysox345.TheShatteredWorld.init.ModBlocks;
 import com.smellysox345.TheShatteredWorld.init.ModItems;
 import net.minecraft.entity.IMerchant;
 import net.minecraft.entity.passive.EntityVillager;
@@ -13,5 +14,7 @@ public class WizardTrades implements EntityVillager.ITradeList {
     @Override
     public void addMerchantRecipe(IMerchant merchant, MerchantRecipeList recipeList, Random random) {
         recipeList.add(new MerchantRecipe(new ItemStack(ModItems.SHROOM_EMERALD, 1), new ItemStack(ModItems.CORRUPTEDBEEF, 1)));
+        recipeList.add(new MerchantRecipe(new ItemStack(ModItems.SHROOM_EMERALD, 1), new ItemStack(ModItems.R_STRING, 8)));
+        recipeList.add(new MerchantRecipe(new ItemStack(ModItems.SHROOM_EMERALD, 2), new ItemStack(ModBlocks.BOUNCYSHROOM_BLOCK, 1)));
     }
 }

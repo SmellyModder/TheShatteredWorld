@@ -232,4 +232,12 @@ public class WorldGenEyeTreeDefault extends WorldGenAbstractTree{
 					break;
 		}
 	}
+	
+	@Override
+	protected boolean canGrowInto(Block blockType)
+	{
+		Material material = blockType.getDefaultState().getMaterial();
+        return material == Material.AIR || material == Material.LEAVES || material == Material.GROUND || blockType == ModBlocks.DIRT || blockType == Blocks.GRASS || blockType == Blocks.DIRT || blockType == Blocks.LOG || blockType == Blocks.LOG2 || blockType == Blocks.SAPLING || blockType == Blocks.VINE;
+  
+	}
 }

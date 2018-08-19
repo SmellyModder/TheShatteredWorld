@@ -1,6 +1,5 @@
 package com.smellysox345.TheShatteredWorld;
 
-import com.smellysox345.TheShatteredWorld.QuestGui.GuiHandlerRegistry;
 import com.smellysox345.TheShatteredWorld.World.gen.structures.WorldGenCustomStructures;
 import com.smellysox345.TheShatteredWorld.init.ModBlocks;
 import com.smellysox345.TheShatteredWorld.init.ModItems;
@@ -8,6 +7,7 @@ import com.smellysox345.TheShatteredWorld.potion.Deformation;
 import com.smellysox345.TheShatteredWorld.potion.PotionTypeRegistry;
 import com.smellysox345.TheShatteredWorld.potion.Shroom_Bounce;
 import com.smellysox345.TheShatteredWorld.proxy.CommonProxy;
+import com.smellysox345.TheShatteredWorld.quest.GuiHandlerRegistry;
 import com.smellysox345.TheShatteredWorld.util.Reference;
 import com.smellysox345.TheShatteredWorld.util.handlers.RegistryHandler;
 import com.smellysox345.TheShatteredWorld.util.handlers.WizardRightHandler;

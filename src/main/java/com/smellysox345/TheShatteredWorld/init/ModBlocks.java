@@ -34,6 +34,7 @@ public class ModBlocks {
     public static final Block LOGS = new BlockLogs("log");
     public static final Block EYE_TREE = new EyeTreeLog("eye_tree", Material.WOOD);
     public static final Block EYE_TREE_DEFAULT = new EyeTreeLogDefault("eye_tree_default", Material.WOOD);
+    public static final Block BIG_OAK = new BlockSpookyLog("bigoak_r", Material.WOOD);
     public static final Block PLANKS = new BlockPlanks("planks");
     public static final Block WATCHER_PLANKS_D = new BlockSpookyWood("watcher_planks_default", Material.WOOD);
     public static final Block WATCHER_PLANKS = new BlockSummonerWood("watcher_planks", Material.WOOD);

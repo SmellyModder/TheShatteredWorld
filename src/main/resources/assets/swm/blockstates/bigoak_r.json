@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "axis=y":  { "model": "swm:bigoak_r" },
+        "axis=z":   { "model": "swm:bigoak_r", "x": 90 },
+        "axis=x":   { "model": "swm:bigoak_r", "x": 90, "y": 90 },
+        "axis=none": { "model": "swm:bigoak_r" }
+    }
+}

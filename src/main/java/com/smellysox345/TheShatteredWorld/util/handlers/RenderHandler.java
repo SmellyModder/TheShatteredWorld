@@ -4,6 +4,7 @@ import com.smellysox345.TheShatteredWorld.entity.EntityArachnoShroom;
 import com.smellysox345.TheShatteredWorld.entity.EntityArachnoShroomQueen;
 import com.smellysox345.TheShatteredWorld.entity.EntityFlyingEye;
 import com.smellysox345.TheShatteredWorld.entity.EntityNightShroom;
+import com.smellysox345.TheShatteredWorld.entity.EntityShadowSpider;
 import com.smellysox345.TheShatteredWorld.entity.EntityShroomCreeper;
 import com.smellysox345.TheShatteredWorld.entity.EntityShroomSkeleton;
 import com.smellysox345.TheShatteredWorld.entity.EntityShroomZombie;
@@ -19,6 +20,7 @@ import com.smellysox345.TheShatteredWorld.entity.render.RenderArachnoShroom;
 import com.smellysox345.TheShatteredWorld.entity.render.RenderArachnoShroomQueen;
 import com.smellysox345.TheShatteredWorld.entity.render.RenderFlyingEye;
 import com.smellysox345.TheShatteredWorld.entity.render.RenderNightShroom;
+import com.smellysox345.TheShatteredWorld.entity.render.RenderShadowSpider;
 import com.smellysox345.TheShatteredWorld.entity.render.RenderShroomCreeper;
 import com.smellysox345.TheShatteredWorld.entity.render.RenderShroomSkeleton;
 import com.smellysox345.TheShatteredWorld.entity.render.RenderShroomWizard;
@@ -202,6 +204,18 @@ public class RenderHandler {
 			public Render<? super EntityWatcherBlock> createRenderFor(RenderManager manager){
 				
 				return new RenderWatcherBlock(manager);
+				
+			}
+			
+		});
+		
+		RenderingRegistry.registerEntityRenderingHandler(EntityShadowSpider.class, new IRenderFactory<EntityShadowSpider>()
+		{
+			
+			@Override
+			public Render<? super EntityShadowSpider> createRenderFor(RenderManager manager){
+				
+				return new RenderShadowSpider(manager);
 				
 			}
 			

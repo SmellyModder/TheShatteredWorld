@@ -5,6 +5,7 @@ import com.smellysox345.TheShatteredWorld.entity.EntityArachnoShroom;
 import com.smellysox345.TheShatteredWorld.entity.EntityArachnoShroomQueen;
 import com.smellysox345.TheShatteredWorld.entity.EntityFlyingEye;
 import com.smellysox345.TheShatteredWorld.entity.EntityNightShroom;
+import com.smellysox345.TheShatteredWorld.entity.EntityShadowSpider;
 import com.smellysox345.TheShatteredWorld.entity.EntityShroomCreeper;
 import com.smellysox345.TheShatteredWorld.entity.EntityShroomSkeleton;
 import com.smellysox345.TheShatteredWorld.entity.EntityShroomZombie;
@@ -46,6 +47,7 @@ public class EntityInit {
 		registerEntity("turnedvillager", EntityTurnedVillager.class, Reference.ENTITY_TURNED_VILLAGER, 50, 1638400, 16759452);
 		registerEntity("flying_eye", EntityFlyingEye.class, Reference.ENTITY_FLYING_EYE, 50, 1638400, 12845114);
 		registerEntity("watcher_block_entity", EntityWatcherBlock.class, Reference.ENTITY_WATCHER, 50, 1638400, 15118080);
+		registerEntity("shadow_spider", EntityShadowSpider.class, Reference.ENTITY_SHADOW_SPIDER, 50, 1638400, 16711721);
 	}
 	
 	//Registers stuff that has no egg

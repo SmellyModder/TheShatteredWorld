@@ -1,10 +1,7 @@
 package com.smellysox345.TheShatteredWorld.entity.render;
 
 import com.smellysox345.TheShatteredWorld.entity.EntityShroomSkeleton;
-import com.smellysox345.TheShatteredWorld.entity.EntityShroomZombie;
-import com.smellysox345.TheShatteredWorld.entity.EntityShroomite;
 import com.smellysox345.TheShatteredWorld.entity.model.ModelShroomSkeleton;
-import com.smellysox345.TheShatteredWorld.entity.model.ModelShroomZombie;
 import com.smellysox345.TheShatteredWorld.util.Reference;
 
 import net.minecraft.client.renderer.GlStateManager;
@@ -19,7 +16,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderShroomSkeleton extends RenderLiving<EntityShroomSkeleton>{
 	
-public static final ResourceLocation TEXTURES = new ResourceLocation(Reference.MOD_ID + ":textures/entity/shroomskeleton.png");
+public static final ResourceLocation TEXTURES = new ResourceLocation(Reference.MODID + ":textures/entity/shroomskeleton.png");
 	
 	
 	public RenderShroomSkeleton(RenderManager manager) {

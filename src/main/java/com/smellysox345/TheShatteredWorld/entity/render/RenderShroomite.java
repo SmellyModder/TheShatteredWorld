@@ -1,8 +1,6 @@
 package com.smellysox345.TheShatteredWorld.entity.render;
 
-import com.smellysox345.TheShatteredWorld.entity.EntityShroomZombie;
 import com.smellysox345.TheShatteredWorld.entity.EntityShroomite;
-import com.smellysox345.TheShatteredWorld.entity.model.ModelShroomZombie;
 import com.smellysox345.TheShatteredWorld.entity.model.ModelShroomite;
 import com.smellysox345.TheShatteredWorld.util.Reference;
 
@@ -15,7 +13,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderShroomite extends RenderLiving<EntityShroomite>{
 
-public static final ResourceLocation TEXTURES = new ResourceLocation(Reference.MOD_ID + ":textures/entity/shroomite.png");
+public static final ResourceLocation TEXTURES = new ResourceLocation(Reference.MODID + ":textures/entity/shroomite.png");
 	
 	
 	public RenderShroomite(RenderManager manager) {

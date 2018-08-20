@@ -63,7 +63,7 @@ public class EntityInit {
 	private static void registerEntity2(String entityName, Class<? extends Entity> entityClass, int id, int range) {
 		
 		
-		EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID + ":" + entityName), entityClass, entityName, id, Main.instance, range, 1, true);
+		EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID + ":" + entityName), entityClass, entityName, id, Main.instance, range, 1, true);
 		
 		
 	}
@@ -72,7 +72,7 @@ public class EntityInit {
 	private static void registerEntity(String name, Class<? extends Entity> entity, int id, int range, int color1, int color2) {
 		
 		
-		EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID + ":" + name), entity, name, id, Main.instance, range, 1, true, color1, color2);
+		EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID + ":" + name), entity, name, id, Main.instance, range, 1, true, color1, color2);
 		
 		
 	}

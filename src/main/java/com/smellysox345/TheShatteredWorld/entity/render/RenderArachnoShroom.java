@@ -1,9 +1,7 @@
 package com.smellysox345.TheShatteredWorld.entity.render;
 
 import com.smellysox345.TheShatteredWorld.entity.EntityArachnoShroom;
-import com.smellysox345.TheShatteredWorld.entity.EntityNightShroom;
 import com.smellysox345.TheShatteredWorld.entity.model.ModelArachnoShroom;
-import com.smellysox345.TheShatteredWorld.entity.model.ModelNightShroom;
 import com.smellysox345.TheShatteredWorld.util.Reference;
 
 import net.minecraft.client.renderer.entity.RenderLiving;
@@ -15,7 +13,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderArachnoShroom extends RenderLiving<EntityArachnoShroom>{
 
-public static final ResourceLocation TEXTURES = new ResourceLocation(Reference.MOD_ID + ":textures/entity/arachnoshroom.png");
+public static final ResourceLocation TEXTURES = new ResourceLocation(Reference.MODID + ":textures/entity/arachnoshroom.png");
 	
 	
 	public RenderArachnoShroom(RenderManager manager) {

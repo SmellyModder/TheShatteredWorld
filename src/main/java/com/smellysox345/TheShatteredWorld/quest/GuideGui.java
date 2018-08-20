@@ -36,23 +36,23 @@ public class GuideGui extends GuiScreen {
 
         switch (tempX) {
             case 0:
-                bookPageTextures[0] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/questing/book.png");
+                bookPageTextures[0] = new ResourceLocation(Reference.MODID + ":textures/gui/questing/book.png");
 
                 stringPageText[0] = "";
                 break;
             case 1:
-                bookPageTextures[0] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book1.png");
-                bookPageTextures[1] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book2.png");
-                bookPageTextures[2] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book3.png");
-                bookPageTextures[3] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book4.png");
-                bookPageTextures[4] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book5.png");
-                bookPageTextures[5] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book6.png");
-                bookPageTextures[6] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book.png");
-                bookPageTextures[7] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book.png");
-                bookPageTextures[8] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book.png");
-                bookPageTextures[9] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book.png");
-                bookPageTextures[10] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book.png");
-                bookPageTextures[11] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book.png");
+                bookPageTextures[0] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book1.png");
+                bookPageTextures[1] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book2.png");
+                bookPageTextures[2] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book3.png");
+                bookPageTextures[3] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book4.png");
+                bookPageTextures[4] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book5.png");
+                bookPageTextures[5] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book6.png");
+                bookPageTextures[6] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book.png");
+                bookPageTextures[7] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book.png");
+                bookPageTextures[8] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book.png");
+                bookPageTextures[9] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book.png");
+                bookPageTextures[10] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book.png");
+                bookPageTextures[11] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book.png");
 
                 stringPageText[0] = "";
                 stringPageText[1] = "";
@@ -69,18 +69,18 @@ public class GuideGui extends GuiScreen {
                 stringPageText[11] = "";
                 break;
             case 2:
-                bookPageTextures[0] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book1.png");
-                bookPageTextures[1] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book2.png");
-                bookPageTextures[2] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book3.png");
-                bookPageTextures[3] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book4.png");
-                bookPageTextures[4] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book5a.png");
-                bookPageTextures[5] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book6a.png");
-                bookPageTextures[6] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book.png");
-                bookPageTextures[7] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book.png");
-                bookPageTextures[8] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book.png");
-                bookPageTextures[9] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book.png");
-                bookPageTextures[10] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book.png");
-                bookPageTextures[11] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book.png");
+                bookPageTextures[0] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book1.png");
+                bookPageTextures[1] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book2.png");
+                bookPageTextures[2] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book3.png");
+                bookPageTextures[3] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book4.png");
+                bookPageTextures[4] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book5a.png");
+                bookPageTextures[5] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book6a.png");
+                bookPageTextures[6] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book.png");
+                bookPageTextures[7] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book.png");
+                bookPageTextures[8] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book.png");
+                bookPageTextures[9] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book.png");
+                bookPageTextures[10] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book.png");
+                bookPageTextures[11] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book.png");
 
                 stringPageText[0] = "";
                 stringPageText[1] = "";
@@ -97,18 +97,18 @@ public class GuideGui extends GuiScreen {
                 stringPageText[11] = "";
                 break;
             case 3:
-                bookPageTextures[0] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book1.png");
-                bookPageTextures[1] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book2.png");
-                bookPageTextures[2] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book3.png");
-                bookPageTextures[3] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book4.png");
-                bookPageTextures[4] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book5a.png");
-                bookPageTextures[5] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book6b.png");
-                bookPageTextures[6] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book7.png");
-                bookPageTextures[7] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book8.png");
-                bookPageTextures[8] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book.png");
-                bookPageTextures[9] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book.png");
-                bookPageTextures[10] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book.png");
-                bookPageTextures[11] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book.png");
+                bookPageTextures[0] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book1.png");
+                bookPageTextures[1] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book2.png");
+                bookPageTextures[2] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book3.png");
+                bookPageTextures[3] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book4.png");
+                bookPageTextures[4] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book5a.png");
+                bookPageTextures[5] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book6b.png");
+                bookPageTextures[6] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book7.png");
+                bookPageTextures[7] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book8.png");
+                bookPageTextures[8] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book.png");
+                bookPageTextures[9] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book.png");
+                bookPageTextures[10] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book.png");
+                bookPageTextures[11] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book.png");
 
                 stringPageText[0] = "";
                 stringPageText[1] = "";
@@ -124,18 +124,18 @@ public class GuideGui extends GuiScreen {
                 stringPageText[11] = "";
                 break;
             case 4:
-                bookPageTextures[0] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book1.png");
-                bookPageTextures[1] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book2.png");
-                bookPageTextures[2] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book3.png");
-                bookPageTextures[3] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book4.png");
-                bookPageTextures[4] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book5a.png");
-                bookPageTextures[5] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book6b.png");
-                bookPageTextures[6] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book7.png");
-                bookPageTextures[7] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book8.png");
-                bookPageTextures[8] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book9.png");
-                bookPageTextures[9] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book10.png");
-                bookPageTextures[10] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book11.png");
-                bookPageTextures[11] = new ResourceLocation(Reference.MOD_ID + ":textures/gui/book/book12.png");
+                bookPageTextures[0] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book1.png");
+                bookPageTextures[1] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book2.png");
+                bookPageTextures[2] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book3.png");
+                bookPageTextures[3] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book4.png");
+                bookPageTextures[4] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book5a.png");
+                bookPageTextures[5] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book6b.png");
+                bookPageTextures[6] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book7.png");
+                bookPageTextures[7] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book8.png");
+                bookPageTextures[8] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book9.png");
+                bookPageTextures[9] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book10.png");
+                bookPageTextures[10] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book11.png");
+                bookPageTextures[11] = new ResourceLocation(Reference.MODID + ":textures/gui/book/book12.png");
 
                 stringPageText[0] = "";
                 stringPageText[1] = "";
@@ -204,7 +204,7 @@ public class GuideGui extends GuiScreen {
         //int offsetFromScreenLeft = (width - bookImageWidth) / 2;
         //this.drawTexturedModalRect((width - bookImageWidth) / 2, (height - bookImageHeight) / 2, 0, 0, bookImageWidth, bookImageHeight);
         drawScaledCustomSizeModalRect((width - bookImageWidth) / 2, (height - bookImageHeight) / 2, 0F, 0F, bookImageWidth, bookImageHeight, bookImageWidth, bookImageHeight, 228, 228);
-        ResourceLocation spiderHead = new ResourceLocation(Reference.MOD_ID + ":textures/gui/head.png");
+        ResourceLocation spiderHead = new ResourceLocation(Reference.MODID + ":textures/gui/head.png");
         mc.getTextureManager().bindTexture(spiderHead);
         drawScaledCustomSizeModalRect(offsetFromScreenRight + buttonWidth, offsetFromScreenTop + buttonSpacing, 0F, 0F, 20, 20, 20, 20, 20, 20);
         super.drawScreen(parWidth, parHeight, p_73863_3_);

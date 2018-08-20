@@ -25,7 +25,7 @@ public static SoundEvent ENTITY_SLIMEWOLF_HURT, ENTITY_SLIMEWOLF_DEATH, ENTITY_S
 	
 	public static SoundEvent registerSound(String name) {
 		
-		ResourceLocation location = new ResourceLocation(Reference.MOD_ID, name);
+		ResourceLocation location = new ResourceLocation(Reference.MODID, name);
 		SoundEvent event = new SoundEvent(location);
 		event.setRegistryName(name);
 		ForgeRegistries.SOUND_EVENTS.register(event);

@@ -1,20 +1,12 @@
 package com.smellysox345.TheShatteredWorld.World.gen.generators.shroomGens;
 
 
-import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.tileentity.TileEntityChest;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.TextComponentTranslation;
-import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraft.world.gen.feature.WorldGenerator;
@@ -39,7 +31,7 @@ public class RefractaShroom extends WorldGenerator {
                 WorldServer worldserver = (WorldServer) world;
                 MinecraftServer minecraftserver = world.getMinecraftServer();
                 TemplateManager templatemanager = worldserver.getStructureTemplateManager();
-                ResourceLocation loc = new ResourceLocation(Reference.MOD_ID, "shroom_r_r");
+                ResourceLocation loc = new ResourceLocation(Reference.MODID, "shroom_r_r");
                 Template template = templatemanager.get(minecraftserver, loc);
 
                 if (template != null) {

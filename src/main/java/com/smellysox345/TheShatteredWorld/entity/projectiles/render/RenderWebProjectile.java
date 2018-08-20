@@ -1,17 +1,12 @@
 package com.smellysox345.TheShatteredWorld.entity.projectiles.render;
 
-import com.smellysox345.TheShatteredWorld.entity.EntityArachnoShroom;
-import com.smellysox345.TheShatteredWorld.entity.model.ModelArachnoShroom;
 import com.smellysox345.TheShatteredWorld.entity.projectiles.EntityWebProjectile;
 import com.smellysox345.TheShatteredWorld.entity.projectiles.model.ModelWebProjectile;
 import com.smellysox345.TheShatteredWorld.util.Reference;
 
-import net.minecraft.client.model.ModelShulkerBullet;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.Render;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraft.entity.projectile.EntityShulkerBullet;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraftforge.fml.relauncher.Side;
@@ -20,7 +15,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderWebProjectile extends Render<EntityWebProjectile>{
 	
-public static final ResourceLocation TEXTURES = new ResourceLocation(Reference.MOD_ID + ":textures/entity/webprojectile.png");
+public static final ResourceLocation TEXTURES = new ResourceLocation(Reference.MODID + ":textures/entity/webprojectile.png");
 private final ModelWebProjectile model = new ModelWebProjectile();
 	
 	public RenderWebProjectile(RenderManager manager) {

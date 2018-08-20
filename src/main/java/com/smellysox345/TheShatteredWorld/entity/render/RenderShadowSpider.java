@@ -1,8 +1,6 @@
 package com.smellysox345.TheShatteredWorld.entity.render;
 
-import com.smellysox345.TheShatteredWorld.entity.EntityArachnoShroom;
 import com.smellysox345.TheShatteredWorld.entity.EntityShadowSpider;
-import com.smellysox345.TheShatteredWorld.entity.model.ModelArachnoShroom;
 import com.smellysox345.TheShatteredWorld.entity.model.ModelShadowSpider;
 import com.smellysox345.TheShatteredWorld.util.Reference;
 
@@ -15,7 +13,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderShadowSpider extends RenderLiving<EntityShadowSpider>{
 
-public static final ResourceLocation TEXTURES = new ResourceLocation(Reference.MOD_ID + ":textures/entity/shadowspider.png");
+public static final ResourceLocation TEXTURES = new ResourceLocation(Reference.MODID + ":textures/entity/shadowspider.png");
 	
 	
 	public RenderShadowSpider(RenderManager manager) {

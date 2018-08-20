@@ -1,8 +1,6 @@
 package com.smellysox345.TheShatteredWorld.entity.render;
 
-import com.smellysox345.TheShatteredWorld.entity.EntityArachnoShroom;
 import com.smellysox345.TheShatteredWorld.entity.EntityWatcherBlock;
-import com.smellysox345.TheShatteredWorld.entity.model.ModelArachnoShroom;
 import com.smellysox345.TheShatteredWorld.entity.model.ModelWatcher;
 import com.smellysox345.TheShatteredWorld.util.Reference;
 
@@ -15,7 +13,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderWatcherBlock extends RenderLiving<EntityWatcherBlock>{
 
-public static final ResourceLocation TEXTURES = new ResourceLocation(Reference.MOD_ID + ":textures/entity/watcher_creature_block.png");
+public static final ResourceLocation TEXTURES = new ResourceLocation(Reference.MODID + ":textures/entity/watcher_creature_block.png");
 	
 	
 	public RenderWatcherBlock(RenderManager manager) {

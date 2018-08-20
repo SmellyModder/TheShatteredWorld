@@ -1,17 +1,12 @@
 package com.smellysox345.TheShatteredWorld.entity.render;
 
 import com.smellysox345.TheShatteredWorld.entity.EntityShroomCreeper;
-import com.smellysox345.TheShatteredWorld.entity.EntityShroomite;
 import com.smellysox345.TheShatteredWorld.entity.model.ModelShroomCreeper;
-import com.smellysox345.TheShatteredWorld.entity.model.ModelShroomite;
 import com.smellysox345.TheShatteredWorld.util.Reference;
 
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraft.client.renderer.entity.layers.LayerCreeperCharge;
-import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraftforge.fml.relauncher.Side;
@@ -20,7 +15,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderShroomCreeper extends RenderLiving<EntityShroomCreeper>{
 
-public static final ResourceLocation TEXTURES = new ResourceLocation(Reference.MOD_ID + ":textures/entity/shroomcreeper.png");
+public static final ResourceLocation TEXTURES = new ResourceLocation(Reference.MODID + ":textures/entity/shroomcreeper.png");
 	
 	
 	public RenderShroomCreeper(RenderManager manager) {

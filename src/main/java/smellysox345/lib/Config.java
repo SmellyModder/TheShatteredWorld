@@ -9,7 +9,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class Config {
-	private static final String LANG_PREFIX = Reference.MOD_ID + ".config.";
+	private static final String LANG_PREFIX = Reference.MODID + ".config.";
 
 	private static Configuration config;
 	
@@ -34,7 +34,7 @@ public class Config {
 
 	@SubscribeEvent
 	public static void onConfigChanged(ConfigChangedEvent.OnConfigChangedEvent event) {
-		if (event.getModID().equals(Reference.MOD_ID)) {
+		if (event.getModID().equals(Reference.MODID)) {
 			reloadConfig();
 		}
 	}

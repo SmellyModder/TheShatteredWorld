@@ -1,8 +1,6 @@
 package com.smellysox345.TheShatteredWorld.entity.render;
 
-import com.smellysox345.TheShatteredWorld.entity.EntitySlimeWolf;
 import com.smellysox345.TheShatteredWorld.entity.EntitySlimeWolfBaby;
-import com.smellysox345.TheShatteredWorld.entity.model.ModelSlimeWolf;
 import com.smellysox345.TheShatteredWorld.entity.model.ModelSlimeWolfBaby;
 import com.smellysox345.TheShatteredWorld.util.Reference;
 
@@ -15,7 +13,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderSlimeWolfBaby extends RenderLiving<EntitySlimeWolfBaby>{
 	
-public static final ResourceLocation TEXTURES = new ResourceLocation(Reference.MOD_ID + ":textures/entity/slimewolfbaby.png");
+public static final ResourceLocation TEXTURES = new ResourceLocation(Reference.MODID + ":textures/entity/slimewolfbaby.png");
 	
 	
 	public RenderSlimeWolfBaby(RenderManager manager) {

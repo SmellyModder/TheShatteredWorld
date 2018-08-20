@@ -30,7 +30,7 @@ public class ShroomPatchR extends WorldGenerator {
                 WorldServer worldserver = (WorldServer) world;
                 MinecraftServer minecraftserver = world.getMinecraftServer();
                 TemplateManager templatemanager = worldserver.getStructureTemplateManager();
-                ResourceLocation loc = new ResourceLocation(Reference.MOD_ID, "shroompatch_r");
+                ResourceLocation loc = new ResourceLocation(Reference.MODID, "shroompatch_r");
                 Template template = templatemanager.get(minecraftserver, loc);
 
                 if (template != null) {

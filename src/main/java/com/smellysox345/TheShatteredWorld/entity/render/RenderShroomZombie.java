@@ -1,9 +1,7 @@
 package com.smellysox345.TheShatteredWorld.entity.render;
 
 import com.smellysox345.TheShatteredWorld.entity.EntityShroomZombie;
-import com.smellysox345.TheShatteredWorld.entity.EntitySlimeWolf;
 import com.smellysox345.TheShatteredWorld.entity.model.ModelShroomZombie;
-import com.smellysox345.TheShatteredWorld.entity.model.ModelSlimeWolf;
 import com.smellysox345.TheShatteredWorld.util.Reference;
 
 import net.minecraft.client.renderer.entity.RenderLiving;
@@ -15,7 +13,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderShroomZombie extends RenderLiving<EntityShroomZombie>{
 
-public static final ResourceLocation TEXTURES = new ResourceLocation(Reference.MOD_ID + ":textures/entity/shroomzombie.png");
+public static final ResourceLocation TEXTURES = new ResourceLocation(Reference.MODID + ":textures/entity/shroomzombie.png");
 	
 	
 	public RenderShroomZombie(RenderManager manager) {

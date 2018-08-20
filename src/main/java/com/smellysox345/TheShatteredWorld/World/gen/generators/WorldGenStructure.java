@@ -35,7 +35,7 @@ public static String structureName;
 	{
 		MinecraftServer mcServer = world.getMinecraftServer();
 		TemplateManager manager = worldServer.getStructureTemplateManager();
-		ResourceLocation location = new ResourceLocation(Reference.MOD_ID, structureName);
+		ResourceLocation location = new ResourceLocation(Reference.MODID, structureName);
 		Template template = manager.get(mcServer, location);
 		
 		if(template != null)

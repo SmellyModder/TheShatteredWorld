@@ -7,5 +7,5 @@ import net.minecraft.world.storage.loot.LootTableList;
 
 public class LootTableHandler {
 
-	public static final ResourceLocation ARACHNO_SHROOM = LootTableList.register(new ResourceLocation(Reference.MOD_ID, "arachno_shroom"));
+	public static final ResourceLocation ARACHNO_SHROOM = LootTableList.register(new ResourceLocation(Reference.MODID, "arachno_shroom"));
 }

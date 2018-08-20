@@ -10,7 +10,7 @@ import smellysox345.lib.Config;
 
 public class DimensionInit {
 
-	public static final DimensionType SW = DimensionType.register(Reference.MOD_ID, "_sw", Config.ShatteredWorldDimId, DimensionSW.class, false);
+	public static final DimensionType SW = DimensionType.register(Reference.MODID, "_sw", Config.ShatteredWorldDimId, DimensionSW.class, false);
 	
 	public static void registerDimensions() {
 		

@@ -12,13 +12,13 @@ public class Shroom_Bounce extends Potion{
 		super(true, 3801212);
 		setPotionName("effect.deformation");
 		setIconIndex(1, 0);
-		setRegistryName(new ResourceLocation(Reference.MOD_ID + ":" + "shroom_bounce"));
+		setRegistryName(new ResourceLocation(Reference.MODID + ":" + "shroom_bounce"));
 		
 	}
 	
 	@Override
 	public boolean hasStatusIcon() {
-		Minecraft.getMinecraft().renderEngine.bindTexture(new ResourceLocation(Reference.MOD_ID, "textures/gui/container/potion_effect.png"));
+		Minecraft.getMinecraft().renderEngine.bindTexture(new ResourceLocation(Reference.MODID, "textures/gui/container/potion_effect.png"));
 		return true;
 	} 
 

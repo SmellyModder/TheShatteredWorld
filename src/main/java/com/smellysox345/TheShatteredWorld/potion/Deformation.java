@@ -1,7 +1,5 @@
 package com.smellysox345.TheShatteredWorld.potion;
 
-import java.util.Random;
-
 import com.smellysox345.TheShatteredWorld.util.Reference;
 
 import net.minecraft.client.Minecraft;
@@ -15,13 +13,13 @@ public class Deformation extends Potion{
 		super(true, 14155775);
 		setPotionName("effect.deformation");
 		setIconIndex(0, 0);
-		setRegistryName(new ResourceLocation(Reference.MOD_ID + ":" + "deformation"));
+		setRegistryName(new ResourceLocation(Reference.MODID + ":" + "deformation"));
 		
 	}
 	
 	@Override
 	public boolean hasStatusIcon() {
-		Minecraft.getMinecraft().renderEngine.bindTexture(new ResourceLocation(Reference.MOD_ID, "textures/gui/container/potion_effect.png"));
+		Minecraft.getMinecraft().renderEngine.bindTexture(new ResourceLocation(Reference.MODID, "textures/gui/container/potion_effect.png"));
 		return true;
 	} 
 

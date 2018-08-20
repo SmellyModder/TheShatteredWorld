@@ -3,6 +3,7 @@ package com.smellysox345.TheShatteredWorld;
 import com.smellysox345.TheShatteredWorld.World.gen.structures.WorldGenCustomStructures;
 import com.smellysox345.TheShatteredWorld.init.ModBlocks;
 import com.smellysox345.TheShatteredWorld.init.ModItems;
+import com.smellysox345.TheShatteredWorld.particle.TextureStitcher;
 import com.smellysox345.TheShatteredWorld.potion.Deformation;
 import com.smellysox345.TheShatteredWorld.potion.PotionTypeRegistry;
 import com.smellysox345.TheShatteredWorld.potion.Shroom_Bounce;
@@ -11,11 +12,9 @@ import com.smellysox345.TheShatteredWorld.quest.GuiHandlerRegistry;
 import com.smellysox345.TheShatteredWorld.util.Reference;
 import com.smellysox345.TheShatteredWorld.util.handlers.RegistryHandler;
 import com.smellysox345.TheShatteredWorld.util.handlers.WizardRightHandler;
-import com.smellysox345.TheShatteredWorld.util.handlers.WizardTrades;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -28,12 +27,11 @@ import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.fml.common.registry.VillagerRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import smellysox345.lib.Config;
 
-@Mod(modid = Reference.MOD_ID, name = Reference.NAME, version = Reference.VERSION)
+@Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION)
 public class Main {
 
     public static final Potion DEFORMATION_POTION = new Deformation();
@@ -98,6 +96,7 @@ public class Main {
     @EventHandler
     public static void preinitSide(FMLPreInitializationEvent event) {
         RegistryHandler.preInitRegistriesSide();
+        MinecraftForge.EVENT_BUS.register(new TextureStitcher());
     }
 
     @EventHandler

@@ -32,6 +32,8 @@ import com.smellysox345.TheShatteredWorld.entity.render.RenderSlimeWolf;
 import com.smellysox345.TheShatteredWorld.entity.render.RenderSlimeWolfBaby;
 import com.smellysox345.TheShatteredWorld.entity.render.RenderTurnedVillager;
 import com.smellysox345.TheShatteredWorld.entity.render.RenderWatcherBlock;
+import com.smellysox345.TheShatteredWorld.entity.util.EntityRootSpell;
+import com.smellysox345.TheShatteredWorld.entity.util.RenderRootSpell;
 import com.smellysox345.TheShatteredWorld.init.EntityInit;
 
 import net.minecraft.client.renderer.entity.Render;
@@ -230,6 +232,18 @@ public class RenderHandler {
 			public Render<? super EntityNagrot> createRenderFor(RenderManager manager){
 				
 				return new RenderNagrot(manager);
+				
+			}
+			
+		});
+		
+		RenderingRegistry.registerEntityRenderingHandler(EntityRootSpell.class, new IRenderFactory<EntityRootSpell>()
+		{
+			
+			@Override
+			public Render<? super EntityRootSpell> createRenderFor(RenderManager manager){
+				
+				return new RenderRootSpell(manager);
 				
 			}
 			

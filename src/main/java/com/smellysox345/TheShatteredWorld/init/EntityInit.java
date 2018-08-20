@@ -18,6 +18,7 @@ import com.smellysox345.TheShatteredWorld.entity.EntityWatcherBlock;
 import com.smellysox345.TheShatteredWorld.entity.NPCShroomWizard;
 import com.smellysox345.TheShatteredWorld.entity.projectiles.EntityWebProjectile;
 import com.smellysox345.TheShatteredWorld.entity.projectiles.EntityWebProjectileEgg;
+import com.smellysox345.TheShatteredWorld.entity.util.EntityRootSpell;
 import com.smellysox345.TheShatteredWorld.util.Reference;
 
 import net.minecraft.entity.Entity;
@@ -60,6 +61,7 @@ public class EntityInit {
 		
 		//Questers
 		registerEntity2("shroom_wizard", NPCShroomWizard.class , Reference.ENTITY_SHROOM_WIZ, 50);
+		registerEntity2("root_spell", EntityRootSpell.class, Reference.ENTITY_ROOT_SPELL, 50);
 	}
 	
 	private static void registerEntity2(String entityName, Class<? extends Entity> entityClass, int id, int range) {

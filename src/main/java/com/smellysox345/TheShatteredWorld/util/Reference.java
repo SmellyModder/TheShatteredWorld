@@ -28,18 +28,19 @@ public class Reference {
 	public static final int ENTITY_SHROOMCREEPER = 118;
 	
 	//BOSSES
-	public static final int ENTITY_ARACHNOSHROOMQUEEN = 11111;
+	public static final int ENTITY_ARACHNOSHROOMQUEEN = 119;
 	
 	//Projectiles
-	public static final int ENTITY_ARACHNOSHROOM_EGG = 119;
+	public static final int ENTITY_ARACHNOSHROOM_EGG = 120;
+	public static final int ENTITY_ROOT_SPELL = 121;
 	
 	//Dark Forest
-	public static final int ENTITY_TURNED_VILLAGER = 120;
-	public static final int ENTITY_FLYING_EYE = 122;
-	public static final int ENTITY_WATCHER = 123;
-	public static final int ENTITY_SHADOW_SPIDER = 124;
-	public static final int ENTITY_NAGROT = 125;
+	public static final int ENTITY_TURNED_VILLAGER = 122;
+	public static final int ENTITY_FLYING_EYE = 123;
+	public static final int ENTITY_WATCHER = 124;
+	public static final int ENTITY_SHADOW_SPIDER = 125;
+	public static final int ENTITY_NAGROT = 126;
 	
 	//Questing
-	public static final int ENTITY_SHROOM_WIZ = 121;
+	public static final int ENTITY_SHROOM_WIZ = 127;
 }

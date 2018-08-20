@@ -18,7 +18,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderRootSpell extends Render<EntityRootSpell>{
 
-public static final ResourceLocation TEXTURES = new ResourceLocation(Reference.MODID + ":textures/entity/rootspell.png");
+public static final ResourceLocation TEXTURES = new ResourceLocation(Reference.MODID + ":textures/entity/root_spell.png");
 private final ModelRootSpell model = new ModelRootSpell();
 	
 	public RenderRootSpell(RenderManager manager) {

@@ -21,17 +21,6 @@ public class EntitySlimeWolf extends EntityWolf {
     @Override
     public void onUpdate() {
         super.onUpdate();
-        //TODO Remove this and add to new Boss Mob
-        if (world.isRemote) {
-            double dx = this.posX;
-            double dy = this.posY + .5D;
-            double dz = this.posZ;
-            double speedMult = 12D;
-            float[] red = {rand.nextFloat(), rand.nextFloat(), rand.nextFloat()};
-            BubblingFireParticle fireEffect = new BubblingFireParticle(world, dx, dy, dz,
-                    -rand.nextDouble() / speedMult, rand.nextDouble() / speedMult, -rand.nextDouble() / speedMult, red);
-            Minecraft.getMinecraft().effectRenderer.addEffect(fireEffect);
-        }
     }
 
     @Override

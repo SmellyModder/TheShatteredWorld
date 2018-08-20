@@ -110,7 +110,7 @@ public class EntityRootSpell extends Entity{
                         double d3 = (this.rand.nextDouble() * 2.0D - 1.0D) * 0.3D;
                         double d4 = 0.3D + this.rand.nextDouble() * 0.3D;
                         double d5 = (this.rand.nextDouble() * 2.0D - 1.0D) * 0.3D;
-                        this.world.spawnParticle(EnumParticleTypes.CRIT, d0, d1 + 1.0D, d2, d3, d4, d5);
+                        this.world.spawnParticle(EnumParticleTypes.SLIME, d0, d1 + 1.0D, d2, d3, d4, d5);
                     }
                 }
             }
@@ -174,7 +174,7 @@ public class EntityRootSpell extends Entity{
 
             if (!this.isSilent())
             {
-                this.world.playSound(this.posX, this.posY, this.posZ, SoundEvents.EVOCATION_FANGS_ATTACK, this.getSoundCategory(), 1.0F, this.rand.nextFloat() * 0.1F + 0.85F, false);
+                this.world.playSound(this.posX, this.posY, this.posZ, SoundEvents.EVOCATION_FANGS_ATTACK, this.getSoundCategory(), 1.0F, this.rand.nextFloat() * 0.1F + 0.05F, false);
             }
         }
     }

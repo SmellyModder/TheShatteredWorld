@@ -3,6 +3,7 @@ package com.smellysox345.TheShatteredWorld.util.handlers;
 import com.smellysox345.TheShatteredWorld.entity.EntityArachnoShroom;
 import com.smellysox345.TheShatteredWorld.entity.EntityArachnoShroomQueen;
 import com.smellysox345.TheShatteredWorld.entity.EntityFlyingEye;
+import com.smellysox345.TheShatteredWorld.entity.EntityNagrot;
 import com.smellysox345.TheShatteredWorld.entity.EntityNightShroom;
 import com.smellysox345.TheShatteredWorld.entity.EntityShadowSpider;
 import com.smellysox345.TheShatteredWorld.entity.EntityShroomCreeper;
@@ -19,6 +20,7 @@ import com.smellysox345.TheShatteredWorld.entity.projectiles.render.RenderWebPro
 import com.smellysox345.TheShatteredWorld.entity.render.RenderArachnoShroom;
 import com.smellysox345.TheShatteredWorld.entity.render.RenderArachnoShroomQueen;
 import com.smellysox345.TheShatteredWorld.entity.render.RenderFlyingEye;
+import com.smellysox345.TheShatteredWorld.entity.render.RenderNagrot;
 import com.smellysox345.TheShatteredWorld.entity.render.RenderNightShroom;
 import com.smellysox345.TheShatteredWorld.entity.render.RenderShadowSpider;
 import com.smellysox345.TheShatteredWorld.entity.render.RenderShroomCreeper;
@@ -216,6 +218,18 @@ public class RenderHandler {
 			public Render<? super EntityShadowSpider> createRenderFor(RenderManager manager){
 				
 				return new RenderShadowSpider(manager);
+				
+			}
+			
+		});
+		
+		RenderingRegistry.registerEntityRenderingHandler(EntityNagrot.class, new IRenderFactory<EntityNagrot>()
+		{
+			
+			@Override
+			public Render<? super EntityNagrot> createRenderFor(RenderManager manager){
+				
+				return new RenderNagrot(manager);
 				
 			}
 			

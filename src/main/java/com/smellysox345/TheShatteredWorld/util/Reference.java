@@ -38,6 +38,7 @@ public class Reference {
 	public static final int ENTITY_FLYING_EYE = 122;
 	public static final int ENTITY_WATCHER = 123;
 	public static final int ENTITY_SHADOW_SPIDER = 124;
+	public static final int ENTITY_NAGROT = 125;
 	
 	//Questing
 	public static final int ENTITY_SHROOM_WIZ = 121;

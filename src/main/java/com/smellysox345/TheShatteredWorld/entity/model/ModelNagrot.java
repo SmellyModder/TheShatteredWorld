@@ -211,7 +211,7 @@ public class ModelNagrot extends ModelBase {
         {
             this.RIGHT_ARM_BASE.rotateAngleX = -2.0F + 1.5F * this.triangleWave((float)i - partialTickTime, 10.0F);
             this.LEFT_ARM_BASE.rotateAngleX = -2.0F + 1.5F * this.triangleWave((float)i - partialTickTime, 10.0F);
-            this.HEAD_TOP.rotateAngleX = -0.4517993877991494F;
+             this.HEAD_TOP.rotateAngleX = -0.4517993877991494F;
             this.HEAD_BOTTOM.rotateAngleX = 0.4617993877991494F;
         }
         else

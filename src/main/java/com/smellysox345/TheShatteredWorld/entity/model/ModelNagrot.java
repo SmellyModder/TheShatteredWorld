@@ -1,11 +1,13 @@
 package com.smellysox345.TheShatteredWorld.entity.model;
 
 import com.smellysox345.TheShatteredWorld.entity.EntityNagrot;
+import com.smellysox345.TheShatteredWorld.entity.util.AbstractNagrot;
 
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.monster.AbstractIllager;
 import net.minecraft.entity.monster.EntityIronGolem;
 import net.minecraft.util.math.MathHelper;
 
@@ -203,7 +205,8 @@ public class ModelNagrot extends ModelBase {
     {
     	EntityNagrot entitynagrot = (EntityNagrot)entitylivingbaseIn;
         int i = entitynagrot.getAttackTimer();
-
+        AbstractNagrot.IPose abstractillager$illagerarmpose = ((AbstractNagrot)entitylivingbaseIn).getArmPose();
+        
         if (i > 0)
         {
             this.RIGHT_ARM_BASE.rotateAngleX = -2.0F + 1.5F * this.triangleWave((float)i - partialTickTime, 10.0F);
@@ -220,6 +223,11 @@ public class ModelNagrot extends ModelBase {
             this.LEFT_LEG_BASE.rotateAngleY = 0.0F;
             this.RIGHT_ARM_BASE.rotateAngleY = 0.0F;
             this.HEAD_TOP.rotateAngleX = 0.2617993877991494F;
+            this.HEAD_BOTTOM.rotateAngleX = 0.2617993877991494F;
+        }
+        if (abstractillager$illagerarmpose == AbstractNagrot.IPose.SPELL)
+        {
+        	this.HEAD_TOP.rotateAngleX = 0.2617993877991494F;
             this.HEAD_BOTTOM.rotateAngleX = 0.2617993877991494F;
         }
     }

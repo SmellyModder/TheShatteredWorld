@@ -6,6 +6,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
 
 public class ModelRootSpell extends ModelBase {
+	
 	 private final ModelRenderer base = new ModelRenderer(this, 0, 0);
 	    private final ModelRenderer upperJaw;
 	    private final ModelRenderer lowerJaw;

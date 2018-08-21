@@ -5,12 +5,15 @@ import java.util.UUID;
 import javax.annotation.Nullable;
 
 import com.google.common.base.Predicate;
+import com.smellysox345.TheShatteredWorld.entity.util.EntityRootSpell;
+import com.smellysox345.TheShatteredWorld.entity.util.SpellCasterNagrot;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackMelee;
 import net.minecraft.entity.ai.EntityAIDefendVillage;
@@ -25,14 +28,25 @@ import net.minecraft.entity.ai.EntityAIWanderAvoidWater;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
+import net.minecraft.entity.monster.AbstractIllager;
 import net.minecraft.entity.monster.EntityCreeper;
+import net.minecraft.entity.monster.EntityEvoker;
 import net.minecraft.entity.monster.EntityMob;
+import net.minecraft.entity.monster.EntitySpellcasterIllager;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.entity.projectile.EntityEvokerFangs;
 import net.minecraft.init.SoundEvents;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.util.SoundEvent;
+import net.minecraft.util.datafix.DataFixer;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.BossInfo;
@@ -41,26 +55,29 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class EntityNagrot extends EntityMob{
+public class EntityNagrot extends SpellCasterNagrot{
 
-	private int attackTimer;
+	
 	
 	private static final UUID ATTACKING_SPEED_BOOST_ID = UUID.fromString("020E0DFB-87AE-4653-9556-831010E291A0");
 	private static final AttributeModifier ATTACKING_SPEED_BOOST = (new AttributeModifier(ATTACKING_SPEED_BOOST_ID, "Attacking speed boost", 0.07000000596046448D, 0)).setSaved(false);
 	private final BossInfoServer bossInfo = (BossInfoServer)(new BossInfoServer(this.getDisplayName(), BossInfo.Color.RED, BossInfo.Overlay.NOTCHED_10)).setDarkenSky(true);
+	private int attackTimer;
 	
 	public EntityNagrot(World worldIn) {
 		super(worldIn);
 		setSize(2.8F, 5.4F);
-		this.experienceValue = 467;
+		this.experienceValue = 1346;
 	}
 	
 	protected void initEntityAI()
     {
         this.tasks.addTask(1, new EntityAIAttackMelee(this, 1.0D, true));
+        this.tasks.addTask(6, new EntityNagrot.AIAttackSpell());
         this.tasks.addTask(2, new EntityAIMoveTowardsTarget(this, 0.9D, 32.0F));
         this.tasks.addTask(4, new EntityAIMoveTowardsRestriction(this, 1.0D));
         this.tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
+        this.targetTasks.addTask(2, (new EntityAINearestAttackableTarget(this, EntityPlayer.class, true)).setUnseenMemoryTicks(300));
         this.tasks.addTask(8, new EntityAILookIdle(this));
         this.targetTasks.addTask(2, new EntityAIHurtByTarget(this, false, new Class[0]));
         this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityLiving.class, 10, false, true, new Predicate<EntityLiving>()
@@ -70,6 +87,35 @@ public class EntityNagrot extends EntityMob{
                 return p_apply_1_ != null && IMob.VISIBLE_MOB_SELECTOR.apply(p_apply_1_) && !(p_apply_1_ instanceof EntityCreeper);
             }
         }));
+    }
+	protected void entityInit() 
+	{
+		 super.entityInit();
+	}
+	
+	public static void registerFixesEvoker(DataFixer fixer)
+    {
+        EntityLiving.registerFixesMob(fixer, EntityNagrot.class);
+    }
+	
+    public void readEntityFromNBT(NBTTagCompound compound)
+    {
+        super.readEntityFromNBT(compound);
+    }
+
+    public void writeEntityToNBT(NBTTagCompound compound)
+    {
+        super.writeEntityToNBT(compound);
+    }
+    
+    protected void updateAITasks()
+    {
+        super.updateAITasks();
+    }
+    
+    protected SoundEvent getSpellSound()
+    {
+        return SoundEvents.BLOCK_CHORUS_FLOWER_GROW;
     }
 	
 	@Override
@@ -163,4 +209,123 @@ public class EntityNagrot extends EntityMob{
     {
         return this.attackTimer;
     }
+	
+	class AIAttackSpell extends SpellCasterNagrot.AIUseSpell
+    {
+        private AIAttackSpell()
+        {
+            super();
+        }
+
+        protected int getCastingTime()
+        {
+            return 40;
+        }
+
+        protected int getCastingInterval()
+        {
+            return 100;
+        }
+
+        protected void castSpell()
+        {
+            EntityLivingBase entitylivingbase = EntityNagrot.this.getAttackTarget();
+            double d0 = Math.min(entitylivingbase.posY, EntityNagrot.this.posY);
+            double d1 = Math.max(entitylivingbase.posY, EntityNagrot.this.posY) + 1.0D;
+            float f = (float)MathHelper.atan2(entitylivingbase.posZ - EntityNagrot.this.posZ, entitylivingbase.posX - EntityNagrot.this.posX);
+
+            if (EntityNagrot.this.getDistanceSq(entitylivingbase) < 9.0D)
+            {
+                for (int i = 0; i < 5; ++i)
+                {
+                    float f1 = f + (float)i * (float)Math.PI * 0.4F;
+                    this.spawnFangs(EntityNagrot.this.posX + (double)MathHelper.cos(f1) * 1.5D, EntityNagrot.this.posZ + (double)MathHelper.sin(f1) * 1.5D, d0, d1, f1, 0);
+                }
+
+                for (int k = 0; k < 8; ++k)
+                {
+                    float f2 = f + (float)k * (float)Math.PI * 2.0F / 8.0F + ((float)Math.PI * 2F / 5F);
+                    this.spawnFangs(EntityNagrot.this.posX + (double)MathHelper.cos(f2) * 2.5D, EntityNagrot.this.posZ + (double)MathHelper.sin(f2) * 2.5D, d0, d1, f2, 3);
+                }
+            }
+            else
+            {
+                for (int l = 0; l < 16; ++l)
+                {
+                    double d2 = 1.25D * (double)(l + 1);
+                    int j = 1 * l;
+                    this.spawnFangs(EntityNagrot.this.posX + (double)MathHelper.cos(f) * d2, EntityNagrot.this.posZ + (double)MathHelper.sin(f) * d2, d0, d1, f, j);
+                }
+            }
+        }
+
+        private void spawnFangs(double p_190876_1_, double p_190876_3_, double p_190876_5_, double p_190876_7_, float p_190876_9_, int p_190876_10_)
+        {
+            BlockPos blockpos = new BlockPos(p_190876_1_, p_190876_7_, p_190876_3_);
+            boolean flag = false;
+            double d0 = 0.0D;
+
+            while (true)
+            {
+                if (!EntityNagrot.this.world.isBlockNormalCube(blockpos, true) && EntityNagrot.this.world.isBlockNormalCube(blockpos.down(), true))
+                {
+                    if (!EntityNagrot.this.world.isAirBlock(blockpos))
+                    {
+                        IBlockState iblockstate = EntityNagrot.this.world.getBlockState(blockpos);
+                        AxisAlignedBB axisalignedbb = iblockstate.getCollisionBoundingBox(EntityNagrot.this.world, blockpos);
+
+                        if (axisalignedbb != null)
+                        {
+                            d0 = axisalignedbb.maxY;
+                        }
+                    }
+
+                    flag = true;
+                    break;
+                }
+
+                blockpos = blockpos.down();
+
+                if (blockpos.getY() < MathHelper.floor(p_190876_5_) - 1)
+                {
+                    break;
+                }
+            }
+
+            if (flag)
+            {
+                EntityRootSpell entityevokerfangs = new EntityRootSpell(EntityNagrot.this.world, p_190876_1_, (double)blockpos.getY() + d0, p_190876_3_, p_190876_9_, p_190876_10_, EntityNagrot.this);
+                EntityNagrot.this.world.spawnEntity(entityevokerfangs);
+            }
+        }
+
+        protected SoundEvent getSpellPrepareSound()
+        {
+            return SoundEvents.EVOCATION_ILLAGER_PREPARE_ATTACK;
+        }
+
+        protected SpellCasterNagrot.SpellType getSpellType()
+        {
+            return SpellCasterNagrot.SpellType.ROOTS;
+        }
+    }
+	
+	 class AICastingSpell extends SpellCasterNagrot.AICastingApell
+	 {
+	        private AICastingSpell()
+	        {
+	            super();
+	        }
+
+	        /**
+	         * Keep ticking a continuous task that has already been started
+	         */
+	        public void updateTask()
+	        {
+	            if (EntityNagrot.this.getAttackTarget() != null)
+	            {
+	            	EntityNagrot.this.getLookHelper().setLookPositionWithEntity(EntityNagrot.this.getAttackTarget(), (float)EntityNagrot.this.getHorizontalFaceSpeed(), (float)EntityNagrot.this.getVerticalFaceSpeed());
+	            }
+	        }
+	 }
 }

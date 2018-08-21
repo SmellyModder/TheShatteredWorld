@@ -205,7 +205,7 @@ public class ModelNagrot extends ModelBase {
     {
     	EntityNagrot entitynagrot = (EntityNagrot)entitylivingbaseIn;
         int i = entitynagrot.getAttackTimer();
-        AbstractNagrot.IPose abstractillager$illagerarmpose = ((AbstractNagrot)entitylivingbaseIn).getArmPose();
+        
         
         if (i > 0)
         {
@@ -225,11 +225,21 @@ public class ModelNagrot extends ModelBase {
             this.HEAD_TOP.rotateAngleX = 0.2617993877991494F;
             this.HEAD_BOTTOM.rotateAngleX = 0.2617993877991494F;
         }
-        if (abstractillager$illagerarmpose == AbstractNagrot.IPose.SPELL)
+        
+    }
+    
+    public void setRotationAngles(EntityLivingBase entitylivingbaseIn) {
+    	
+    	AbstractNagrot.IPose abstractillager$illagerarmpose = ((AbstractNagrot)entitylivingbaseIn).getArmPose();
+    	if (abstractillager$illagerarmpose == AbstractNagrot.IPose.SPELL)
         {
-        	this.HEAD_TOP.rotateAngleX = 0.2617993877991494F;
-            this.HEAD_BOTTOM.rotateAngleX = 0.2617993877991494F;
+    		this.HEAD_TOP.rotateAngleX = -0.4517993877991494F;
+            this.HEAD_BOTTOM.rotateAngleX = 0.4617993877991494F;
         }
+    	else if(abstractillager$illagerarmpose == AbstractNagrot.IPose.DEFAULT) {
+    		this.HEAD_TOP.rotateAngleX = 0.2617993877991494F;
+            this.HEAD_BOTTOM.rotateAngleX =  0.2617993877991494F;
+    	}
     }
     
     private float triangleWave(float p_78172_1_, float p_78172_2_)

@@ -99,7 +99,7 @@ public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer play
 
 /**
  * Return whether this item is repairable in an anvil.
- *  
+ *
  * @param toRepair the {@code ItemStack} being repaired
  * @param repair the {@code ItemStack} being used to perform the repair
  */

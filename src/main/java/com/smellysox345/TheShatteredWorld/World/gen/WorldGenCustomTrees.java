@@ -24,6 +24,7 @@ public class WorldGenCustomTrees implements IWorldGenerator{
 	private final WorldGenerator OAK_REFRACTED = new WorldGenOakRefracted();
 	private final WorldGenerator BIRCH_REFRACTED = new WorldGenBirchRefracted();
 	
+	
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) 
 	{

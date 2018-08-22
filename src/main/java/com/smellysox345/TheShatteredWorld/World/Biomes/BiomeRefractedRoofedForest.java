@@ -2,6 +2,7 @@ package com.smellysox345.TheShatteredWorld.World.Biomes;
 
 import java.util.Random;
 
+import com.smellysox345.TheShatteredWorld.World.gen.generators.tree.WorldGenCanopyRefracted;
 import com.smellysox345.TheShatteredWorld.World.gen.generators.tree.WorldGenEyeTreeDefault;
 import com.smellysox345.TheShatteredWorld.World.gen.generators.tree.WorldGenOakRefracted;
 import com.smellysox345.TheShatteredWorld.entity.EntitySlimeWolf;
@@ -18,10 +19,12 @@ import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
 public class BiomeRefractedRoofedForest extends Biome{
 
+	protected static final WorldGenAbstractTree TREE =  new WorldGenCanopyRefracted();
+	
 	public BiomeRefractedRoofedForest() {
 		super(new BiomeProperties("Refracted Roofed Forest").setTemperature(0.8F).setRainfall(0.8F).setBaseHeight(0.2F).setWaterColor(8983040));
 		
-		this.decorator.treesPerChunk = -999;
+		this.decorator.treesPerChunk = 33;
 		this.spawnableCaveCreatureList.clear();
 		this.spawnableCreatureList.clear();
 		this.spawnableMonsterList.clear();
@@ -29,5 +32,11 @@ public class BiomeRefractedRoofedForest extends Biome{
 		
 		this.topBlock = Blocks.GRASS.getDefaultState();
         this.fillerBlock = Blocks.DIRT.getDefaultState();
+	}
+	
+	@Override
+	public WorldGenAbstractTree getRandomTreeFeature(Random rand) {
+		
+		return TREE;
 	}
 }

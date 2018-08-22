@@ -24,6 +24,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class WorldGenSpookyTrees implements IWorldGenerator{
 
 	private final WorldGenerator EYE_TREE_NORMAL = new WorldGenEyeTreeDefault();
+	private final WorldGenerator CANOPY = new WorldGenCanopyRefracted();
 	
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) 

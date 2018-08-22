@@ -10,7 +10,7 @@ public class BlockSpookyWood extends BlockBase{
 	public BlockSpookyWood(String name, Material material) {
 		super(name, material);
 		setHardness(1.0F);
-		setResistance(1.0F);
+		setResistance(1.9F);
 		setHarvestLevel("axe", 2);
 		setSoundType(SoundType.WOOD);
 	}

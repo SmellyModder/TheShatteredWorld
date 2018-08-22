@@ -8,10 +8,6 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.passive.EntityBat;
 import net.minecraft.util.math.MathHelper;
 
-/**
- * ModelBat - Either Mojang or a mod author
- * Created using Tabula 7.0.0
- */
 public class ModelFlyingEye extends ModelBase {
     public ModelRenderer EYE;
     public ModelRenderer BODY;

@@ -4,6 +4,7 @@ import com.smellysox345.TheShatteredWorld.blocks.CrystalBlock;
 import com.smellysox345.TheShatteredWorld.blocks.RefractedCactus;
 import com.smellysox345.TheShatteredWorld.blocks.RefractedSandBlock;
 import com.smellysox345.TheShatteredWorld.blocks.RefractedStone;
+import com.smellysox345.TheShatteredWorld.blocks.magic.BlockLantern;
 import com.smellysox345.TheShatteredWorld.blocks.magic.BlockSpookyWood;
 import com.smellysox345.TheShatteredWorld.blocks.magic.BlockSummonerWood;
 import com.smellysox345.TheShatteredWorld.blocks.magic.BlockTeleporter;
@@ -71,5 +72,5 @@ public class ModBlocks {
     public static final Block SHROOM_SHIELD = new ForceFieldShroom("force_field_s", Material.ICE);
 
     //Containers
-
+    public static final Block MAGIC_LANTERN = new BlockLantern("lantern", Material.FIRE);
 }

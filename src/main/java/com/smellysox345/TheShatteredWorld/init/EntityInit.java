@@ -4,6 +4,7 @@ import com.smellysox345.TheShatteredWorld.Main;
 import com.smellysox345.TheShatteredWorld.entity.EntityArachnoShroom;
 import com.smellysox345.TheShatteredWorld.entity.EntityArachnoShroomQueen;
 import com.smellysox345.TheShatteredWorld.entity.EntityFlyingEye;
+import com.smellysox345.TheShatteredWorld.entity.EntityNagrot;
 import com.smellysox345.TheShatteredWorld.entity.EntityNightShroom;
 import com.smellysox345.TheShatteredWorld.entity.EntityShadowSpider;
 import com.smellysox345.TheShatteredWorld.entity.EntityShroomCreeper;
@@ -17,6 +18,7 @@ import com.smellysox345.TheShatteredWorld.entity.EntityWatcherBlock;
 import com.smellysox345.TheShatteredWorld.entity.NPCShroomWizard;
 import com.smellysox345.TheShatteredWorld.entity.projectiles.EntityWebProjectile;
 import com.smellysox345.TheShatteredWorld.entity.projectiles.EntityWebProjectileEgg;
+import com.smellysox345.TheShatteredWorld.entity.util.EntityRootSpell;
 import com.smellysox345.TheShatteredWorld.util.Reference;
 
 import net.minecraft.entity.Entity;
@@ -48,6 +50,7 @@ public class EntityInit {
 		registerEntity("flying_eye", EntityFlyingEye.class, Reference.ENTITY_FLYING_EYE, 50, 1638400, 12845114);
 		registerEntity("watcher_block_entity", EntityWatcherBlock.class, Reference.ENTITY_WATCHER, 50, 1638400, 15118080);
 		registerEntity("shadow_spider", EntityShadowSpider.class, Reference.ENTITY_SHADOW_SPIDER, 50, 1638400, 16711721);
+		registerEntity("nagrot", EntityNagrot.class, Reference.ENTITY_NAGROT, 50, 1638400, 4392192);
 	}
 	
 	//Registers stuff that has no egg
@@ -58,6 +61,7 @@ public class EntityInit {
 		
 		//Questers
 		registerEntity2("shroom_wizard", NPCShroomWizard.class , Reference.ENTITY_SHROOM_WIZ, 50);
+		registerEntity2("root_spell", EntityRootSpell.class, Reference.ENTITY_ROOT_SPELL, 50);
 	}
 	
 	private static void registerEntity2(String entityName, Class<? extends Entity> entityClass, int id, int range) {

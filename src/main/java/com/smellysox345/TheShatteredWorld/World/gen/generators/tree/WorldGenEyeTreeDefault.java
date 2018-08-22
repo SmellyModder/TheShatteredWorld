@@ -33,7 +33,7 @@ public class WorldGenEyeTreeDefault extends WorldGenAbstractTree{
 		int radius = rand.nextInt(2) + 3;
 		int height = rand.nextInt(radius) + 12;
 		int maxRadius = 9;
-
+		
 		for (int xx = x - maxRadius; xx <= x + maxRadius; xx++)
 			for (int zz = z - maxRadius; zz <= z + maxRadius; zz++)
 				for (int yy = y + 2; yy < y + height; yy++)

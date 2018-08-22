@@ -34,7 +34,7 @@ public class BlockRefractedDarkOakLeaves extends BlockLeaves implements IHasMode
 		setRegistryName(name);
 		setSoundType(SoundType.PLANT);
 		setCreativeTab(Main.refractedblocks);
-		this.setLightOpacity(0);
+		setLightOpacity(120);
 		Blocks.FIRE.setFireInfo(this, 30, 60);
 		
 		ModBlocks.BLOCKS.add(this);
@@ -83,7 +83,7 @@ public class BlockRefractedDarkOakLeaves extends BlockLeaves implements IHasMode
 	@Override
 	public BlockRenderLayer getBlockLayer() 
 	{
-		return BlockRenderLayer.CUTOUT;
+		return BlockRenderLayer.CUTOUT_MIPPED;
 	}
 	
 	@SideOnly(Side.CLIENT)
@@ -92,7 +92,7 @@ public class BlockRefractedDarkOakLeaves extends BlockLeaves implements IHasMode
         IBlockState iblockstate = blockAccess.getBlockState(pos.offset(side));
         Block block = iblockstate.getBlock();
 
-        if (this == ModBlocks.EYE_LEAVES_DEFAULT)
+        if (this == ModBlocks.R_DARK_LEAVES)
         {
             if (blockState != iblockstate)
             {

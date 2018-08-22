@@ -12,6 +12,7 @@ import com.smellysox345.TheShatteredWorld.blocks.magic.ForceFieldShroom;
 import com.smellysox345.TheShatteredWorld.blocks.mobutil.BlockSpiderSack;
 import com.smellysox345.TheShatteredWorld.blocks.mobutil.SpiderQueenEgg;
 import com.smellysox345.TheShatteredWorld.blocks.plants.*;
+import com.smellysox345.TheShatteredWorld.blocks.plants.tree.BlockRefractedDarkOakLeaves;
 import com.smellysox345.TheShatteredWorld.blocks.plants.tree.BlockSpookyLog;
 import com.smellysox345.TheShatteredWorld.blocks.variant.*;
 import net.minecraft.block.Block;
@@ -42,6 +43,7 @@ public class ModBlocks {
     public static final Block WATCHER_PLANKS = new BlockSummonerWood("watcher_planks", Material.WOOD);
     public static final Block LEAVES = new BlockLeaf("leaves");
     public static final Block EYE_LEAVES_DEFAULT = new EyeTreeLeavesDefault("eye_tree_leaves_default", Material.LEAVES);
+    public static final Block R_DARK_LEAVES = new BlockRefractedDarkOakLeaves("bigoakr_leaves", Material.LEAVES);
     public static final Block SAPLING = new BlockSaplings("saplings");
     public static final Block SAPLING_EYE_DEFAULT = new EyeTreeSaplingDefault("eye_sapling_default", Material.PLANTS);
 

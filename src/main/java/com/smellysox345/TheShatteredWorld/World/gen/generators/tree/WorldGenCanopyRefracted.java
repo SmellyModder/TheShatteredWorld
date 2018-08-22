@@ -18,7 +18,7 @@ import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 public class WorldGenCanopyRefracted extends WorldGenAbstractTree{
 
 	private static final IBlockState DARK_OAK_LOG = ModBlocks.BIG_OAK.getDefaultState();
-    private static final IBlockState DARK_OAK_LEAVES = Blocks.LEAVES2.getDefaultState().withProperty(BlockNewLeaf.VARIANT, BlockPlanks.EnumType.DARK_OAK).withProperty(BlockLeaves.DECAYABLE, Boolean.valueOf(false));
+    private static final IBlockState DARK_OAK_LEAVES = ModBlocks.R_DARK_LEAVES.getDefaultState().withProperty(BlockLeaves.DECAYABLE, Boolean.valueOf(false));
 
     public WorldGenCanopyRefracted()
     {
@@ -92,6 +92,7 @@ public class WorldGenCanopyRefracted extends WorldGenAbstractTree{
                         this.placeLeafAt(worldIn, 1 + k1 - i3, i2 + k4, l1 + l3);
                         this.placeLeafAt(worldIn, k1 + i3, i2 + k4, 1 + l1 - l3);
                         this.placeLeafAt(worldIn, 1 + k1 - i3, i2 + k4, 1 + l1 - l3);
+                        this.placeBranchAt(worldIn, k1 + i3, i2 + k4, l1 + l3);
 
                         if ((i3 > -2 || l3 > -1) && (i3 != -1 || l3 != -2))
                         {
@@ -101,6 +102,7 @@ public class WorldGenCanopyRefracted extends WorldGenAbstractTree{
                             this.placeLeafAt(worldIn, k1 + i3, i2 + k4, 1 + l1 - l3);
                             this.placeLeafAt(worldIn, 1 + k1 - i3, i2 + k4, 1 + l1 - l3);
                             this.placeLeafAt(worldIn, 3 + k1 - i3, i2 - k4, 1 + l1 - l3);
+                            this.placeBranchAt(worldIn, 2 + k1 - i3, i2 - k4, 2 + l1 - l3);
                         }
                     }
                 }
@@ -219,6 +221,18 @@ public class WorldGenCanopyRefracted extends WorldGenAbstractTree{
 
         if (state.getBlock().isAir(state, worldIn, blockpos))
         {
+            this.setBlockAndNotifyAdequately(worldIn, blockpos, DARK_OAK_LEAVES);
+        }
+    }
+    
+    private void placeBranchAt(World worldIn, int x, int y, int z) {
+    	
+    	 BlockPos blockpos = new BlockPos(x, y + 1, z);
+         IBlockState state = worldIn.getBlockState(blockpos);
+    	
+    	if (this.canGrowInto(worldIn.getBlockState(blockpos).getBlock()))
+        {
+            this.setBlockAndNotifyAdequately(worldIn, blockpos, DARK_OAK_LEAVES);
             this.setBlockAndNotifyAdequately(worldIn, blockpos, DARK_OAK_LEAVES);
         }
     }

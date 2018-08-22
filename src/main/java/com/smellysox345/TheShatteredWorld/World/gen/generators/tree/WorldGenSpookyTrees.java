@@ -8,6 +8,7 @@ import com.smellysox345.TheShatteredWorld.World.Biomes.BiomeRForest;
 import com.smellysox345.TheShatteredWorld.World.gen.WorldGenCustomTrees;
 import com.smellysox345.TheShatteredWorld.World.gen.generators.shroomGens.ShroomPatchN;
 import com.smellysox345.TheShatteredWorld.init.BiomeInit;
+import com.smellysox345.TheShatteredWorld.init.ModBlocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
@@ -72,7 +73,7 @@ public class WorldGenSpookyTrees implements IWorldGenerator{
 	private void generateSurfaceForSpookyEyeTree(World world, Random rand, int chunkX, int chunkZ, int chunkY) {
 
         WorldGenerator genNShroomType = new WorldGenEyeTreeDefault();
-        final int Chance = 15;
+        final int Chance = 18;
         
         
         if (rand.nextInt(Chance) <= 1) {
@@ -81,7 +82,7 @@ public class WorldGenSpookyTrees implements IWorldGenerator{
             int randX = chunkX + rand.nextInt(16);
             int randZ = chunkZ + rand.nextInt(16);
             int groundY = getGroundFromAbove(world, randX, randZ);
-            genNShroomType.generate(world, rand, new BlockPos(randX, groundY + 1, randZ));
+            genNShroomType.generate(world, rand, new BlockPos(randX, groundY, randZ));
         }
         }
     }
@@ -93,7 +94,7 @@ public class WorldGenSpookyTrees implements IWorldGenerator{
         while (!foundGround && y-- >= 0) {
             Block blockAt = world.getBlockState(new BlockPos(x, y, z)).getBlock();
 
-            foundGround = blockAt != Blocks.AIR && blockAt != Blocks.WATER && blockAt != Blocks.FLOWING_WATER;
+            foundGround = blockAt != Blocks.AIR && blockAt != Blocks.WATER && blockAt != Blocks.FLOWING_WATER && blockAt != ModBlocks.R_DARK_LEAVES && blockAt != ModBlocks.BIG_OAK;
             
         }
         return y;

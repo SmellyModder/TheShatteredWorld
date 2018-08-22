@@ -1,4 +1,4 @@
-package com.smellysox345.TheShatteredWorld.blocks.plants;
+package com.smellysox345.TheShatteredWorld.blocks.plants.tree;
 
 import com.smellysox345.TheShatteredWorld.Main;
 import com.smellysox345.TheShatteredWorld.entity.EntityWatcherBlock;

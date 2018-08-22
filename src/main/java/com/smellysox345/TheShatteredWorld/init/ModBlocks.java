@@ -12,6 +12,7 @@ import com.smellysox345.TheShatteredWorld.blocks.magic.ForceFieldShroom;
 import com.smellysox345.TheShatteredWorld.blocks.mobutil.BlockSpiderSack;
 import com.smellysox345.TheShatteredWorld.blocks.mobutil.SpiderQueenEgg;
 import com.smellysox345.TheShatteredWorld.blocks.plants.*;
+import com.smellysox345.TheShatteredWorld.blocks.plants.tree.BlockSpookyLog;
 import com.smellysox345.TheShatteredWorld.blocks.variant.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;

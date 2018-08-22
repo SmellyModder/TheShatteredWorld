@@ -11,6 +11,7 @@ import com.smellysox345.TheShatteredWorld.items.food.ItemCustomFood;
 import com.smellysox345.TheShatteredWorld.items.food.ItemCustomFoodNausea;
 import com.smellysox345.TheShatteredWorld.items.food.ItemRefractiSoup;
 import com.smellysox345.TheShatteredWorld.items.food.ItemShroomSoup;
+import com.smellysox345.TheShatteredWorld.items.shield.ItemNagrotShield;
 import com.smellysox345.TheShatteredWorld.items.shield.ItemShieldCrystal;
 import com.smellysox345.TheShatteredWorld.items.tools.ToolAxe;
 import com.smellysox345.TheShatteredWorld.items.tools.ToolPickaxe;
@@ -76,6 +77,7 @@ public class ModItems {
 	public static final Item REFRACTI_BOOTS = new ArmorBase("refracti_boots", ARMOR_MATERIAL_REFRACTI, 2, EntityEquipmentSlot.FEET);
 	
 	public static final Item CRYSTAL_SHIELD = new ItemShieldCrystal("crystal_shield");
+	public static final Item NAGROT_SHIELD = new ItemNagrotShield("nagrot_shield");
 	
 	public static final Item DARKNUT_HELMET = new ArmorBase("templar_helmet", ARMOR_MATERIAL_DARKNUT, 1, EntityEquipmentSlot.HEAD);
 	public static final Item DARKNUT_BODY = new ArmorBase("templar_chestplate", ARMOR_MATERIAL_DARKNUT, 1, EntityEquipmentSlot.CHEST);

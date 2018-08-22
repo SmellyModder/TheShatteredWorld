@@ -29,9 +29,9 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ItemShieldNagrot extends ItemBase{
+public class ItemNagrotShield extends ItemBase{
 
-	public ItemShieldNagrot(String name) {
+	public ItemNagrotShield(String name) {
 		super(name);
 		this.maxStackSize = 1;
 		this.setCreativeTab(Main.shatteredworldweapons);
@@ -56,7 +56,7 @@ public class ItemShieldNagrot extends ItemBase{
     }
     else
     {
-        return I18n.translateToLocal("item.crystalshield.name");
+        return I18n.translateToLocal("item.nagrot.name");
     }
 	}
 

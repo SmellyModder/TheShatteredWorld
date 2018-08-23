@@ -99,7 +99,6 @@ public class Main {
     public static void preinitSide(FMLPreInitializationEvent event) {
         RegistryHandler.preInitRegistriesSide();
         MinecraftForge.EVENT_BUS.register(new TextureStitcher());
-        RegisterClientHandlers();
     }
 
     @EventHandler
@@ -120,11 +119,5 @@ public class Main {
     public static void serverInit(FMLServerStartingEvent event) {
         RegistryHandler.serverRegistries(event);
     }
-    
-    @EventHandler
-    public static void RegisterClientHandlers() {
-        MinecraftForge.EVENT_BUS.register(new MistHandler());
-     }
-
 }
 

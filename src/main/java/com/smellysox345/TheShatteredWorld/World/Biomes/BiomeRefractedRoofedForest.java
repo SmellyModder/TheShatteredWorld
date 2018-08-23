@@ -36,7 +36,7 @@ public class BiomeRefractedRoofedForest extends Biome implements IBiomeMist{
 	protected final float[] lightBrightnessTable = new float[16];
 	
 	public BiomeRefractedRoofedForest() {
-		super(new BiomeProperties("Refracted Roofed Forest").setTemperature(0.7F).setRainfall(0.8F).setBaseHeight(0.2F).setWaterColor(8983040));
+		super(new BiomeProperties("Refracted Roofed Forest").setTemperature(0.7F).setRainfall(0.8F));
 		
 		this.decorator.treesPerChunk = 8;
 		this.spawnableCaveCreatureList.clear();
@@ -109,13 +109,13 @@ public class BiomeRefractedRoofedForest extends Biome implements IBiomeMist{
     }
 
     @Override
-    public int getMistColor(int var1, int var2, int var3) {
-        return 0;
+    public int getMistColour(int var1, int var2, int var3) {
+        return 16777215;
     }
 
     @Override
     public int getMistMultiplier(int i) {
-        return 240;
+        return 40;
     }
     
 }

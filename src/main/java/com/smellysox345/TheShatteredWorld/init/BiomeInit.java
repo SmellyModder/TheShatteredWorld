@@ -38,8 +38,12 @@ public class BiomeInit {
 		return biome;
 	}
 	
+	static int gen = 1;
+	
 	 public static void addBiomes() {
-	 addBiome(R_ROOFED_FOREST);
+		 if(gen == 1) {
+			  addBiome(R_ROOFED_FOREST);
+		 }
 	 }
 	
 	private static Biome addBiome(Biome biome) {

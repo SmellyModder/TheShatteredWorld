@@ -251,7 +251,7 @@ public class MistHandler {
                 Biome rScale = world.getBiomeForCoordsBody(new BlockPos(playerX + celestialAngle, playerY + celestialAngle, playerZ + baseScale));
                 if (rScale instanceof IBiomeMist) {
                     IBiomeMist gScale = (IBiomeMist) rScale;
-                    int bScale = gScale.getMistColor(playerX + celestialAngle, playerY, playerZ + baseScale);
+                    int bScale = gScale.getMistColour(playerX + celestialAngle, playerY, playerZ + baseScale);
                     rainStrength = (float) ((bScale & 16711680) >> 16);
                     thunderStrength = (float) ((bScale & '\uff00') >> 8);
                     float processedColor = (float) (bScale & 255);

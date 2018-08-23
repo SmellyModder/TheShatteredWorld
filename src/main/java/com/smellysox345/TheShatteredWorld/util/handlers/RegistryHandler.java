@@ -67,19 +67,21 @@ public class RegistryHandler {
     public static void preInitRegistriesSide() {
 
         RenderHandler.registerEntityRenders();
+        RegisterClientHandlers();
     }
 
     public static void initRegistries() {
 
         SoundHandler.registerSounds();
+        BiomeInit.registerBiomes();
+        BiomeInit.addBiomes();
     }
 
     public static void otherRegistries() {
 
         GameRegistry.registerWorldGenerator(new WorldGenCustomTrees(), 0);
         GameRegistry.registerWorldGenerator(new WorldGenSpookyTrees(), 0);
-        BiomeInit.registerBiomes();
-        BiomeInit.addBiomes();
+        
     }
 
     public static void serverRegistries(FMLServerStartingEvent event) {
@@ -87,5 +89,9 @@ public class RegistryHandler {
         event.registerServerCommand(new CommandDimensionTP());
 
     }
+    
+    public static void RegisterClientHandlers() {
+        MinecraftForge.EVENT_BUS.register(new MistHandler());
+     }
 
 }

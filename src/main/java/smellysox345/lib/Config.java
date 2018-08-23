@@ -15,6 +15,7 @@ public class Config {
 	
 	public static int ShatteredWorldDimId;
 	public static int QuestGuiID;
+	public static int difficulty;
 
 	public static void load(FMLPreInitializationEvent event) {
 		config = new Configuration(event.getSuggestedConfigurationFile());

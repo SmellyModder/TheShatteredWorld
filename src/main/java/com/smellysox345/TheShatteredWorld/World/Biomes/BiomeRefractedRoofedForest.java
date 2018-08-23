@@ -110,7 +110,7 @@ public class BiomeRefractedRoofedForest extends Biome implements IBiomeMist{
 
     @Override
     public int getMistColor(int var1, int var2, int var3) {
-        return 16777215;
+        return 0;
     }
 
     @Override

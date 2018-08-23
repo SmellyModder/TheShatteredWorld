@@ -10,6 +10,7 @@ import com.smellysox345.TheShatteredWorld.potion.Shroom_Bounce;
 import com.smellysox345.TheShatteredWorld.proxy.CommonProxy;
 import com.smellysox345.TheShatteredWorld.quest.GuiHandlerRegistry;
 import com.smellysox345.TheShatteredWorld.util.Reference;
+import com.smellysox345.TheShatteredWorld.util.handlers.MistHandler;
 import com.smellysox345.TheShatteredWorld.util.handlers.RegistryHandler;
 import com.smellysox345.TheShatteredWorld.util.handlers.WizardRightHandler;
 import net.minecraft.creativetab.CreativeTabs;
@@ -90,6 +91,7 @@ public class Main {
         ForgeRegistries.POTIONS.register(DEFORMATION_POTION);
         ForgeRegistries.POTIONS.register(BOUNCE_POTION);
         PotionTypeRegistry.registerPotionTypes();
+       
     }
 
     @SideOnly(Side.CLIENT)
@@ -97,6 +99,7 @@ public class Main {
     public static void preinitSide(FMLPreInitializationEvent event) {
         RegistryHandler.preInitRegistriesSide();
         MinecraftForge.EVENT_BUS.register(new TextureStitcher());
+        RegisterClientHandlers();
     }
 
     @EventHandler
@@ -115,10 +118,13 @@ public class Main {
 
     @EventHandler
     public static void serverInit(FMLServerStartingEvent event) {
-
         RegistryHandler.serverRegistries(event);
-
     }
+    
+    @EventHandler
+    public static void RegisterClientHandlers() {
+        MinecraftForge.EVENT_BUS.register(new MistHandler());
+     }
 
 }
 

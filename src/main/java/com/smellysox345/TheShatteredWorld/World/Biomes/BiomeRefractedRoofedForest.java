@@ -7,14 +7,17 @@ import com.smellysox345.TheShatteredWorld.World.gen.generators.tree.WorldGenEyeT
 import com.smellysox345.TheShatteredWorld.World.gen.generators.tree.WorldGenOakRefracted;
 import com.smellysox345.TheShatteredWorld.entity.EntitySlimeWolf;
 import com.smellysox345.TheShatteredWorld.init.ModBlocks;
+import com.smellysox345.TheShatteredWorld.util.interfaces.IBiomeMist;
 
 import net.minecraft.block.BlockDirt;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.ColorizerFoliage;
 import net.minecraft.world.ColorizerGrass;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeForest;
 import net.minecraft.world.biome.Biome.BiomeProperties;
@@ -22,14 +25,18 @@ import net.minecraft.world.biome.Biome.SpawnListEntry;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraft.world.gen.feature.WorldGenBigMushroom;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BiomeRefractedRoofedForest extends Biome{
+public class BiomeRefractedRoofedForest extends Biome implements IBiomeMist{
 
 	protected static final WorldGenAbstractTree TREE =  new WorldGenCanopyRefracted();
 	protected static final WorldGenAbstractTree TREE2 =  new WorldGenEyeTreeDefault();
 	
+	protected final float[] lightBrightnessTable = new float[16];
+	
 	public BiomeRefractedRoofedForest() {
-		super(new BiomeProperties("Refracted Roofed Forest").setTemperature(0.8F).setRainfall(0.8F).setBaseHeight(0.2F).setWaterColor(8983040));
+		super(new BiomeProperties("Refracted Roofed Forest").setTemperature(0.7F).setRainfall(0.8F).setBaseHeight(0.2F).setWaterColor(8983040));
 		
 		this.decorator.treesPerChunk = 8;
 		this.spawnableCaveCreatureList.clear();
@@ -95,5 +102,20 @@ public class BiomeRefractedRoofedForest extends Biome{
 	{
         this.addMushrooms(worldIn, rand, pos);
     }
+	
+	@Override
+    public float getMistDensity(int var1, int var2, int var3) {
+        return 0.1F;
+    }
 
+    @Override
+    public int getMistColor(int var1, int var2, int var3) {
+        return 16777215;
+    }
+
+    @Override
+    public int getMistMultiplier(int i) {
+        return 240;
+    }
+    
 }

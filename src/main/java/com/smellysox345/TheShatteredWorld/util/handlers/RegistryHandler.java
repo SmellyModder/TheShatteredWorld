@@ -9,6 +9,7 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
@@ -59,6 +60,7 @@ public class RegistryHandler {
         EntityInit.registerEntities();
         EntityInit.registerEntities2();
         DimensionInit.registerDimensions();
+        
     }
 
     @SideOnly(Side.CLIENT)
@@ -70,7 +72,6 @@ public class RegistryHandler {
     public static void initRegistries() {
 
         SoundHandler.registerSounds();
-
     }
 
     public static void otherRegistries() {
@@ -78,6 +79,7 @@ public class RegistryHandler {
         GameRegistry.registerWorldGenerator(new WorldGenCustomTrees(), 0);
         GameRegistry.registerWorldGenerator(new WorldGenSpookyTrees(), 0);
         BiomeInit.registerBiomes();
+        BiomeInit.addBiomes();
     }
 
     public static void serverRegistries(FMLServerStartingEvent event) {

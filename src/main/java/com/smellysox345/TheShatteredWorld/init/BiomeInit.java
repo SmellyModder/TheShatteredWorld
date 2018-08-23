@@ -37,4 +37,13 @@ public class BiomeInit {
 		BiomeManager.addSpawnBiome(biome);
 		return biome;
 	}
+	
+	 public static void addBiomes() {
+	 addBiome(R_ROOFED_FOREST);
+	 }
+	
+	private static Biome addBiome(Biome biome) {
+        BiomeManager.addSpawnBiome(biome);
+        return biome;
+    }
 }

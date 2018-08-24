@@ -5,6 +5,7 @@ item.prism.name=Prism
 tile.saplings_oakr.name=Refracted Oak Sapling
 tile.saplings_birchr.name=Refracted Birch Sapling
 item.r_string.name=Shroom String
+item.watcher_stick.name=Watcher Stick
 
 # Currency
 item.shroom_currency.name=Shroom Emerald
@@ -38,6 +39,10 @@ item.crystalshield.name=Crystal Shield
 item.crystal_sword.name=Crystal Sword
 item.refracti_sword.name=Refracti Sword
 item.watcher_sword.name=Watcher Sword
+item.watcher_bow.name=Watcher Bow
+item.refracted_oak_bow.name=Refracted Oak Bow
+item.refracted_ice_bow.name=Refracted Ice Bow
+
 
 # Tools
 item.crystal_shovel.name=Crystal Shovel

@@ -7,6 +7,7 @@ import com.smellysox345.TheShatteredWorld.items.ItemBase;
 import com.smellysox345.TheShatteredWorld.items.ItemGlinting;
 import com.smellysox345.TheShatteredWorld.items.ItemShroomCurrency;
 import com.smellysox345.TheShatteredWorld.items.armor.ArmorBase;
+import com.smellysox345.TheShatteredWorld.items.bows.ModBow;
 import com.smellysox345.TheShatteredWorld.items.food.ItemCustomFood;
 import com.smellysox345.TheShatteredWorld.items.food.ItemCustomFoodNausea;
 import com.smellysox345.TheShatteredWorld.items.food.ItemRefractiSoup;
@@ -110,6 +111,10 @@ public class ModItems {
 	public static final ItemAxe CRYSTAL_AXE = new ToolAxe("crystal_axe", MATERIAL_CRYSTAL);
 	public static final ItemAxe REFRACTI_AXE = new ToolAxe("refracti_axe", MATERIAL_CACTI);
 	public static final ItemAxe WATCHER_AXE = new ToolAxe("watcher_axe", MATERIAL_DARKNUT);
-	
-	
+
+	//Bows
+    public static final ModBow WATCHER_BOW = new ModBow("watcher_bow", 450);
+    public static final ModBow REFRACTED_OAK_BOW = new ModBow("refracted_oak_bow", 350);
+    public static final ModBow REFRACTED_ICE_BOW = new ModBow("refracted_ice_bow", 250);
+
 }

@@ -67,7 +67,7 @@ public class WorldGenBirchRefracted extends WorldGenAbstractTree{
 				}
 			}
 		}
-		
+		//TODO remove this duplicate code
 		if(!flag)
 		{
 			return false;
@@ -122,7 +122,7 @@ public class WorldGenBirchRefracted extends WorldGenAbstractTree{
 				return true;
 			}
 		}
-		
+		//DUPE end
 		return true;
 	}	
 	

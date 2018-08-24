@@ -1,0 +1,6 @@
+{
+    "parent": "swm:item/watcher_bow",
+    "textures": {
+        "layer0": "swm:items/watcher_bowpull0"
+    }
+}

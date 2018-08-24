@@ -1,0 +1,6 @@
+{
+    "parent": "swm:item/refracted_oak_bow",
+    "textures": {
+        "layer0": "swm:items/refracted_oak_bowpull1"
+    }
+}

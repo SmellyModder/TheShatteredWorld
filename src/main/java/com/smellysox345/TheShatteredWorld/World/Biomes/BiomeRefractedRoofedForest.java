@@ -89,17 +89,26 @@ public class BiomeRefractedRoofedForest extends Biome implements IBiomeMist {
 
     @Override
     public float getMistDensity(int var1, int var2, int var3) {
-        return 0.4F;
+        return 0.08F;
     }
 
+    public int getMistColor() {
+        return mistColor;
+    }
+
+    public void setMistColor(int mistColor) {
+        this.mistColor = mistColor;
+    }
+
+    private int mistColor = 4266496;
     @Override
     public int getMistColour(int var1, int var2, int var3) {
-        return 3289650;
+        return mistColor;
     }
 
     @Override
     public int getMistMultiplier(int i) {
-        return 40;
+        return i;
     }
 
 }

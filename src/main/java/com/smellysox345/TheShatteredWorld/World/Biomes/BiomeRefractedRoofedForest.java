@@ -24,11 +24,11 @@ public class BiomeRefractedRoofedForest extends Biome implements IBiomeMist {
     protected static final WorldGenAbstractTree TREE2 = new WorldGenEyeTreeDefault();
 
 
-    private static float mistDensity = 0.08F;
+    private static float mistDensity = 0.1F;
     private static int mistColor = 4266496;
 
     public BiomeRefractedRoofedForest() {
-        super(new BiomeProperties("Refracted Roofed Forest").setTemperature(0.3F).setRainfall(0.8F));
+        super(new BiomeProperties("Refracted Roofed Forest").setRainfall(0.8F));
 
         this.decorator.treesPerChunk = 8;
         this.spawnableCaveCreatureList.clear();
@@ -41,7 +41,7 @@ public class BiomeRefractedRoofedForest extends Biome implements IBiomeMist {
     @Override
     @SideOnly(Side.CLIENT)
     public int getSkyColorByTemp(float temp) {
-        return 6572850;
+        return 4266496;
     }
 
     @Override
@@ -174,7 +174,7 @@ public class BiomeRefractedRoofedForest extends Biome implements IBiomeMist {
 
     @Override
     public int getMistMultiplier(int i) {
-        return i;
+        return 40;
     }
 
 }

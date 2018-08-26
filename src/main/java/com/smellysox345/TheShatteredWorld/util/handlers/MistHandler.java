@@ -1,14 +1,12 @@
 package com.smellysox345.TheShatteredWorld.util.handlers;
 
-import org.lwjgl.opengl.GL11;
-
+import com.smellysox345.TheShatteredWorld.World.Biomes.BiomeRefractedRoofedForest;
+import com.smellysox345.TheShatteredWorld.init.BiomeInit;
 import com.smellysox345.TheShatteredWorld.util.interfaces.IBiomeMist;
-
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ActiveRenderInfo;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.settings.GameSettings;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
@@ -20,108 +18,23 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
+import net.minecraftforge.client.event.EntityViewRenderEvent;
 import net.minecraftforge.client.event.EntityViewRenderEvent.FogColors;
 import net.minecraftforge.client.event.EntityViewRenderEvent.RenderFogEvent;
 import net.minecraftforge.common.ForgeModContainer;
+import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.lwjgl.opengl.GL11;
+
+import java.awt.*;
 
 public class MistHandler {
-	private static double MistX;
+    private static double MistX;
     private static double MistZ;
     private static boolean MistInit;
     private static float MistFarPlaneDistance;
-
-    @SideOnly(Side.CLIENT)
-    @SubscribeEvent
-    public void onGetMistColour(FogColors event) {
-        if (event.getEntity() instanceof EntityPlayer) {
-            EntityPlayer player = (EntityPlayer) event.getEntity();
-            World world = player.world;
-            int x = MathHelper.floor(player.posX);
-            int y = MathHelper.floor(player.posY);
-            int z = MathHelper.floor(player.posZ);
-            IBlockState blockStateAtEyes = ActiveRenderInfo.getBlockStateAtEntityViewpoint(world, event.getEntity(), (float) event.getRenderPartialTicks());
-            if (blockStateAtEyes.getMaterial() == Material.LAVA) {
-                return;
-            }
-
-            Vec3d mixedColor;
-            if (blockStateAtEyes.getMaterial() == Material.WATER) {
-                mixedColor = getMistBlendColorWater(world, player, x, y, z, event.getRenderPartialTicks());
-            } else {
-                mixedColor = getMistBlendColour(world, player, x, y, z, event.getRed(), event.getGreen(), event.getBlue(), event.getRenderPartialTicks());
-            }
-            event.setRed((float) mixedColor.x);
-            event.setGreen((float) mixedColor.y);
-            event.setBlue((float) mixedColor.z);
-        }
-    }
-
-    @SideOnly(Side.CLIENT)
-    @SubscribeEvent
-    public void onRenderMist(RenderFogEvent event) {
-        Entity entity = event.getEntity();
-        World world = entity.world;
-        int playerX = MathHelper.floor(entity.posX);
-        int playerY = MathHelper.floor(entity.posY);
-        int playerZ = MathHelper.floor(entity.posZ);
-        if ((double) playerX == MistX && (double) playerZ == MistZ && MistInit) {
-            renderMist(event.getFogMode(), MistFarPlaneDistance, 0.75F);
-        } else {
-            MistInit = true;
-            byte distance = 20;
-            float fpDistanceBiomeMist = 0.0F;
-            float weightBiomeMist = 0.0F;
-
-            float farPlaneDistance;
-            float farPlaneDistanceScaleBiome;
-            for (int weightMixed = -distance; weightMixed <= distance; ++weightMixed) {
-                for (int weightDefault = -distance; weightDefault <= distance; ++weightDefault) {
-                    Biome fpDistanceBiomeMistAvg = world.getBiomeForCoordsBody(new BlockPos(playerX + weightMixed, playerZ + weightDefault, playerY + weightDefault));
-                    if (fpDistanceBiomeMistAvg instanceof IBiomeMist) {
-                        farPlaneDistance = ((IBiomeMist) fpDistanceBiomeMistAvg).getMistDensity(playerX + weightMixed, playerY, playerZ + weightDefault);
-                        farPlaneDistanceScaleBiome = 1.0F;
-                        double farPlaneDistanceScale;
-                        if (weightMixed == -distance) {
-                            farPlaneDistanceScale = 1.0D - (entity.posX - (double) playerX);
-                            farPlaneDistance = (float) ((double) farPlaneDistance * farPlaneDistanceScale);
-                            farPlaneDistanceScaleBiome = (float) ((double) farPlaneDistanceScaleBiome * farPlaneDistanceScale);
-                        } else if (weightMixed == distance) {
-                            farPlaneDistanceScale = entity.posX - (double) playerX;
-                            farPlaneDistance = (float) ((double) farPlaneDistance * farPlaneDistanceScale);
-                            farPlaneDistanceScaleBiome = (float) ((double) farPlaneDistanceScaleBiome * farPlaneDistanceScale);
-                        }
-
-                        if (weightDefault == -distance) {
-                            farPlaneDistanceScale = 1.0D - (entity.posZ - (double) playerZ);
-                            farPlaneDistance = (float) ((double) farPlaneDistance * farPlaneDistanceScale);
-                            farPlaneDistanceScaleBiome = (float) ((double) farPlaneDistanceScaleBiome * farPlaneDistanceScale);
-                        } else if (weightDefault == distance) {
-                            farPlaneDistanceScale = entity.posZ - (double) playerZ;
-                            farPlaneDistance = (float) ((double) farPlaneDistance * farPlaneDistanceScale);
-                            farPlaneDistanceScaleBiome = (float) ((double) farPlaneDistanceScaleBiome * farPlaneDistanceScale);
-                        }
-
-                        fpDistanceBiomeMist += farPlaneDistance;
-                        weightBiomeMist += farPlaneDistanceScaleBiome;
-                    }
-                }
-            }
-
-            float var17 = (float) (distance * 2 * distance * 2);
-            float var18 = var17 - weightBiomeMist;
-            float var19 = weightBiomeMist == 0.0F ? 0.0F : fpDistanceBiomeMist / weightBiomeMist;
-            farPlaneDistance = (fpDistanceBiomeMist * 240.0F + event.getFarPlaneDistance() * var18) / var17;
-            farPlaneDistanceScaleBiome = 0.1F * (1.0F - var19) + 0.75F * var19;
-            float var20 = (farPlaneDistanceScaleBiome * weightBiomeMist + 0.75F * var18) / var17;
-            MistX = entity.posX;
-            MistZ = entity.posZ;
-            MistFarPlaneDistance = Math.min(farPlaneDistance, event.getFarPlaneDistance());
-            renderMist(event.getFogMode(), MistFarPlaneDistance, var20);
-        }
-    }
 
     private static void renderMist(int mistMode, float farPlaneDistance, float farPlaneDistanceScale) {
         if (mistMode < 0) {
@@ -333,6 +246,121 @@ public class MistHandler {
             double bFinal = (double) ((bBiomeMist * weightBiomeMist + defB * var34) / weightMixed);
 
             return new Vec3d(rFinal, gFinal, bFinal);
+        }
+    }
+
+    //@SideOnly(Side.CLIENT)
+    //@SubscribeEvent
+    public void onGetMistColour(FogColors event) {
+        if (event.getEntity() instanceof EntityPlayer) {
+            EntityPlayer player = (EntityPlayer) event.getEntity();
+            World world = player.world;
+            int x = MathHelper.floor(player.posX);
+            int y = MathHelper.floor(player.posY);
+            int z = MathHelper.floor(player.posZ);
+            IBlockState blockStateAtEyes = ActiveRenderInfo.getBlockStateAtEntityViewpoint(world, event.getEntity(), (float) event.getRenderPartialTicks());
+            if (blockStateAtEyes.getMaterial() == Material.LAVA) {
+                return;
+            }
+
+            Vec3d mixedColor;
+            if (blockStateAtEyes.getMaterial() == Material.WATER) {
+                mixedColor = getMistBlendColorWater(world, player, x, y, z, event.getRenderPartialTicks());
+            } else {
+                mixedColor = getMistBlendColour(world, player, x, y, z, event.getRed(), event.getGreen(), event.getBlue(), event.getRenderPartialTicks());
+            }
+            event.setRed((float) mixedColor.x);
+            event.setGreen((float) mixedColor.y);
+            event.setBlue((float) mixedColor.z);
+        }
+    }
+
+    @SideOnly(Side.CLIENT)
+    @SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
+    public void onEvent(EntityViewRenderEvent.FogDensity event) {
+        if (event.getEntity().getEntityWorld().getBiome(event.getEntity().getPosition()).equals(BiomeInit.R_ROOFED_FOREST)) {
+            event.setCanceled(true);
+            event.setDensity(BiomeRefractedRoofedForest.getMistDensity());
+        } else {
+            return;
+        }
+
+        event.setCanceled(false); // must cancel event for event handler to take effect
+    }
+
+
+    @SideOnly(Side.CLIENT)
+    @SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
+    public void onEvent(FogColors event) {
+        if (event.getEntity().getEntityWorld().getBiome(event.getEntity().getPosition()).equals(BiomeInit.R_ROOFED_FOREST)) {
+            Color theColor = new Color(109, 73, 0);
+            event.setRed(theColor.getRed());
+            event.setGreen(theColor.getGreen());
+            event.setBlue(theColor.getBlue());
+        }
+    }
+
+    //@SideOnly(Side.CLIENT)
+    //@SubscribeEvent
+    public void onRenderMist(RenderFogEvent event) {
+        Entity entity = event.getEntity();
+        World world = entity.world;
+        int playerX = MathHelper.floor(entity.posX);
+        int playerY = MathHelper.floor(entity.posY);
+        int playerZ = MathHelper.floor(entity.posZ);
+        if ((double) playerX == MistX && (double) playerZ == MistZ && MistInit) {
+            renderMist(event.getFogMode(), MistFarPlaneDistance, 0.75F);
+        } else {
+            MistInit = true;
+            byte distance = 20;
+            float fpDistanceBiomeMist = 0.0F;
+            float weightBiomeMist = 0.0F;
+
+            float farPlaneDistance;
+            float farPlaneDistanceScaleBiome;
+            for (int weightMixed = -distance; weightMixed <= distance; ++weightMixed) {
+                for (int weightDefault = -distance; weightDefault <= distance; ++weightDefault) {
+                    Biome fpDistanceBiomeMistAvg = world.getBiomeForCoordsBody(new BlockPos(playerX + weightMixed, playerZ + weightDefault, playerY + weightDefault));
+                    if (fpDistanceBiomeMistAvg instanceof IBiomeMist) {
+                        farPlaneDistance = ((IBiomeMist) fpDistanceBiomeMistAvg).getMistDensity(playerX + weightMixed, playerY, playerZ + weightDefault);
+                        farPlaneDistanceScaleBiome = 1.0F;
+                        double farPlaneDistanceScale;
+                        if (weightMixed == -distance) {
+                            farPlaneDistanceScale = 1.0D - (entity.posX - (double) playerX);
+                            farPlaneDistance = (float) ((double) farPlaneDistance * farPlaneDistanceScale);
+                            farPlaneDistanceScaleBiome = (float) ((double) farPlaneDistanceScaleBiome * farPlaneDistanceScale);
+                        } else if (weightMixed == distance) {
+                            farPlaneDistanceScale = entity.posX - (double) playerX;
+                            farPlaneDistance = (float) ((double) farPlaneDistance * farPlaneDistanceScale);
+                            farPlaneDistanceScaleBiome = (float) ((double) farPlaneDistanceScaleBiome * farPlaneDistanceScale);
+                        }
+
+                        if (weightDefault == -distance) {
+                            farPlaneDistanceScale = 1.0D - (entity.posZ - (double) playerZ);
+                            farPlaneDistance = (float) ((double) farPlaneDistance * farPlaneDistanceScale);
+                            farPlaneDistanceScaleBiome = (float) ((double) farPlaneDistanceScaleBiome * farPlaneDistanceScale);
+                        } else if (weightDefault == distance) {
+                            farPlaneDistanceScale = entity.posZ - (double) playerZ;
+                            farPlaneDistance = (float) ((double) farPlaneDistance * farPlaneDistanceScale);
+                            farPlaneDistanceScaleBiome = (float) ((double) farPlaneDistanceScaleBiome * farPlaneDistanceScale);
+                        }
+
+                        fpDistanceBiomeMist += farPlaneDistance;
+                        weightBiomeMist += farPlaneDistanceScaleBiome;
+                    }
+                }
+            }
+
+            float var17 = (float) (distance * 2 * distance * 2);
+            float var18 = var17 - weightBiomeMist;
+            float var19 = weightBiomeMist == 0.0F ? 0.0F : fpDistanceBiomeMist / weightBiomeMist;
+            farPlaneDistance = (fpDistanceBiomeMist * 240.0F + event.getFarPlaneDistance() * var18) / var17;
+            farPlaneDistanceScaleBiome = 0.1F * (1.0F - var19) + 0.75F * var19;
+            float var20 = (farPlaneDistanceScaleBiome * weightBiomeMist + 0.75F * var18) / var17;
+            MistX = entity.posX;
+            MistZ = entity.posZ;
+            MistFarPlaneDistance = Math.min(farPlaneDistance, event.getFarPlaneDistance());
+            renderMist(event.getFogMode(), MistFarPlaneDistance, var20);
         }
     }
 }

@@ -10,6 +10,7 @@ import com.smellysox345.TheShatteredWorld.potion.Shroom_Bounce;
 import com.smellysox345.TheShatteredWorld.proxy.CommonProxy;
 import com.smellysox345.TheShatteredWorld.quest.GuiHandlerRegistry;
 import com.smellysox345.TheShatteredWorld.util.Reference;
+import com.smellysox345.TheShatteredWorld.util.handlers.MistHandler;
 import com.smellysox345.TheShatteredWorld.util.handlers.RegistryHandler;
 import com.smellysox345.TheShatteredWorld.util.handlers.WizardRightHandler;
 import net.minecraft.creativetab.CreativeTabs;

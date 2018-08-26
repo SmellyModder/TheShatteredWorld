@@ -24,9 +24,8 @@ public class BiomeRefractedRoofedForest extends Biome implements IBiomeMist {
     protected static final WorldGenAbstractTree TREE2 = new WorldGenEyeTreeDefault();
 
 
-    private float mistDensity = 0.08F;
-    private int mistColor = 4266496;
-    private int mistColor2 = 786432;
+    private static float mistDensity = 0.08F;
+    private static int mistColor = 4266496;
 
     public BiomeRefractedRoofedForest() {
         super(new BiomeProperties("Refracted Roofed Forest").setTemperature(0.3F).setRainfall(0.8F));
@@ -147,7 +146,7 @@ public class BiomeRefractedRoofedForest extends Biome implements IBiomeMist {
         }
     }
 
-    public float getMistDensity() {
+    public static float getMistDensity() {
         return mistDensity;
     }
 
@@ -160,7 +159,7 @@ public class BiomeRefractedRoofedForest extends Biome implements IBiomeMist {
         return mistDensity;
     }
 
-    public int getMistColor() {
+    public static int getMistColor() {
         return mistColor;
     }
 

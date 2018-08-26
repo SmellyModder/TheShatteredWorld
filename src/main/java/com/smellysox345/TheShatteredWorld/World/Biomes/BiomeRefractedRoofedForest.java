@@ -26,6 +26,7 @@ public class BiomeRefractedRoofedForest extends Biome implements IBiomeMist {
 
     private float mistDensity = 0.08F;
     private int mistColor = 4266496;
+    private int mistColor2 = 786432;
 
     public BiomeRefractedRoofedForest() {
         super(new BiomeProperties("Refracted Roofed Forest").setTemperature(0.3F).setRainfall(0.8F));

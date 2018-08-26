@@ -10,6 +10,7 @@ import net.minecraft.world.DimensionType;
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.biome.BiomeProviderSingle;
 import net.minecraft.world.gen.IChunkGenerator;
+import smellysox345.lib.Config;
 
 public class DimensionSW extends WorldProvider{
 
@@ -18,6 +19,7 @@ public class DimensionSW extends WorldProvider{
 	{
 		this.biomeProvider = new BiomeProviderSingle(BiomeInit.REFRACTED_FOREST);
 		this.biomeProvider = new BiomeProviderSingle(BiomeInit.RF_SHROOM);
+		this.biomeProvider = new BiomeProviderSingle(BiomeInit.R_ROOFED_FOREST);
 	}
 	
 	@Override
@@ -29,7 +31,7 @@ public class DimensionSW extends WorldProvider{
 	@Override
 	public IChunkGenerator createChunkGenerator() 
 	{
-		return new FlorusChunkGenerator(world);
+		return new ChunkGeneratorSW(world, Config.ShatteredWorldDimId, false, "shattered");
 	}
 	
 	@Override

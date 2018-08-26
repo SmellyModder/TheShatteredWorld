@@ -10,12 +10,12 @@ import com.smellysox345.TheShatteredWorld.potion.Shroom_Bounce;
 import com.smellysox345.TheShatteredWorld.proxy.CommonProxy;
 import com.smellysox345.TheShatteredWorld.quest.GuiHandlerRegistry;
 import com.smellysox345.TheShatteredWorld.util.Reference;
-import com.smellysox345.TheShatteredWorld.util.handlers.MistHandler;
 import com.smellysox345.TheShatteredWorld.util.handlers.RegistryHandler;
 import com.smellysox345.TheShatteredWorld.util.handlers.WizardRightHandler;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
+import net.minecraft.world.WorldType;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -34,9 +34,13 @@ import smellysox345.lib.Config;
 
 @Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION)
 public class Main {
-
     public static final Potion DEFORMATION_POTION = new Deformation();
     public static final Potion BOUNCE_POTION = new Shroom_Bounce();
+
+    //Adding custom world gen for testing biomes out.
+    //These cannot be placed in the final mod without using some type of array extender. (There are only 16 allowed world types and vanilla uses some already)
+    //See the class to change what biome it gens
+    public static final WorldType worldTypeDark = new WorldTypeDark();
     @Instance
     public static Main instance;
     @SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.COMMON_PROXY_CLASS)
@@ -91,7 +95,7 @@ public class Main {
         ForgeRegistries.POTIONS.register(DEFORMATION_POTION);
         ForgeRegistries.POTIONS.register(BOUNCE_POTION);
         PotionTypeRegistry.registerPotionTypes();
-       
+
     }
 
     @SideOnly(Side.CLIENT)

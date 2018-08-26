@@ -9,6 +9,7 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
@@ -26,8 +27,9 @@ public class RegistryHandler {
     @SubscribeEvent
     public static void registerTrades(RegistryEvent.Register<VillagerRegistry.VillagerProfession> event) {
         VillagerRegistry.VillagerProfession nitwit = ForgeRegistries.VILLAGER_PROFESSIONS.getValue(new ResourceLocation("minecraft:nitwit"));
-        nitwit.getCareer(5).addTrade(1,new WizardTrades());
+        nitwit.getCareer(5).addTrade(1, new WizardTrades());
     }
+
     @SubscribeEvent
     public static void onItemRegister(RegistryEvent.Register<Item> event) {
         event.getRegistry().registerAll(ModItems.ITEMS.toArray(new Item[0]));
@@ -51,8 +53,6 @@ public class RegistryHandler {
                 ((IHasModel) block).registerModels();
             }
         }
-
-
     }
 
     public static void preInitRegistries() {
@@ -60,7 +60,7 @@ public class RegistryHandler {
         EntityInit.registerEntities();
         EntityInit.registerEntities2();
         DimensionInit.registerDimensions();
-        
+
     }
 
     @SideOnly(Side.CLIENT)
@@ -81,7 +81,7 @@ public class RegistryHandler {
 
         GameRegistry.registerWorldGenerator(new WorldGenCustomTrees(), 0);
         GameRegistry.registerWorldGenerator(new WorldGenSpookyTrees(), 0);
-        
+
     }
 
     public static void serverRegistries(FMLServerStartingEvent event) {
@@ -89,9 +89,9 @@ public class RegistryHandler {
         event.registerServerCommand(new CommandDimensionTP());
 
     }
-    
+
     public static void RegisterClientHandlers() {
         MinecraftForge.EVENT_BUS.register(new MistHandler());
-     }
+    }
 
 }

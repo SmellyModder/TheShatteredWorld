@@ -4,9 +4,11 @@ import com.smellysox345.TheShatteredWorld.World.dimension.library.ChunkGenerator
 import com.smellysox345.TheShatteredWorld.World.dimension.library.ChunkGeneratorShatteredWorld;
 import com.smellysox345.TheShatteredWorld.World.dimension.library.FlorusChunkGenerator;
 import com.smellysox345.TheShatteredWorld.World.dimension.library.FlorusTerrainGenerator;
+import com.smellysox345.TheShatteredWorld.World.dimension.provider.SWBiomeProvider;
 import com.smellysox345.TheShatteredWorld.init.BiomeInit;
 import com.smellysox345.TheShatteredWorld.init.DimensionInit;
 
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.DimensionType;
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.biome.BiomeProviderSingle;
@@ -31,7 +33,7 @@ public class DimensionSW extends WorldProvider{
 	@Override
 	public IChunkGenerator createChunkGenerator() 
 	{
-		return new ChunkGeneratorShatteredWorld(world, Config.ShatteredWorldDimId, false);
+		return new ChunkGeneratorShatteredWorld(world, Config.ShatteredWorldDimId, true);
 	}
 	
 	@Override

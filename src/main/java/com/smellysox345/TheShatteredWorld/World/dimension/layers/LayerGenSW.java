@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.Supplier;
 
+import com.smellysox345.TheShatteredWorld.init.BiomeInit;
+
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
@@ -13,8 +15,11 @@ public class LayerGenSW extends GenLayer{
 	private static final int SPECIAL_CHANCE = 11;
 
 	protected static final List<Supplier<Biome>> commonBiomes = Arrays.asList(
+			() -> BiomeInit.REFRACTED_FOREST,
+			() -> BiomeInit.RF_SHROOM
 	);
 	protected static final List<Supplier<Biome>> rareBiomes = Arrays.asList(
+			() -> BiomeInit.R_ROOFED_FOREST
 	);
 
 	public LayerGenSW(long l, GenLayer genlayer) {

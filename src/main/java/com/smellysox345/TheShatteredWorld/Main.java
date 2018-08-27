@@ -10,7 +10,6 @@ import com.smellysox345.TheShatteredWorld.potion.Shroom_Bounce;
 import com.smellysox345.TheShatteredWorld.proxy.CommonProxy;
 import com.smellysox345.TheShatteredWorld.quest.GuiHandlerRegistry;
 import com.smellysox345.TheShatteredWorld.util.Reference;
-import com.smellysox345.TheShatteredWorld.util.handlers.MistHandler;
 import com.smellysox345.TheShatteredWorld.util.handlers.RegistryHandler;
 import com.smellysox345.TheShatteredWorld.util.handlers.WizardRightHandler;
 import net.minecraft.creativetab.CreativeTabs;
@@ -33,6 +32,8 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import smellysox345.lib.Config;
+
+import static com.smellysox345.TheShatteredWorld.util.handlers.RegistryHandler.RegisterClientHandlers;
 
 @Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION)
 public class Main {
@@ -99,7 +100,6 @@ public class Main {
         ForgeRegistries.POTIONS.register(DEFORMATION_POTION);
         ForgeRegistries.POTIONS.register(BOUNCE_POTION);
         PotionTypeRegistry.registerPotionTypes();
-
     }
 
     @SideOnly(Side.CLIENT)
@@ -120,6 +120,13 @@ public class Main {
         GameRegistry.registerWorldGenerator(new WorldGenCustomStructures(), 0);
         NetworkRegistry.INSTANCE.registerGuiHandler(instance, GuiHandlerRegistry.getInstance());
         MinecraftForge.EVENT_BUS.register(WizardRightHandler.class);
+
+    }
+
+    @SideOnly(Side.CLIENT)
+    @EventHandler
+    public static void PostinitClient(FMLPostInitializationEvent event) {
+        RegisterClientHandlers();
 
     }
 

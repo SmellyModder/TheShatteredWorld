@@ -1,7 +1,5 @@
 package com.smellysox345.TheShatteredWorld.util.handlers;
 
-import com.smellysox345.TheShatteredWorld.World.Biomes.BiomeRefractedRoofedForest;
-import com.smellysox345.TheShatteredWorld.init.BiomeInit;
 import com.smellysox345.TheShatteredWorld.util.interfaces.IBiomeMist;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -18,17 +16,13 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
-import net.minecraftforge.client.event.EntityViewRenderEvent;
 import net.minecraftforge.client.event.EntityViewRenderEvent.FogColors;
 import net.minecraftforge.client.event.EntityViewRenderEvent.RenderFogEvent;
 import net.minecraftforge.common.ForgeModContainer;
-import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.lwjgl.opengl.GL11;
-
-import java.awt.*;
 
 public class MistHandler {
     private static double MistX;
@@ -37,13 +31,11 @@ public class MistHandler {
     private static float MistFarPlaneDistance;
 
     private static void renderMist(int mistMode, float farPlaneDistance, float farPlaneDistanceScale) {
-        if (mistMode < 0) {
             GL11.glFogf(GL11.GL_FOG_START, 0.0F);
             GL11.glFogf(GL11.GL_FOG_END, farPlaneDistance);
-        } else {
             GL11.glFogf(GL11.GL_FOG_START, farPlaneDistance * farPlaneDistanceScale);
             GL11.glFogf(GL11.GL_FOG_END, farPlaneDistance);
-        }
+
     }
 
     private static Vec3d postProcessColor(World world, EntityLivingBase player, double r, double g, double b, double renderPartialTicks) {
@@ -249,8 +241,8 @@ public class MistHandler {
         }
     }
 
-    //@SideOnly(Side.CLIENT)
-    //@SubscribeEvent
+    @SideOnly(Side.CLIENT)
+    @SubscribeEvent
     public void onGetMistColour(FogColors event) {
         if (event.getEntity() instanceof EntityPlayer) {
             EntityPlayer player = (EntityPlayer) event.getEntity();
@@ -276,32 +268,7 @@ public class MistHandler {
     }
 
     @SideOnly(Side.CLIENT)
-    @SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
-    public void onEvent(EntityViewRenderEvent.FogDensity event) {
-        if (event.getEntity().getEntityWorld().getBiome(event.getEntity().getPosition()).equals(BiomeInit.R_ROOFED_FOREST)) {
-            event.setCanceled(true);
-            event.setDensity(BiomeRefractedRoofedForest.getMistDensity());
-        } else {
-            return;
-        }
-
-        event.setCanceled(false); // must cancel event for event handler to take effect
-    }
-
-
-    @SideOnly(Side.CLIENT)
-    @SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
-    public void onEvent(FogColors event) {
-        if (event.getEntity().getEntityWorld().getBiome(event.getEntity().getPosition()).equals(BiomeInit.R_ROOFED_FOREST)) {
-            Color theColor = new Color(109, 73, 0);
-            event.setRed(theColor.getRed());
-            event.setGreen(theColor.getGreen());
-            event.setBlue(theColor.getBlue());
-        }
-    }
-
-    //@SideOnly(Side.CLIENT)
-    //@SubscribeEvent
+    @SubscribeEvent
     public void onRenderMist(RenderFogEvent event) {
         Entity entity = event.getEntity();
         World world = entity.world;

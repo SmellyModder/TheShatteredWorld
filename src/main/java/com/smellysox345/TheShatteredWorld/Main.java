@@ -16,6 +16,7 @@ import com.smellysox345.TheShatteredWorld.util.handlers.WizardRightHandler;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
+import net.minecraft.world.DimensionType;
 import net.minecraft.world.WorldType;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
@@ -42,6 +43,8 @@ public class Main {
     //These cannot be placed in the final mod without using some type of array extender. (There are only 16 allowed world types and vanilla uses some already)
     //See the class to change what biome it gens
     public static final WorldType worldTypeDark = new WorldTypeDark();
+    
+    public static DimensionType dimType;
     @Instance
     public static Main instance;
     @SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.COMMON_PROXY_CLASS)

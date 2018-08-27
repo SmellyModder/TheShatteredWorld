@@ -31,7 +31,11 @@ public class DimensionSW extends WorldProvider{
 	@Override
 	public IChunkGenerator createChunkGenerator() 
 	{
+<<<<<<< HEAD
 		return new ChunkGeneratorSW(world, false, Config.ShatteredWorldDimId);
+=======
+		return new ChunkGeneratorSW(world, Config.ShatteredWorldDimId, false);
+>>>>>>> parent of 2ff57a1... a
 	}
 	
 	@Override

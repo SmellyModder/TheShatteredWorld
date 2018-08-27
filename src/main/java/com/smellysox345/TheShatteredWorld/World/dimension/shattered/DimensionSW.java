@@ -19,7 +19,6 @@ public class DimensionSW extends WorldProvider{
 	{
 		this.biomeProvider = new BiomeProviderSingle(BiomeInit.REFRACTED_FOREST);
 		this.biomeProvider = new BiomeProviderSingle(BiomeInit.RF_SHROOM);
-		this.biomeProvider = new BiomeProviderSingle(BiomeInit.R_ROOFED_FOREST);
 	}
 	
 	@Override
@@ -31,11 +30,7 @@ public class DimensionSW extends WorldProvider{
 	@Override
 	public IChunkGenerator createChunkGenerator() 
 	{
-<<<<<<< HEAD
 		return new ChunkGeneratorSW(world, false, Config.ShatteredWorldDimId);
-=======
-		return new ChunkGeneratorSW(world, Config.ShatteredWorldDimId, false);
->>>>>>> parent of 2ff57a1... a
 	}
 	
 	@Override

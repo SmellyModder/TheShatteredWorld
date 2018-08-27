@@ -1,6 +1,7 @@
 package com.smellysox345.TheShatteredWorld.World.dimension.shattered;
 
 import com.smellysox345.TheShatteredWorld.World.dimension.library.ChunkGeneratorSW;
+import com.smellysox345.TheShatteredWorld.World.dimension.library.ChunkGeneratorShatteredWorld;
 import com.smellysox345.TheShatteredWorld.World.dimension.library.FlorusChunkGenerator;
 import com.smellysox345.TheShatteredWorld.World.dimension.library.FlorusTerrainGenerator;
 import com.smellysox345.TheShatteredWorld.init.BiomeInit;
@@ -30,7 +31,7 @@ public class DimensionSW extends WorldProvider{
 	@Override
 	public IChunkGenerator createChunkGenerator() 
 	{
-		return new ChunkGeneratorSW(world, false, Config.ShatteredWorldDimId);
+		return new ChunkGeneratorShatteredWorld(world, Config.ShatteredWorldDimId, false);
 	}
 	
 	@Override

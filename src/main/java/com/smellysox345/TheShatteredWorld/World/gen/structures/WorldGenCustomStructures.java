@@ -44,7 +44,7 @@ public class WorldGenCustomStructures implements IWorldGenerator {
         while (!foundGround && y-- >= 0) {
             Block blockAt = world.getBlockState(new BlockPos(x, y, z)).getBlock();
 
-            foundGround = blockAt != Blocks.AIR && blockAt != Blocks.WATER && blockAt != Blocks.FLOWING_WATER;
+            foundGround = blockAt != Blocks.AIR && blockAt != Blocks.WATER && blockAt != Blocks.FLOWING_WATER && blockAt != ModBlocks.REFRACTA_SHROOM && blockAt != ModBlocks.NIGHTCRAWLERSHROOM_BLOCK && blockAt != ModBlocks.PINKI_SHROOM;
 
         }
         return y;
@@ -58,8 +58,16 @@ public class WorldGenCustomStructures implements IWorldGenerator {
             generateSurfaceForRShrooms(world, random, chunkX * 16, chunkZ * 16, chunkZ * 16);
         }
         switch (world.provider.getDimension()) {
-            case 123321:
-
+            case -9:
+            	
+            	generateSurface(world, random, chunkX * 16, chunkZ * 16, chunkZ * 16);
+                generateSurfaceForGShrooms(world, random, chunkX * 16, chunkZ * 16, chunkZ * 16);
+                generateSurfaceForRShrooms(world, random, chunkX * 16, chunkZ * 16, chunkZ * 16);
+                generateSurfaceForPShrooms(world, random, chunkX * 16, chunkZ * 16, chunkZ * 16);
+                generateSurfaceForNShrooms(world, random, chunkX * 16, chunkZ * 16, chunkZ * 16);
+                generateSurfaceForPinkShrooms(world, random, chunkX * 16, chunkZ * 16, chunkZ * 16);
+                generateSurfaceForGrassShrooms(world, random, chunkX * 16, chunkZ * 16, chunkZ * 16);
+                generateStructure(SHROOM_BIG_R, world, random, chunkX, chunkZ, 20, ModBlocks.MYCELIUM_REFRACTED_BLOCK, BiomeShroomValley.class);
                 break;
 
             case 1:
@@ -68,14 +76,7 @@ public class WorldGenCustomStructures implements IWorldGenerator {
 
             case 0:
 
-                generateSurface(world, random, chunkX * 16, chunkZ * 16, chunkZ * 16);
-                generateSurfaceForGShrooms(world, random, chunkX * 16, chunkZ * 16, chunkZ * 16);
-                generateSurfaceForRShrooms(world, random, chunkX * 16, chunkZ * 16, chunkZ * 16);
-                generateSurfaceForPShrooms(world, random, chunkX * 16, chunkZ * 16, chunkZ * 16);
-                generateSurfaceForNShrooms(world, random, chunkX * 16, chunkZ * 16, chunkZ * 16);
-                generateSurfaceForPinkShrooms(world, random, chunkX * 16, chunkZ * 16, chunkZ * 16);
-                generateSurfaceForGrassShrooms(world, random, chunkX * 16, chunkZ * 16, chunkZ * 16);
-                generateStructure(SHROOM_BIG_R, world, random, chunkX, chunkZ, 20, ModBlocks.MYCELIUM_REFRACTED_BLOCK, BiomeShroomValley.class);
+                
 
 
                 break;

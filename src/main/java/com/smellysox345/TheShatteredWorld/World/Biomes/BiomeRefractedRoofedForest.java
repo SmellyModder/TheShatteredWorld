@@ -18,7 +18,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.Random;
 
-public class BiomeRefractedRoofedForest extends Biome implements IBiomeMist {
+public class BiomeRefractedRoofedForest extends Biome{
 
     protected static final WorldGenAbstractTree TREE = new WorldGenCanopyRefracted();
     protected static final WorldGenAbstractTree TREE2 = new WorldGenEyeTreeDefault();
@@ -154,27 +154,12 @@ public class BiomeRefractedRoofedForest extends Biome implements IBiomeMist {
         this.mistDensity = mistDensity;
     }
 
-    @Override
-    public float getMistDensity(int var1, int var2, int var3) {
-        return mistDensity;
-    }
-
     public static int getMistColor() {
         return mistColor;
     }
 
     public void setMistColor(int mistColor) {
         this.mistColor = mistColor;
-    }
-
-    @Override
-    public int getMistColour(int var1, int var2, int var3) {
-        return mistColor;
-    }
-
-    @Override
-    public int getMistMultiplier(int i) {
-        return 40;
     }
 
 }

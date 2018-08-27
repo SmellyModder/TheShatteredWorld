@@ -18,6 +18,7 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.DimensionType;
 import net.minecraft.world.WorldProviderSurface;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeProviderSingle;
 import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraftforge.client.IRenderHandler;
 import net.minecraftforge.common.util.Constants;
@@ -27,21 +28,34 @@ import smellysox345.lib.Config;
 
 public class SWWorldProvider extends WorldProviderSurface {
 
-	private static final String SEED_KEY = "CustomSeed";
-
-	private long seed;
-
-	public SWWorldProvider() {
+	@Override
+	public void init() {
+		biomeProvider = new SWBiomeProvider(world.getSeed(), world.getWorldInfo().getTerrainType());
 		setDimension(Config.ShatteredWorldDimId);
 	}
 
+	@Override
+	public IChunkGenerator createChunkGenerator() {
+		return new ChunkGeneratorShatteredWorld(world, world.getSeed(), true);
+	}
+	
 	@Nullable
 	@Override
 	@SideOnly(Side.CLIENT)
 	public MusicTicker.MusicType getMusicType() {
 		return MusicType.END_BOSS;
 	}
+	
+	@Override
+	protected void generateLightBrightnessTable() {
+		float f = 0.35F;
 
+		for (int i = 0; i <= 15; ++i) {
+			float f1 = 1.0F - i / 15.0F;
+			lightBrightnessTable[i] = (1.0F - f1) / (f1 * 3.0F + 1.0F) * (1.0F - f) + f;
+		}
+	}
+	
 	@Override
 	public float[] calcSunriseSunsetColors(float celestialAngle, float f1) {
 		return null;
@@ -70,49 +84,21 @@ public class SWWorldProvider extends WorldProviderSurface {
 	public float calculateCelestialAngle(long par1, float par3) {
 		return 0.225f;
 	}
-
-	@Override
-	public void init() {
-		super.init();
-		this.biomeProvider = new SWBiomeProvider(world);
-		NBTTagCompound data = world.getWorldInfo().getDimensionData(Config.ShatteredWorldDimId);
-		seed = data.hasKey(SEED_KEY, Constants.NBT.TAG_LONG) ? data.getLong(SEED_KEY) : loadSeed();
-	}
-
-	@Override
-	public IChunkGenerator createChunkGenerator() 
-	{
-		return new ChunkGeneratorShatteredWorld(world, Config.ShatteredWorldDimId, false);
-	}
-	/**
-	 * This seems to be a function checking whether we have an ocean.
-	 */
+	
 	@SideOnly(Side.CLIENT)
 	@Override
 	public boolean isSkyColored() {
 		return false;
 	}
-
+	
 	@Override
 	public int getAverageGroundLevel() {
 		return 30;
 	}
-
-	@Override
-	public boolean canRespawnHere() {
-		// lie about this until the world is initialized
-		// otherwise the server will try to generate enough terrain for a spawn point and that's annoying
-		return world.getWorldInfo().isInitialized();
-	}
-
-	@Override
-	public DimensionType getDimensionType() {
-		return DimensionInit.SW;
-	}
-
+	
 	@Override
 	public boolean isDaytime() {
-		return false;
+		return true;
 	}
 
 	@Override
@@ -125,54 +111,17 @@ public class SWWorldProvider extends WorldProviderSurface {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public float getStarBrightness(float par1) {
-		return 1.0F;
+		return 2.0F;
 	}
 
 	@Override
 	public double getHorizon() {
 		return ShatteredWorld.SEALEVEL;
 	}
-
+	
 	@Override
-	public Biome getBiomeForCoords(BlockPos pos) {
-		Biome biome = super.getBiomeForCoords(pos);
-		if (biome == null) {
-			biome = BiomeInit.R_ROOFED_FOREST;
-		}
-		return biome;
-	}
+	public DimensionType getDimensionType() {
 
-	/**
-	 * If there is a specific twilight forest seed set, use that.  Otherwise use the world seed.
-	 */
-	@Override
-	public long getSeed() {
-		return seed == 0L ? super.getSeed() : seed;
+		return DimensionInit.SW;
 	}
-
-	private long loadSeed() {
-		String seed = "";
-		if (seed != null && !seed.isEmpty()) {
-			try {
-				return Long.parseLong(seed);
-			} catch (NumberFormatException e) {
-				return seed.hashCode();
-			}
-		}
-		return 0L;
-	}
-
-	@Override
-	public void onWorldSave() {
-		NBTTagCompound data = new NBTTagCompound();
-		data.setLong(SEED_KEY, seed);
-		world.getWorldInfo().setDimensionData(Config.ShatteredWorldDimId, data);
-	}
-
-	// no sideonly
-	@Override
-	public float getCloudHeight() {
-		return 161F;
-	}
-
 }

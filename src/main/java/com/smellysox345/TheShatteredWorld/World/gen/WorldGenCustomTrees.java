@@ -31,7 +31,7 @@ public class WorldGenCustomTrees implements IWorldGenerator{
 		switch(world.provider.getDimension())
 		{
 		
-		case 123321:
+		case -9:
 			
 			runGenerator(OAK_REFRACTED, world, random, chunkX, chunkZ, 3, -1, 0, BiomeRForest.class);
 			runGenerator(BIRCH_REFRACTED, world, random, chunkX, chunkZ, 3, -1, 0, BiomeRForest.class);
@@ -43,9 +43,6 @@ public class WorldGenCustomTrees implements IWorldGenerator{
 			break;
 			
 		case 0:
-			
-			runGenerator(OAK_REFRACTED, world, random, chunkX, chunkZ, 3, -1, 0, BiomeRForest.class);
-			runGenerator(BIRCH_REFRACTED, world, random, chunkX, chunkZ, 3, -1, 0, BiomeRForest.class);
 			
 			break;
 			

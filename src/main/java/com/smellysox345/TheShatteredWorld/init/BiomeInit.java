@@ -23,7 +23,7 @@ public class BiomeInit {
 	
 	public static void registerBiomes() {
 	
-		//initBiome(REFRACTED_FOREST, "RForest", BiomeType.WARM, Type.MAGICAL, Type.FOREST);
+		initBiome(REFRACTED_FOREST, "RForest", BiomeType.WARM, Type.MAGICAL, Type.FOREST);
 		initBiome(RF_SHROOM, "RShroom", BiomeType.COOL, Type.MAGICAL, Type.DEAD);
 		initBiome(R_ROOFED_FOREST, "RRoofedForest", BiomeType.WARM, Type.FOREST, Type.DEAD);
 	}

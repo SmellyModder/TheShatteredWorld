@@ -18,7 +18,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.Random;
 
-public class BiomeRefractedRoofedForest extends Biome{
+public class BiomeRefractedRoofedForest extends BiomeBaseShatteredWorld{
 
     protected static final WorldGenAbstractTree TREE = new WorldGenCanopyRefracted();
     protected static final WorldGenAbstractTree TREE2 = new WorldGenEyeTreeDefault();

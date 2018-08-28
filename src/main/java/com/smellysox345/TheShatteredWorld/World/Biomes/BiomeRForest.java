@@ -14,7 +14,7 @@ import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraft.world.gen.feature.WorldGenClay;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
-public class BiomeRForest extends Biome{
+public class BiomeRForest extends BiomeBaseShatteredWorld{
 
 	protected static final IBlockState SAND = ModBlocks.REFRACTEDSAND_BLOCK.getDefaultState();
 	

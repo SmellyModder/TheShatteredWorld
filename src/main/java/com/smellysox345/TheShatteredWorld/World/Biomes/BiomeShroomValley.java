@@ -32,7 +32,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 
-public class BiomeShroomValley extends Biome implements IGlobalProp{
+public class BiomeShroomValley extends BiomeBaseShatteredWorld implements IGlobalProp{
 	
 	
 	public BiomeShroomValley() {

@@ -67,6 +67,8 @@ public class ChunkGeneratorShatteredWorld implements IChunkGenerator{
 	double[] field_185987_f;
 	double[] field_185988_g;
 	double[] field_185989_h;
+	protected double[] depthBuffer = new double[256];
+	private final NoiseGeneratorOctaves noiseGen4;
 	protected static final IBlockState AIR = Blocks.AIR.getDefaultState();
 	protected static final IBlockState BEDROCK = Blocks.BEDROCK.getDefaultState();
 	protected static final IBlockState GRAVEL = ModBlocks.REFRACTEDSTONE_BLOCK.getDefaultState();
@@ -89,6 +91,7 @@ public class ChunkGeneratorShatteredWorld implements IChunkGenerator{
 		this.field_185983_b = new NoiseGeneratorOctaves(this.rand, 10);
 		this.field_185984_c = new NoiseGeneratorOctaves(this.rand, 16);
 		this.field_185985_d = new NoiseGeneratorOctaves(this.rand, 8);
+		this.noiseGen4 = new NoiseGeneratorOctaves(rand, 4);
 		this.heightMap = new double[825];
 		this.field_185999_r = new float[25];
 
@@ -120,6 +123,7 @@ public class ChunkGeneratorShatteredWorld implements IChunkGenerator{
 		this.setBlocksInChunk(x, z, chunkprimer);
 		this.biomesForGeneration = this.world.getBiomeProvider().getBiomesForGeneration(this.biomesForGeneration, x * 16, z * 16, 16, 16);
 		this.replaceBiomeBlocks(x, z, chunkprimer, this.biomesForGeneration);
+		addDarkForestCanopy2(x, z, chunkprimer);
 
 		if (this.settings.useCaves) {
 			this.caveGenerator.generate(this.world, x, z, chunkprimer);
@@ -225,6 +229,86 @@ public class ChunkGeneratorShatteredWorld implements IChunkGenerator{
         Biome biome = this.world.getBiome(pos);
         return biome.getSpawnableList(creatureType);
     }
+	
+	private void addDarkForestCanopy2(int chunkX, int chunkZ, ChunkPrimer primer) {
+		int[] thicks = new int[5 * 5];
+
+		for (int z = 0; z < 5; z++) {
+			for (int x = 0; x < 5; x++) {
+
+				for (int bx = -1; bx <= 1; bx++) {
+					for (int bz = -1; bz <= 1; bz++) {
+						Biome biome = biomesForGeneration[x + bx + 2 + (z + bz + 2) * (10)];
+
+						if (biome == BiomeInit.R_ROOFED_FOREST || biome == BiomeInit.R_ROOFED_FOREST) {
+							thicks[x + z * 5]++;
+						}
+					}
+				}
+			}
+		}
+
+		for (int z = 0; z < 16; z++) {
+			for (int x = 0; x < 16; x++) {
+
+				int qx = x / 4;
+				int qz = z / 4;
+
+				float xweight = (x % 4) * 0.25F + 0.125F;
+				float zweight = (z % 4) * 0.25F + 0.125F;
+
+				float thickness = 0;
+
+				thickness += thicks[qx + (qz) * 5] * (1F - xweight) * (1F - zweight);
+				thickness += thicks[qx + 1 + (qz) * 5] * (xweight) * (1F - zweight);
+				thickness += thicks[qx + (qz + 1) * 5] * (1F - xweight) * (zweight);
+				thickness += thicks[qx + 1 + (qz + 1) * 5] * (xweight) * (zweight);
+
+				thickness -= 4;
+
+				//int thickness = thicks[qz + (qz) * 5];
+
+				// make sure we're not too close to the tower
+
+				boolean generateForest = thickness > 1;
+
+				if (generateForest) {
+					double d = 0.03125D;
+					depthBuffer = noiseGen4.generateNoiseOctaves(depthBuffer, chunkX * 16, chunkZ * 16, 0, 16, 16, 1, d * 2D, d * 2D, d * 2D);
+
+					// find the (current) top block
+					int topLevel = -1;
+					for (int y = 127; y >= 0; y--) {
+						Block currentBlock = primer.getBlockState(x, y, z).getBlock();
+						if (currentBlock == Blocks.WATER) {
+							// don't generate over water
+							break;
+						}
+						if (currentBlock == Blocks.STONE) {
+							topLevel = y;
+							break;
+						}
+					}
+
+					if (topLevel != -1) {
+						// just use the same noise generator as the terrain uses
+						// for stones
+						int noise = Math.min(3, (int) (depthBuffer[z & 15 | (x & 15) << 4] / 1.25f));
+
+						// manipulate top and bottom
+						int treeBottom = topLevel + 12 - (int) (thickness * 0.5F);
+						int treeTop = treeBottom + (int) (thickness * 1.5F);
+
+						treeBottom -= noise;
+
+						for (int y = treeBottom; y < treeTop; y++) {
+							primer.setBlockState(x, y, z, ModBlocks.R_DARK_LEAVES.getDefaultState());
+						}
+					}
+				}
+			}
+		}
+	}
 
 	@Override
 	public void recreateStructures(Chunk chunkIn, int x, int z) {

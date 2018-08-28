@@ -22,7 +22,7 @@ public class BiomeRForest extends Biome{
 	public WorldGenerator RclayGen = new SWWorldGenClay(4);
 	
 	public BiomeRForest() {
-		super(new BiomeProperties("Refracted Forest").setTemperature(0.8F).setRainfall(0.8F));
+		super(new BiomeProperties("Refracted Forest").setTemperature(0.8F).setRainfall(0.8F).setBaseHeight(0.2F));
 	
 		topBlock = Blocks.GRASS.getDefaultState();
 		fillerBlock = ModBlocks.REFRACTEDSTONE_BLOCK.getDefaultState();

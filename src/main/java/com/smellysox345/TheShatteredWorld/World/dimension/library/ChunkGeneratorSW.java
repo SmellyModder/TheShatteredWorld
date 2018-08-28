@@ -5,9 +5,11 @@ import java.util.Random;
 
 import javax.annotation.Nullable;
 
+import com.smellysox345.TheShatteredWorld.World.dimension.features.ShatteredWorldFeatures;
 import com.smellysox345.TheShatteredWorld.init.BiomeInit;
 import com.smellysox345.TheShatteredWorld.init.ModBlocks;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -373,6 +375,7 @@ public class ChunkGeneratorSW implements IChunkGenerator{
 
         return noiseField;
     }
+    
 
     @Override
     public void populate(int x, int z)

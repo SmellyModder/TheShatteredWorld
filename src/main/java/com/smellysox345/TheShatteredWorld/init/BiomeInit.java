@@ -25,7 +25,7 @@ public class BiomeInit {
 	
 		initBiome(REFRACTED_FOREST, "RForest", BiomeType.WARM, Type.MAGICAL, Type.FOREST);
 		initBiome(RF_SHROOM, "RShroom", BiomeType.COOL, Type.MAGICAL, Type.DEAD);
-		initBiomeRare(R_ROOFED_FOREST, "RRoofedForest", BiomeType.WARM, Type.FOREST, Type.DEAD);
+		initBiome(R_ROOFED_FOREST, "RRoofedForest", BiomeType.WARM, Type.FOREST, Type.DEAD);
 	}
 	
 	public static Biome initBiome(Biome biome, String name, BiomeType biometype, Type... types)

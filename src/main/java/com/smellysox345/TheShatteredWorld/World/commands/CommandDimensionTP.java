@@ -21,13 +21,13 @@ public class CommandDimensionTP extends CommandBase{
 	@Override
 	public String getName() {
 	
-		return "TPDIM";
+		return "tpdim";
 	}
 
 	@Override
 	public String getUsage(ICommandSender sender) {
 	
-		return "TPDIM <id>";
+		return "tpdim <id>";
 		
 	}
 	

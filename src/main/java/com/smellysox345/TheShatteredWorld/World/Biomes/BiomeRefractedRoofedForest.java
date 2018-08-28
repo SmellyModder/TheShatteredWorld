@@ -73,7 +73,7 @@ public class BiomeRefractedRoofedForest extends Biome{
                 BlockPos blockpos = p_185379_1_.getHeight(p_185379_3_.add(k, 0, l));
 
                 if (p_185379_2_.nextInt(20) == 0 && net.minecraftforge.event.terraingen.TerrainGen.decorate(p_185379_1_, p_185379_2_, new net.minecraft.util.math.ChunkPos(p_185379_3_), blockpos, net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.BIG_SHROOM)) {
-                    WorldGenAbstractTree worldgenbigmushroom = new WorldGenCanopyRefracted();
+                    WorldGenAbstractTree worldgenbigmushroom = new WorldGenEyeTreeDefault();
                     worldgenbigmushroom.generate(p_185379_1_, p_185379_2_, blockpos);
                 } else {
                     addWorldgenBase(p_185379_1_, p_185379_2_, p_185379_3_, blockpos);

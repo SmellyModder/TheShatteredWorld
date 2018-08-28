@@ -28,6 +28,8 @@ import smellysox345.lib.Config;
 
 public class SWWorldProvider extends WorldProviderSurface {
 
+	 private final float[] colorsSunriseSunset = new float[4];
+	
 	@Override
 	public void init() {
 		biomeProvider = new SWBiomeProvider(world.getSeed(), world.getWorldInfo().getTerrainType());
@@ -36,7 +38,7 @@ public class SWWorldProvider extends WorldProviderSurface {
 
 	@Override
 	public IChunkGenerator createChunkGenerator() {
-		return new ChunkGeneratorShatteredWorld(world, world.getSeed(), true);
+		return new ChunkGeneratorShatteredWorld(this.world, this.world.getSeed() - 14175);
 	}
 	
 	@Nullable
@@ -57,9 +59,30 @@ public class SWWorldProvider extends WorldProviderSurface {
 	}
 	
 	@Override
-	public float[] calcSunriseSunsetColors(float celestialAngle, float f1) {
-		return null;
-	}
+	@Nullable
+    @SideOnly(Side.CLIENT)
+    public float[] calcSunriseSunsetColors(float celestialAngle, float partialTicks)
+    {
+        float f = 0.4F;
+        float f1 = MathHelper.cos(celestialAngle * ((float)Math.PI * 2F)) - 0.0F;
+        float f2 = -0.0F;
+
+        if (f1 >= -0.4F && f1 <= 0.4F)
+        {
+            float f3 = (f1 - -0.0F) / 0.4F * 0.5F + 0.5F;
+            float f4 = 1.0F - (1.0F - MathHelper.sin(f3 * (float)Math.PI)) * 0.99F;
+            f4 = f4 * f4;
+            this.colorsSunriseSunset[0] = f3 * 0.3F + 0.7F * -0.1F;
+            this.colorsSunriseSunset[1] = f3;
+            this.colorsSunriseSunset[2] = f3 * f3;
+            this.colorsSunriseSunset[3] = f4;
+            return this.colorsSunriseSunset;
+        }
+        else
+        {
+            return null;
+        }
+    }
 
 	@Override
 	public Vec3d getFogColor(float f, float f1) {
@@ -80,10 +103,25 @@ public class SWWorldProvider extends WorldProviderSurface {
 	}
 
 	// Pin the celestial angle at night/evening so things that use it see night
-	@Override
-	public float calculateCelestialAngle(long par1, float par3) {
-		return 0.225f;
-	}
+	public float calculateCelestialAngle(long worldTime, float partialTicks)
+    {
+        int i = (int)(worldTime % 24000L);
+        float f = ((float)i + partialTicks) / 24000.0F - 0.25F;
+
+        if (f < 0.0F)
+        {
+            ++f;
+        }
+
+        if (f > 1.0F)
+        {
+            --f;
+        }
+
+        float f1 = 1.0F - (float)((Math.cos((double)f * Math.PI) + 1.0D) / 2.0D);
+        f = f + (f1 - f) / 3.0F;
+        return f;
+    }
 	
 	@SideOnly(Side.CLIENT)
 	@Override
@@ -94,11 +132,6 @@ public class SWWorldProvider extends WorldProviderSurface {
 	@Override
 	public int getAverageGroundLevel() {
 		return 30;
-	}
-	
-	@Override
-	public boolean isDaytime() {
-		return true;
 	}
 
 	@Override

@@ -8,6 +8,9 @@ import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.EnumDifficulty;
+import net.minecraft.world.EnumSkyBlock;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -60,5 +63,35 @@ public class EntityShroomZombie extends EntityZombie{
 	    public float getBrightness()
 	    {
 	        return 0.0F;
+	    }
+	 
+	@Override
+	public boolean getCanSpawnHere()
+	{
+	        return this.world.getDifficulty() != EnumDifficulty.PEACEFUL && this.isValidLightLevel2() && super.getCanSpawnHere();
+	}
+	
+	 protected boolean isValidLightLevel2()
+	    {
+	        BlockPos blockpos = new BlockPos(this.posX, this.getEntityBoundingBox().minY, this.posZ);
+
+	        if (this.world.getLightFor(EnumSkyBlock.SKY, blockpos) > this.rand.nextInt(32))
+	        {
+	            return false;
+	        }
+	        else
+	        {
+	            int i = this.world.getLightFromNeighbors(blockpos);
+
+	            if (this.world.isThundering())
+	            {
+	                int j = this.world.getSkylightSubtracted();
+	                this.world.setSkylightSubtracted(10);
+	                i = this.world.getLightFromNeighbors(blockpos);
+	                this.world.setSkylightSubtracted(j);
+	            }
+
+	            return i <= this.rand.nextInt(8);
+	        }
 	    }
 }

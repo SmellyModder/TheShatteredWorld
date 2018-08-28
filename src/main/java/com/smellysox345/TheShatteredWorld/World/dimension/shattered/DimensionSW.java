@@ -31,9 +31,8 @@ public class DimensionSW extends WorldProvider{
 	}
 	
 	@Override
-	public IChunkGenerator createChunkGenerator() 
-	{
-		return new ChunkGeneratorShatteredWorld(world, Config.ShatteredWorldDimId, true);
+	public IChunkGenerator createChunkGenerator() {
+		return new ChunkGeneratorShatteredWorld(this.world, this.world.getSeed() - 14175);
 	}
 	
 	@Override

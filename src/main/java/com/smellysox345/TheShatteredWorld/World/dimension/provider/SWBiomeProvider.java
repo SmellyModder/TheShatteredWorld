@@ -5,11 +5,15 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
+import com.smellysox345.TheShatteredWorld.World.dimension.layers.GenLayerSWBiomes;
 import com.smellysox345.TheShatteredWorld.World.dimension.layers.GenLayerSWStabilize;
 import com.smellysox345.TheShatteredWorld.World.dimension.layers.LayerGenSW;
 import com.smellysox345.TheShatteredWorld.init.BiomeInit;
 
+import net.minecraft.crash.CrashReport;
+import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.init.Biomes;
+import net.minecraft.util.ReportedException;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldType;
@@ -26,160 +30,234 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class SWBiomeProvider extends BiomeProvider{
 
-	private GenLayer biomeToUse;
+	private GenLayer genBiomes;
+	/** A GenLayer containing the indices into Biome.biomeList[] */
 	private GenLayer biomeIndexLayer;
+	/** The BiomeCache object for this world. */
 	private BiomeCache biomeCache;
+	/** A list of biomes that the player can spawn in. */
 	private List<Biome> biomesToSpawnIn;
 
-	public SWBiomeProvider()
-	{
-		biomeCache = new BiomeCache(this);
-		biomesToSpawnIn = new ArrayList<Biome>();
-		biomesToSpawnIn.add(BiomeInit.RF_SHROOM);
-		biomesToSpawnIn.add(BiomeInit.REFRACTED_FOREST);
-		biomesToSpawnIn.add(BiomeInit.R_ROOFED_FOREST);
+	@SuppressWarnings({"unchecked", "rawtypes"})
+	public SWBiomeProvider() {
+		this.biomeCache = new BiomeCache(this);
+		this.biomesToSpawnIn = new ArrayList();
+		this.biomesToSpawnIn.addAll(allowedBiomes);
 	}
 
-	public SWBiomeProvider(long par1, WorldType par3WorldType)
-	{
+	public SWBiomeProvider(long seed, WorldType worldType) {
 		this();
-		GenLayer[] agenlayer = LayerGenSW.makeTheWorld(par1);
-		biomeToUse = agenlayer[0];
-		biomeIndexLayer = agenlayer[1];
+		GenLayer[] agenlayer = GenLayerFix.makeTheWorld(seed, worldType);
+		agenlayer = getModdedBiomeGenerators(worldType, seed, agenlayer);
+		this.genBiomes = agenlayer[0];
+		this.biomeIndexLayer = agenlayer[1];
+
 	}
 
-	public SWBiomeProvider(World par1world)
-	{
-		this(par1world.getSeed(), par1world.getWorldInfo().getTerrainType());
+	public SWBiomeProvider(World world) {
+		this(world.getSeed(), world.getWorldInfo().getTerrainType());
+
 	}
 
+	/**
+	 * Gets the list of valid biomes for the player to spawn in.
+	 */
 	@Override
-	public List<Biome> getBiomesToSpawnIn()
-	{
-		return biomesToSpawnIn;
+	public List<Biome> getBiomesToSpawnIn() {
+		return this.biomesToSpawnIn;
 	}
 
-	@Override
-	public Biome getBiome(BlockPos pos)
-	{
-		return this.getBiome(pos, (Biome)null);
+	/**
+	 * Returns the Biome related to the x, z position on the world.
+	 */
+
+	public Biome getBiomeGenerator(BlockPos pos) {
+		return this.getBiomeGenerator(pos, (Biome) null);
 	}
 
-	@Override
-	public Biome getBiome(BlockPos pos, Biome biomegen)
-	{
-		Biome biome = biomeCache.getBiome(pos.getX(), pos.getZ(), biomegen);
-		if (biome == null)
-			return BiomeInit.REFRACTED_FOREST;
-
-		return biome;
+	public Biome getBiomeGenerator(BlockPos pos, Biome biomeGenBaseIn) {
+		return this.biomeCache.getBiome(pos.getX(), pos.getZ(), biomeGenBaseIn);
 	}
 
+	/**
+	 * Return an adjusted version of a given temperature based on the y
+	 * height
+	 */
 	@Override
 	@SideOnly(Side.CLIENT)
 	public float getTemperatureAtHeight(float par1, int par2) {
 		return par1;
 	}
 
+	/**
+	 * Returns an array of biomes for the location input.
+	 */
 	@Override
-	public Biome[] getBiomesForGeneration(Biome[] par1ArrayOfBiome, int par2, int par3, int par4, int par5)
-	{
-		if (par1ArrayOfBiome == null || par1ArrayOfBiome.length < par4 * par5)
-			par1ArrayOfBiome = new Biome[par4 * par5];
-
-		int[] aint = biomeToUse.getInts(par2, par3, par4, par5);
-
-		for (int i = 0; i < par4 * par5; ++i)
-			if (aint[i] >= 0 && aint[i] <= Biome.REGISTRY.getKeys().size())
-				par1ArrayOfBiome[i] = Biome.getBiome(aint[i]);
-			else
-				par1ArrayOfBiome[i] = BiomeInit.REFRACTED_FOREST;
-
-		return par1ArrayOfBiome;
-	}
-
-	@Override
-	public Biome[] getBiomes(Biome[] par1ArrayOfBiome, int par2, int par3, int par4, int par5)
-	{
-		return getBiomes(par1ArrayOfBiome, par2, par3, par4, par5, true);
-	}
-
-	@Override
-	public Biome[] getBiomes(Biome[] par1ArrayOfBiome, int x, int y, int width, int length, boolean cacheFlag)
-	{
+	public Biome[] getBiomesForGeneration(Biome[] par1ArrayOfBiome, int par2, int par3, int par4, int par5) {
 		IntCache.resetIntCache();
 
-		if (par1ArrayOfBiome == null || par1ArrayOfBiome.length < width * length)
-			par1ArrayOfBiome = new Biome[width * length];
+		if (par1ArrayOfBiome == null || par1ArrayOfBiome.length < par4 * par5) {
+			par1ArrayOfBiome = new Biome[par4 * par5];
+		}
 
-		if (cacheFlag && width == 16 && length == 16 && (x & 15) == 0 && (y & 15) == 0) {
-			Biome[] aBiome1 = biomeCache.getCachedBiomes(x, y);
-			System.arraycopy(aBiome1, 0, par1ArrayOfBiome, 0, width * length);
-			return par1ArrayOfBiome;
-		} else {
-			int[] aint = biomeIndexLayer.getInts(x, y, width, length);
+		int[] aint = this.genBiomes.getInts(par2, par3, par4, par5);
 
-			for (int i = 0; i < width * length; ++i)
-				if (aint[i] >= 0 && aint[i] <= Biome.REGISTRY.getKeys().size())
-					par1ArrayOfBiome[i] = Biome.getBiome(aint[i]);
-				else
-					par1ArrayOfBiome[i] = BiomeInit.REFRACTED_FOREST;
+		try {
+			for (int i = 0; i < par4 * par5; ++i) {
+				par1ArrayOfBiome[i] = Biome.getBiome(aint[i]);
+			}
 
 			return par1ArrayOfBiome;
+		} catch (Throwable throwable) {
+			CrashReport crashreport = CrashReport.makeCrashReport(throwable, "Invalid Biome id");
+			CrashReportCategory crashreportcategory = crashreport.makeCategory("RawBiomeBlock");
+			crashreportcategory.addCrashSection("biomes[] size", Integer.valueOf(par1ArrayOfBiome.length));
+			crashreportcategory.addCrashSection("x", Integer.valueOf(par2));
+			crashreportcategory.addCrashSection("z", Integer.valueOf(par3));
+			crashreportcategory.addCrashSection("w", Integer.valueOf(par4));
+			crashreportcategory.addCrashSection("h", Integer.valueOf(par5));
+			throw new ReportedException(crashreport);
 		}
 	}
 
+	/**
+	 * Returns biomes to use for the blocks and loads the other data like
+	 * temperature and humidity onto the WorldChunkManager Args:
+	 * oldBiomeList, x, z, width, depth
+	 */
 	@Override
-	public boolean areBiomesViable(int par1, int par2, int par3, List par4List) {
-		IntCache.resetIntCache();
-		int l = par1 - par3 >> 2;
-				int i1 = par2 - par3 >> 2;
-			int j1 = par1 + par3 >> 2;
-			int k1 = par2 + par3 >> 2;
-			int l1 = j1 - l + 1;
-			int i2 = k1 - i1 + 1;
-			int[] aint = biomeToUse.getInts(l, i1, l1, i2);
+	public Biome[] getBiomes(Biome[] oldBiomeList, int x, int z, int width, int depth) {
+		return this.getBiomes(oldBiomeList, x, z, width, depth, true);
+	}
 
+	/**
+	 * Return a list of biomes for the specified blocks. Args: listToReuse,
+	 * x, y, width, length, cacheFlag (if false, don't check biomeCache to
+	 * avoid infinite loop in BiomeCacheBlock)
+	 */
+	@Override
+	public Biome[] getBiomes(Biome[] listToReuse, int x, int y, int width, int length, boolean cacheFlag) {
+		IntCache.resetIntCache();
+
+		if (listToReuse == null || listToReuse.length < width * length) {
+			listToReuse = new Biome[width * length];
+		}
+
+		if (cacheFlag && width == 16 && length == 16 && (x & 15) == 0 && (y & 15) == 0) {
+			Biome[] aBiome1 = this.biomeCache.getCachedBiomes(x, y);
+			System.arraycopy(aBiome1, 0, listToReuse, 0, width * length);
+			return listToReuse;
+		} else {
+			int[] aint = this.biomeIndexLayer.getInts(x, y, width, length);
+
+			for (int i = 0; i < width * length; ++i) {
+				listToReuse[i] = Biome.getBiome(aint[i]);
+			}
+			return listToReuse;
+		}
+	}
+
+	/**
+	 * checks given Chunk's Biomes against List of allowed ones
+	 */
+	@Override
+	@SuppressWarnings("rawtypes")
+	public boolean areBiomesViable(int x, int y, int z, List par4List) {
+		IntCache.resetIntCache();
+		int l = x - z >> 2;
+		int i1 = y - z >> 2;
+		int j1 = x + z >> 2;
+		int k1 = y + z >> 2;
+		int l1 = j1 - l + 1;
+		int i2 = k1 - i1 + 1;
+		int[] aint = this.genBiomes.getInts(l, i1, l1, i2);
+
+		try {
 			for (int j2 = 0; j2 < l1 * i2; ++j2) {
 				Biome biome = Biome.getBiome(aint[j2]);
 
-				if (!par4List.contains(biome))
+				if (!par4List.contains(biome)) {
 					return false;
-			}
-
-			return true;
-	}
-
-	@Override
-	public BlockPos findBiomePosition(int par1, int par2, int par3, List par4List, Random par5Random) {
-		IntCache.resetIntCache();
-		int l = par1 - par3 >> 2;
-			int i1 = par2 - par3 >> 2;
-			int j1 = par1 + par3 >> 2;
-			int k1 = par2 + par3 >> 2;
-			int l1 = j1 - l + 1;
-			int i2 = k1 - i1 + 1;
-			int[] aint = biomeToUse.getInts(l, i1, l1, i2);
-			BlockPos blockpos = null;
-			int j2 = 0;
-
-			for (int k2 = 0; k2 < l1 * i2; ++k2) {
-				int l2 = l + k2 % l1 << 2;
-				int i3 = i1 + k2 / l1 << 2;
-				Biome biome = Biome.getBiome(aint[k2]);
-
-				if (par4List.contains(biome) && (blockpos == null || par5Random.nextInt(j2 + 1) == 0)) {
-					blockpos = new BlockPos(l2, 0, i3);
-					++j2;
 				}
 			}
 
-			return blockpos;
+			return true;
+		} catch (Throwable throwable) {
+			CrashReport crashreport = CrashReport.makeCrashReport(throwable, "Invalid Biome id");
+			CrashReportCategory crashreportcategory = crashreport.makeCategory("Layer");
+			crashreportcategory.addCrashSection("Layer", this.genBiomes.toString());
+			crashreportcategory.addCrashSection("x", Integer.valueOf(x));
+			crashreportcategory.addCrashSection("z", Integer.valueOf(y));
+			crashreportcategory.addCrashSection("radius", Integer.valueOf(z));
+			crashreportcategory.addCrashSection("allowed", par4List);
+			throw new ReportedException(crashreport);
+		}
 	}
 
+	/**
+	 * Finds a valid position within a range, that is in one of the listed
+	 * biomes. Searches {par1,par2} +-par3 blocks. Strongly favors positive
+	 * y positions.
+	 */
 	@Override
-	public void cleanupCache()
-	{
-		biomeCache.cleanupCache();
+	@SuppressWarnings("rawtypes")
+	public BlockPos findBiomePosition(int x, int z, int range, List biomes, Random random) {
+		IntCache.resetIntCache();
+		int l = x - range >> 2;
+		int i1 = z - range >> 2;
+		int j1 = x + range >> 2;
+		int k1 = z + range >> 2;
+		int l1 = j1 - l + 1;
+		int i2 = k1 - i1 + 1;
+		int[] aint = this.genBiomes.getInts(l, i1, l1, i2);
+		BlockPos blockpos = null;
+		int j2 = 0;
+
+		for (int k2 = 0; k2 < l1 * i2; ++k2) {
+			int l2 = l + k2 % l1 << 2;
+			int i3 = i1 + k2 / l1 << 2;
+			Biome biome = Biome.getBiome(aint[k2]);
+
+			if (biomes.contains(biome) && (blockpos == null || random.nextInt(j2 + 1) == 0)) {
+				blockpos = new BlockPos(l2, 0, i3);
+				++j2;
+			}
+		}
+
+		return blockpos;
+	}
+
+	/**
+	 * Calls the WorldChunkManager's biomeCache.cleanupCache()
+	 */
+	@Override
+	public void cleanupCache() {
+		this.biomeCache.cleanupCache();
+	}
+	
+	public static class GenLayerFix extends GenLayer {
+
+		public GenLayerFix(long seed) {
+			super(seed);
+		}
+
+		public static GenLayer[] makeTheWorld(long seed, WorldType type) {
+			GenLayer biomes = new GenLayerSWBiomes(2L);
+			biomes = new GenLayerZoom(1000L, biomes);
+			biomes = new GenLayerZoom(1001L, biomes);
+			biomes = new GenLayerZoom(1002L, biomes);
+			biomes = new GenLayerZoom(1003L, biomes);
+			biomes = new GenLayerZoom(1004L, biomes);
+			biomes = new GenLayerZoom(1005L, biomes);
+			GenLayer genlayervoronoizoom = new GenLayerVoronoiZoom(10L, biomes);
+			biomes.initWorldGenSeed(seed);
+			genlayervoronoizoom.initWorldGenSeed(seed);
+			return new GenLayer[]{biomes, genlayervoronoizoom};
+		}
+
+		@Override
+		public int[] getInts(int p_75904_1_, int p_75904_2_, int p_75904_3_, int p_75904_4_) {
+			return null;
+		}
 	}
 }

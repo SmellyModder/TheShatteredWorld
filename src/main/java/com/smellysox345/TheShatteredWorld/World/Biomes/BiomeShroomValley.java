@@ -13,6 +13,7 @@ import com.smellysox345.TheShatteredWorld.entity.EntityShroomZombie;
 import com.smellysox345.TheShatteredWorld.entity.EntityShroomite;
 import com.smellysox345.TheShatteredWorld.entity.EntitySlimeWolf;
 import com.smellysox345.TheShatteredWorld.init.ModBlocks;
+import com.smellysox345.TheShatteredWorld.util.interfaces.IGlobalProp;
 
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.state.IBlockState;
@@ -31,7 +32,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 
-public class BiomeShroomValley extends Biome{
+public class BiomeShroomValley extends Biome implements IGlobalProp{
 	
 	
 	public BiomeShroomValley() {
@@ -53,5 +54,15 @@ public class BiomeShroomValley extends Biome{
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityShroomCreeper.class, 3, 1, 3));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityShroomZombie.class, 3, 1, 3));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityShroomSkeleton.class, 3, 1, 3));
+	}
+
+	@Override
+	public int getMobSpawnRate(int spawnRate) {
+		return 0;
+	}
+
+	@Override
+	public int timeOfDay(int time) {
+		return 0;
 	}
 }

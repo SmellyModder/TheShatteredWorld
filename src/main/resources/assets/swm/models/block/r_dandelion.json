@@ -1,0 +1,6 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "swm:plants/r_dandelion"
+    }
+}

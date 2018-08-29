@@ -12,6 +12,7 @@ import com.smellysox345.TheShatteredWorld.blocks.magic.ForceFieldShroom;
 import com.smellysox345.TheShatteredWorld.blocks.mobutil.BlockSpiderSack;
 import com.smellysox345.TheShatteredWorld.blocks.mobutil.SpiderQueenEgg;
 import com.smellysox345.TheShatteredWorld.blocks.plants.*;
+import com.smellysox345.TheShatteredWorld.blocks.plants.flowers.SWFlowers;
 import com.smellysox345.TheShatteredWorld.blocks.plants.tree.BlockRefractedDarkOakLeaves;
 import com.smellysox345.TheShatteredWorld.blocks.plants.tree.BlockSpookyLog;
 import com.smellysox345.TheShatteredWorld.blocks.variant.*;
@@ -47,6 +48,10 @@ public class ModBlocks {
     public static final Block SAPLING = new BlockSaplings("saplings");
     public static final Block SAPLING_EYE_DEFAULT = new EyeTreeSaplingDefault("eye_sapling_default", Material.PLANTS);
 
+    //Flowers
+    public static final Block R_DANDELION = new SWFlowers("r_dandelion", Material.PLANTS);
+    public static final Block R_POPPY = new SWFlowers("r_poppy", Material.PLANTS);
+    
     //Portals
     public static final Block R_PORTAL = new BlockTeleporter("refractedportal_block", Material.PORTAL);
 

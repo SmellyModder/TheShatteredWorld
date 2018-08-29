@@ -7,6 +7,8 @@ import com.smellysox345.TheShatteredWorld.World.gen.generators.tree.WorldGenOakR
 import com.smellysox345.TheShatteredWorld.entity.EntitySlimeWolf;
 import com.smellysox345.TheShatteredWorld.init.ModBlocks;
 
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockFlower;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.biome.Biome;
@@ -38,6 +40,10 @@ public class BiomeRForest extends BiomeBaseShatteredWorld{
 		this.spawnableMonsterList.clear();
 		
 		this.spawnableCreatureList.add(new SpawnListEntry(EntitySlimeWolf.class, 10, 1, 3));
+		
+		this.flowers.clear();
+		this.decorator.flowersPerChunk = 0;
+		this.decorator.flowerGen = null;
 	}
 	
 	@Override

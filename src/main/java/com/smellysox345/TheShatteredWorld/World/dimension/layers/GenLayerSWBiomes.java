@@ -22,10 +22,13 @@ public class GenLayerSWBiomes extends GenLayer {
 
 	protected static final List<Supplier<Biome>> commonBiomes = Arrays.asList(
 			() -> BiomeInit.RF_SHROOM,
-			() -> BiomeInit.REFRACTED_FOREST
+			() -> BiomeInit.REFRACTED_FOREST,
+			() -> BiomeInit.R_ROOFED_FOREST
 	);
 	protected static final List<Supplier<Biome>> rareBiomes = Arrays.asList(
-			() -> BiomeInit.R_ROOFED_FOREST
+			() -> BiomeInit.SW_TAIGA,
+			() -> BiomeInit.SW_TAIGAM,
+			() -> BiomeInit.SW_TAIGAMP
 	);
 
 	public GenLayerSWBiomes(long l, GenLayer genlayer) {

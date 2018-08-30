@@ -42,7 +42,6 @@ public class BiomeInit {
 		biome.setRegistryName(name);
 		ForgeRegistries.BIOMES.register(biome);
 		BiomeDictionary.addTypes(biome, types);
-		BiomeManager.addBiome(biometype, new BiomeEntry(biome, 40));
 		BiomeManager.addSpawnBiome(biome);
 		return biome;
 	}

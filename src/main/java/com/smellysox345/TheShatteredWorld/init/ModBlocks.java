@@ -13,11 +13,13 @@ import com.smellysox345.TheShatteredWorld.blocks.mobutil.BlockSpiderSack;
 import com.smellysox345.TheShatteredWorld.blocks.mobutil.SpiderQueenEgg;
 import com.smellysox345.TheShatteredWorld.blocks.plants.*;
 import com.smellysox345.TheShatteredWorld.blocks.plants.flowers.SWFlowers;
+import com.smellysox345.TheShatteredWorld.blocks.plants.mushroom.DarkRedMushroomBlock;
 import com.smellysox345.TheShatteredWorld.blocks.plants.tree.BlockRefractedDarkOakLeaves;
 import com.smellysox345.TheShatteredWorld.blocks.plants.tree.BlockSpookyLog;
 import com.smellysox345.TheShatteredWorld.blocks.variant.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
+import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 
 import java.util.ArrayList;
@@ -78,6 +80,9 @@ public class ModBlocks {
     public static final Block BOUNCYSHROOM_BLOCK = new BouncyShroom("bouncyshroom_block", Material.GOURD);
     public static final Block BOUNCYSHROOMSTEM_BLOCK = new BouncyShroomStem("bouncyshroomstem_block", Material.GOURD);
     public static final Block SHROOM_SHIELD = new ForceFieldShroom("force_field_s", Material.ICE);
+    
+    public static final Block DARK_BROWN_MUSHROOM_BLOCK = new DarkRedMushroomBlock("bd_mushroom", MapColor.BROWN, PINKI_SHROOM);
+	public static final Block DARK_RED_MUSHROOM_BLOCK = new DarkRedMushroomBlock("rd_mushroom", MapColor.RED, PINKI_SHROOM );
 
     //Containers
     public static final Block MAGIC_LANTERN = new BlockLantern("lantern", Material.FIRE);

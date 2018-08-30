@@ -3,14 +3,19 @@ package com.smellysox345.TheShatteredWorld.World.Biomes;
 import java.util.Random;
 
 import com.smellysox345.TheShatteredWorld.World.dimension.features.SWWorldGenClay;
+import com.smellysox345.TheShatteredWorld.World.gen.WorldGenSWFlowers;
 import com.smellysox345.TheShatteredWorld.World.gen.generators.tree.WorldGenOakRefracted;
+import com.smellysox345.TheShatteredWorld.blocks.plants.flowers.SWFlowers;
 import com.smellysox345.TheShatteredWorld.entity.EntitySlimeWolf;
 import com.smellysox345.TheShatteredWorld.init.ModBlocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFlower;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraft.world.gen.feature.WorldGenClay;
@@ -22,6 +27,8 @@ public class BiomeRForest extends BiomeBaseShatteredWorld{
 	
 	protected static final WorldGenAbstractTree TREE =  new WorldGenOakRefracted();
 	public WorldGenerator RclayGen = new SWWorldGenClay(4);
+	public WorldGenSWFlowers swflowergen = new WorldGenSWFlowers(ModBlocks.R_POPPY);
+	public BlockPos chunkPos;
 	
 	public BiomeRForest() {
 		super(new BiomeProperties("Refracted Forest").setTemperature(0.8F).setRainfall(0.8F).setBaseHeight(0.2F));
@@ -51,5 +58,4 @@ public class BiomeRForest extends BiomeBaseShatteredWorld{
 		
 		return TREE;
 	}
-
 }

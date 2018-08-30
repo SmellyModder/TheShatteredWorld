@@ -86,8 +86,8 @@ public class ModBlocks {
     public static final Block SHROOM_SHIELD = new ForceFieldShroom("force_field_s", Material.ICE);
     
     //The Dank forest --hehe
-    public static final Block GHOSTRAM_SHROOM = new GhostramShroom("ghostram_shroom", Material.GOURD);
-    public static final Block DARKRUM_SHROOM = new DarkrumShroom("darkrum_shroom", Material.GOURD);
+    public static final GhostramShroom GHOSTRAM_SHROOM = new GhostramShroom("ghostram_shroom", Material.GOURD);
+    public static final DarkrumShroom DARKRUM_SHROOM = new DarkrumShroom("darkrum_shroom", Material.GOURD);
     public static final Block DARK_BROWN_MUSHROOM_BLOCK = new DarkShroomBase("ghostram_shroom_big", MapColor.BROWN, GHOSTRAM_SHROOM);
 	public static final Block DARK_RED_MUSHROOM_BLOCK = new DarkShroomBase("darkrum_shroom_big", MapColor.RED, DARKRUM_SHROOM );
 	public static final Block R_DOUBLE_ROSE = new BlockSWDoublePlant("sw_d_p");

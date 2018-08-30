@@ -3,19 +3,17 @@ package com.smellysox345.TheShatteredWorld.World.gen;
 import java.util.Random;
 
 import com.smellysox345.TheShatteredWorld.blocks.plants.mushroom.DarkrumShroom;
-import com.smellysox345.TheShatteredWorld.blocks.plants.mushroom.GhostramShroom;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockBush;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
-public class WorldGenBushDShrooms extends WorldGenerator
+public class WorldGenBushDShrooms2 extends WorldGenerator
 {
-    private final GhostramShroom block;
+    private final DarkrumShroom block;
 
-    public WorldGenBushDShrooms(GhostramShroom darkrumShroom)
+    public WorldGenBushDShrooms2(DarkrumShroom darkrumShroom)
     {
         this.block = darkrumShroom;
     }
@@ -34,5 +32,4 @@ public class WorldGenBushDShrooms extends WorldGenerator
 
         return true;
     }
-
 }

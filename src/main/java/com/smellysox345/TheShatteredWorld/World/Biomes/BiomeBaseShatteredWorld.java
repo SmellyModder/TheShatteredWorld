@@ -6,6 +6,7 @@ import java.util.List;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeDecorator;
 import net.minecraft.world.gen.feature.WorldGenBigMushroom;
 import net.minecraft.world.gen.feature.WorldGenBirchTree;
 
@@ -13,6 +14,7 @@ public class BiomeBaseShatteredWorld extends Biome{
 
 	public BiomeBaseShatteredWorld(BiomeProperties props) {
 		super(props);
+		
 	}
 
 	@Override

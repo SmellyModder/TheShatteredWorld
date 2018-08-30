@@ -2,6 +2,7 @@ package com.smellysox345.TheShatteredWorld.World.Biomes;
 
 import com.smellysox345.TheShatteredWorld.World.gen.SWWorldGenBigMushroomDark;
 import com.smellysox345.TheShatteredWorld.World.gen.WorldGenBushDShrooms;
+import com.smellysox345.TheShatteredWorld.World.gen.WorldGenBushDShrooms2;
 import com.smellysox345.TheShatteredWorld.World.gen.generators.tree.WorldGenCanopyRefracted;
 import com.smellysox345.TheShatteredWorld.World.gen.generators.tree.WorldGenEyeTreeDefault;
 import com.smellysox345.TheShatteredWorld.entity.EntityFlyingEye;
@@ -18,6 +19,7 @@ import net.minecraft.world.ColorizerFoliage;
 import net.minecraft.world.ColorizerGrass;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeDecorator;
 import net.minecraft.world.biome.Biome.SpawnListEntry;
 import net.minecraft.world.gen.ChunkGeneratorSettings;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
@@ -35,10 +37,6 @@ public class BiomeRefractedRoofedForest extends BiomeBaseShatteredWorld{
     protected static final WorldGenAbstractTree TREE = new WorldGenCanopyRefracted();
     protected static final WorldGenAbstractTree TREE2 = new WorldGenEyeTreeDefault();
 
-    public WorldGenerator mushroomBrownGenR = new WorldGenBushDShrooms(ModBlocks.GHOSTRAM_SHROOM);
-  
-    public WorldGenerator mushroomRedGenR = new WorldGenBushDShrooms(ModBlocks.DARKRUM_SHROOM);
-
     private static float mistDensity = 0.1F;
     private static int mistColor = 4266496;
     
@@ -46,7 +44,7 @@ public class BiomeRefractedRoofedForest extends BiomeBaseShatteredWorld{
     public boolean decorating;
 
     public int mushroomsPerChunkReal = 22;
-    
+ 
     public BiomeRefractedRoofedForest() {
         super(new BiomeProperties("Refracted Roofed Forest").setRainfall(0.8F));
 
@@ -65,56 +63,10 @@ public class BiomeRefractedRoofedForest extends BiomeBaseShatteredWorld{
         this.spawnableMonsterList.add(new SpawnListEntry(EntityShadowSpider.class, 2, 1, 2));
         this.spawnableMonsterList.add(new SpawnListEntry(EntityFlyingEye.class, 1, 1, 7));
         
-        this.decorator.mushroomsPerChunk = 100;
+        this.decorator.mushroomsPerChunk = -99;
         
-        this.decorator.mushroomRedGen = new WorldGenBushDShrooms(ModBlocks.DARKRUM_SHROOM);
-        this.decorator.mushroomBrownGen = new WorldGenBushDShrooms(ModBlocks.GHOSTRAM_SHROOM);
-    }
-    
-    public void decorate(World worldIn, Random random, Biome biome, BlockPos pos)
-    {
-        if (this.decorating)
-        {
-            throw new RuntimeException("Already decorating");
-        }
-        else
         
-            this.chunkPos = pos;
-            this.genDecorations(biome, worldIn, random);
-            this.decorating = false;
-        }
-    
-    protected void genDecorations(Biome biomeIn, World worldIn, Random random)
-    {
-    	net.minecraft.util.math.ChunkPos forgeChunkPos = new net.minecraft.util.math.ChunkPos(chunkPos); // actual ChunkPos instead of BlockPos, used for events
-        net.minecraftforge.common.MinecraftForge.EVENT_BUS.post(new net.minecraftforge.event.terraingen.DecorateBiomeEvent.Pre(worldIn, random, forgeChunkPos));
-    	if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, random, forgeChunkPos, net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.SHROOM))
-        {
-        for (int l3 = 0; l3 < this.mushroomsPerChunkReal; ++l3)
-        {
-            if (random.nextInt(4) == 0)
-            {
-                int i8 = random.nextInt(16) + 8;
-                int l11 = random.nextInt(16) + 8;
-                BlockPos blockpos2 = worldIn.getHeight(this.chunkPos.add(i8, 0, l11));
-                this.mushroomBrownGenR.generate(worldIn, random, blockpos2);
-            }
-            
-            if (random.nextInt(8) == 0)
-            {
-                int j8 = random.nextInt(16) + 8;
-                int i12 = random.nextInt(16) + 8;
-                int j15 = worldIn.getHeight(this.chunkPos.add(j8, 0, i12)).getY() * 2;
-
-                if (j15 > 0)
-                {
-                    int k18 = random.nextInt(j15);
-                    BlockPos blockpos5 = this.chunkPos.add(j8, k18, i12);
-                    this.mushroomRedGenR.generate(worldIn, random, blockpos5);
-                }
-            }
-        }
-        }
+        this.decorator.generateFalls = false;
     }
 
     @Override
@@ -150,12 +102,20 @@ public class BiomeRefractedRoofedForest extends BiomeBaseShatteredWorld{
                 int k = i * 4 + 1 + 8 + p_185379_2_.nextInt(3);
                 int l = j * 4 + 1 + 8 + p_185379_2_.nextInt(3);
                 BlockPos blockpos = p_185379_1_.getHeight(p_185379_3_.add(k, 0, l));
+                BlockPos blockpos2 = p_185379_1_.getHeight(p_185379_3_.add(k, -2, l));
 
                 if (p_185379_2_.nextInt(20) == 0 && net.minecraftforge.event.terraingen.TerrainGen.decorate(p_185379_1_, p_185379_2_, new net.minecraft.util.math.ChunkPos(p_185379_3_), blockpos, net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.BIG_SHROOM)) {
                     WorldGenAbstractTree worldgenbigmushroom = new WorldGenEyeTreeDefault();
+                    WorldGenBushDShrooms mushroomBrownGenR = new WorldGenBushDShrooms(ModBlocks.GHOSTRAM_SHROOM);
+                    WorldGenBushDShrooms2 mushroomRedGenR = new WorldGenBushDShrooms2(ModBlocks.DARKRUM_SHROOM);
                     worldgenbigmushroom.generate(p_185379_1_, p_185379_2_, blockpos);
+                    mushroomBrownGenR.generate(p_185379_1_, p_185379_2_, blockpos);
+                    mushroomRedGenR.generate(p_185379_1_, p_185379_2_, blockpos2);
+                    
                 } else {
+                	
                     addWorldgenBase(p_185379_1_, p_185379_2_, p_185379_3_, blockpos);
+                    
                 }
             }
         }
@@ -176,6 +136,7 @@ public class BiomeRefractedRoofedForest extends BiomeBaseShatteredWorld{
     public void decorate(World worldIn, Random rand, BlockPos pos) {
         this.addMushrooms(worldIn, rand, pos);
         this.addRoofedTrees(worldIn, rand, pos);
+        
 
         if (net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.FLOWERS)) { // no tab for patch
             int i = rand.nextInt(5) - 3;
@@ -195,6 +156,7 @@ public class BiomeRefractedRoofedForest extends BiomeBaseShatteredWorld{
 
                 if (p_185379_2_.nextInt(20) == 0 && net.minecraftforge.event.terraingen.TerrainGen.decorate(p_185379_1_, p_185379_2_, new net.minecraft.util.math.ChunkPos(p_185379_3_), blockpos, net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.BIG_SHROOM)) {
                     SWWorldGenBigMushroomDark worldgenbigmushroom = new SWWorldGenBigMushroomDark();
+                    
                     worldgenbigmushroom.generate(p_185379_1_, p_185379_2_, blockpos);
                 } else addWorldgenBase(p_185379_1_, p_185379_2_, p_185379_3_, blockpos);
             }

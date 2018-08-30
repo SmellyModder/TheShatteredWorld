@@ -1,7 +1,11 @@
 package com.smellysox345.TheShatteredWorld.World.Biomes;
 
+import com.smellysox345.TheShatteredWorld.World.gen.SWWorldGenBigMushroomDark;
 import com.smellysox345.TheShatteredWorld.World.gen.generators.tree.WorldGenCanopyRefracted;
 import com.smellysox345.TheShatteredWorld.World.gen.generators.tree.WorldGenEyeTreeDefault;
+import com.smellysox345.TheShatteredWorld.entity.EntityFlyingEye;
+import com.smellysox345.TheShatteredWorld.entity.EntityShadowSpider;
+import com.smellysox345.TheShatteredWorld.entity.EntitySlimeWolf;
 import com.smellysox345.TheShatteredWorld.util.interfaces.IBiomeMist;
 import net.minecraft.block.BlockDoublePlant;
 import net.minecraft.init.Blocks;
@@ -11,6 +15,7 @@ import net.minecraft.world.ColorizerFoliage;
 import net.minecraft.world.ColorizerGrass;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.Biome.SpawnListEntry;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraft.world.gen.feature.WorldGenBigMushroom;
 import net.minecraftforge.fml.relauncher.Side;
@@ -36,6 +41,15 @@ public class BiomeRefractedRoofedForest extends BiomeBaseShatteredWorld{
         this.spawnableMonsterList.clear();
         this.topBlock = Blocks.GRASS.getDefaultState();
         this.fillerBlock = Blocks.DIRT.getDefaultState();
+        
+        this.spawnableMonsterList.clear();
+        this.spawnableCaveCreatureList.clear();
+        this.spawnableMonsterList.clear();
+        this.spawnableWaterCreatureList.clear();
+        
+        this.spawnableMonsterList.add(new SpawnListEntry(EntityShadowSpider.class, 2, 1, 2));
+        this.spawnableMonsterList.add(new SpawnListEntry(EntityFlyingEye.class, 1, 1, 7));
+        
     }
 
     @Override
@@ -115,7 +129,7 @@ public class BiomeRefractedRoofedForest extends BiomeBaseShatteredWorld{
                 BlockPos blockpos = p_185379_1_.getHeight(p_185379_3_.add(k, 0, l));
 
                 if (p_185379_2_.nextInt(20) == 0 && net.minecraftforge.event.terraingen.TerrainGen.decorate(p_185379_1_, p_185379_2_, new net.minecraft.util.math.ChunkPos(p_185379_3_), blockpos, net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.BIG_SHROOM)) {
-                    WorldGenBigMushroom worldgenbigmushroom = new WorldGenBigMushroom();
+                    SWWorldGenBigMushroomDark worldgenbigmushroom = new SWWorldGenBigMushroomDark();
                     worldgenbigmushroom.generate(p_185379_1_, p_185379_2_, blockpos);
                 } else addWorldgenBase(p_185379_1_, p_185379_2_, p_185379_3_, blockpos);
             }

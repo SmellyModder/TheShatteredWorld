@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "particle": "swm:plants/ghostram_inside",
+        "down": "swm:plants/ghostram_inside",
+        "up": "swm:plants/ghostram_shroom_block",
+        "north": "swm:plants/ghostram_shroom_block",
+        "east": "swm:plants/ghostram_inside",
+        "south": "swm:plants/ghostram_inside",
+        "west": "swm:plants/ghostram_inside"
+    }
+}

@@ -41,21 +41,13 @@ public class SWWorldProvider extends WorldProviderSurface {
 		return new ChunkGeneratorShatteredWorld(this.world, this.world.getSeed() - 14175);
 	}
 	
+	
+	
 	@Nullable
 	@Override
 	@SideOnly(Side.CLIENT)
 	public MusicTicker.MusicType getMusicType() {
 		return MusicType.END_BOSS;
-	}
-	
-	@Override
-	protected void generateLightBrightnessTable() {
-		float f = 0.35F;
-
-		for (int i = 0; i <= 15; ++i) {
-			float f1 = 1.0F - i / 15.0F;
-			lightBrightnessTable[i] = (1.0F - f1) / (f1 * 3.0F + 1.0F) * (1.0F - f) + f;
-		}
 	}
 	
 	@Override
@@ -83,6 +75,28 @@ public class SWWorldProvider extends WorldProviderSurface {
             return null;
         }
     }
+	
+	@Override
+	protected void generateLightBrightnessTable() {
+		float f = 0.1F;
+
+		for (int i = 0; i <= 15; i++) {
+			float f1 = 1F - i / 15F;
+			lightBrightnessTable[i] = (1F - f1) / (f1 * 3F + 1F) * (1F - f) + f;
+		}
+	}
+	
+	int time = 0;
+	protected void keepTimeMoving() {
+		
+		
+		if(time == 0) {
+			time++;
+			if(time == 1) {
+				time++;
+			}
+		}
+	}
 
 	@Override
 	public Vec3d getFogColor(float f, float f1) {

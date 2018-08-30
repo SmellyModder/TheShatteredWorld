@@ -2,8 +2,10 @@ package com.smellysox345.TheShatteredWorld.World.gen;
 
 import java.util.Random;
 
+import com.smellysox345.TheShatteredWorld.blocks.plants.mushroom.DarkShroomBase;
+import com.smellysox345.TheShatteredWorld.init.ModBlocks;
+
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockHugeMushroom;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -33,7 +35,7 @@ public class SWWorldGenBigMushroomDark extends WorldGenerator
 
         if (block == null)
         {
-            block = rand.nextBoolean() ? Blocks.BROWN_MUSHROOM_BLOCK : Blocks.RED_MUSHROOM_BLOCK;
+            block = rand.nextBoolean() ? ModBlocks.DARK_BROWN_MUSHROOM_BLOCK : ModBlocks.DARK_RED_MUSHROOM_BLOCK;
         }
 
         int i = rand.nextInt(3) + 4;
@@ -95,7 +97,7 @@ public class SWWorldGenBigMushroomDark extends WorldGenerator
                 {
                     int k2 = position.getY() + i;
 
-                    if (block == Blocks.RED_MUSHROOM_BLOCK)
+                    if (block == ModBlocks.DARK_RED_MUSHROOM_BLOCK)
                     {
                         k2 = position.getY() + i - 3;
                     }
@@ -109,7 +111,7 @@ public class SWWorldGenBigMushroomDark extends WorldGenerator
                             ++j3;
                         }
 
-                        if (block == Blocks.BROWN_MUSHROOM_BLOCK)
+                        if (block == ModBlocks.DARK_BROWN_MUSHROOM_BLOCK)
                         {
                             j3 = 3;
                         }
@@ -143,9 +145,9 @@ public class SWWorldGenBigMushroomDark extends WorldGenerator
                                     j2 += 3;
                                 }
 
-                                BlockHugeMushroom.EnumType blockhugemushroom$enumtype = BlockHugeMushroom.EnumType.byMetadata(j2);
+                                DarkShroomBase.EnumType DarkShroomBase$enumtype = DarkShroomBase.EnumType.byMetadata(j2);
 
-                                if (block == Blocks.BROWN_MUSHROOM_BLOCK || l2 < position.getY() + i)
+                                if (block == ModBlocks.DARK_BROWN_MUSHROOM_BLOCK || l2 < position.getY() + i)
                                 {
                                     if ((l1 == k3 || l1 == l3) && (i2 == j1 || i2 == k1))
                                     {
@@ -154,58 +156,58 @@ public class SWWorldGenBigMushroomDark extends WorldGenerator
 
                                     if (l1 == position.getX() - (j3 - 1) && i2 == j1)
                                     {
-                                        blockhugemushroom$enumtype = BlockHugeMushroom.EnumType.NORTH_WEST;
+                                        DarkShroomBase$enumtype = DarkShroomBase.EnumType.NORTH_WEST;
                                     }
 
                                     if (l1 == k3 && i2 == position.getZ() - (j3 - 1))
                                     {
-                                        blockhugemushroom$enumtype = BlockHugeMushroom.EnumType.NORTH_WEST;
+                                        DarkShroomBase$enumtype = DarkShroomBase.EnumType.NORTH_WEST;
                                     }
 
                                     if (l1 == position.getX() + (j3 - 1) && i2 == j1)
                                     {
-                                        blockhugemushroom$enumtype = BlockHugeMushroom.EnumType.NORTH_EAST;
+                                        DarkShroomBase$enumtype = DarkShroomBase.EnumType.NORTH_EAST;
                                     }
 
                                     if (l1 == l3 && i2 == position.getZ() - (j3 - 1))
                                     {
-                                        blockhugemushroom$enumtype = BlockHugeMushroom.EnumType.NORTH_EAST;
+                                        DarkShroomBase$enumtype = DarkShroomBase.EnumType.NORTH_EAST;
                                     }
 
                                     if (l1 == position.getX() - (j3 - 1) && i2 == k1)
                                     {
-                                        blockhugemushroom$enumtype = BlockHugeMushroom.EnumType.SOUTH_WEST;
+                                        DarkShroomBase$enumtype = DarkShroomBase.EnumType.SOUTH_WEST;
                                     }
 
                                     if (l1 == k3 && i2 == position.getZ() + (j3 - 1))
                                     {
-                                        blockhugemushroom$enumtype = BlockHugeMushroom.EnumType.SOUTH_WEST;
+                                        DarkShroomBase$enumtype = DarkShroomBase.EnumType.SOUTH_WEST;
                                     }
 
                                     if (l1 == position.getX() + (j3 - 1) && i2 == k1)
                                     {
-                                        blockhugemushroom$enumtype = BlockHugeMushroom.EnumType.SOUTH_EAST;
+                                        DarkShroomBase$enumtype = DarkShroomBase.EnumType.SOUTH_EAST;
                                     }
 
                                     if (l1 == l3 && i2 == position.getZ() + (j3 - 1))
                                     {
-                                        blockhugemushroom$enumtype = BlockHugeMushroom.EnumType.SOUTH_EAST;
+                                        DarkShroomBase$enumtype = DarkShroomBase.EnumType.SOUTH_EAST;
                                     }
                                 }
 
-                                if (blockhugemushroom$enumtype == BlockHugeMushroom.EnumType.CENTER && l2 < position.getY() + i)
+                                if (DarkShroomBase$enumtype == DarkShroomBase.EnumType.CENTER && l2 < position.getY() + i)
                                 {
-                                    blockhugemushroom$enumtype = BlockHugeMushroom.EnumType.ALL_INSIDE;
+                                    DarkShroomBase$enumtype = DarkShroomBase.EnumType.ALL_INSIDE;
                                 }
 
-                                if (position.getY() >= position.getY() + i - 1 || blockhugemushroom$enumtype != BlockHugeMushroom.EnumType.ALL_INSIDE)
+                                if (position.getY() >= position.getY() + i - 1 || DarkShroomBase$enumtype != DarkShroomBase.EnumType.ALL_INSIDE)
                                 {
                                     BlockPos blockpos = new BlockPos(l1, l2, i2);
                                     IBlockState state = worldIn.getBlockState(blockpos);
 
                                     if (state.getBlock().canBeReplacedByLeaves(state, worldIn, blockpos))
                                     {
-                                        this.setBlockAndNotifyAdequately(worldIn, blockpos, block.getDefaultState().withProperty(BlockHugeMushroom.VARIANT, blockhugemushroom$enumtype));
+                                        this.setBlockAndNotifyAdequately(worldIn, blockpos, block.getDefaultState().withProperty(DarkShroomBase.VARIANT, DarkShroomBase$enumtype));
                                     }
                                 }
                             }
@@ -218,7 +220,7 @@ public class SWWorldGenBigMushroomDark extends WorldGenerator
 
                         if (iblockstate.getBlock().canBeReplacedByLeaves(iblockstate, worldIn, position.up(i3)))
                         {
-                            this.setBlockAndNotifyAdequately(worldIn, position.up(i3), block.getDefaultState().withProperty(BlockHugeMushroom.VARIANT, BlockHugeMushroom.EnumType.STEM));
+                            this.setBlockAndNotifyAdequately(worldIn, position.up(i3), block.getDefaultState().withProperty(DarkShroomBase.VARIANT, DarkShroomBase.EnumType.STEM));
                         }
                     }
 

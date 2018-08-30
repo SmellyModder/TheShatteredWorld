@@ -13,7 +13,9 @@ import com.smellysox345.TheShatteredWorld.blocks.mobutil.BlockSpiderSack;
 import com.smellysox345.TheShatteredWorld.blocks.mobutil.SpiderQueenEgg;
 import com.smellysox345.TheShatteredWorld.blocks.plants.*;
 import com.smellysox345.TheShatteredWorld.blocks.plants.flowers.SWFlowers;
-import com.smellysox345.TheShatteredWorld.blocks.plants.mushroom.DarkRedMushroomBlock;
+import com.smellysox345.TheShatteredWorld.blocks.plants.mushroom.DarkShroomBase;
+import com.smellysox345.TheShatteredWorld.blocks.plants.mushroom.DarkrumShroom;
+import com.smellysox345.TheShatteredWorld.blocks.plants.mushroom.GhostramShroom;
 import com.smellysox345.TheShatteredWorld.blocks.plants.tree.BlockRefractedDarkOakLeaves;
 import com.smellysox345.TheShatteredWorld.blocks.plants.tree.BlockSpookyLog;
 import com.smellysox345.TheShatteredWorld.blocks.variant.*;
@@ -81,8 +83,13 @@ public class ModBlocks {
     public static final Block BOUNCYSHROOMSTEM_BLOCK = new BouncyShroomStem("bouncyshroomstem_block", Material.GOURD);
     public static final Block SHROOM_SHIELD = new ForceFieldShroom("force_field_s", Material.ICE);
     
-    public static final Block DARK_BROWN_MUSHROOM_BLOCK = new DarkRedMushroomBlock("bd_mushroom", MapColor.BROWN, PINKI_SHROOM);
-	public static final Block DARK_RED_MUSHROOM_BLOCK = new DarkRedMushroomBlock("rd_mushroom", MapColor.RED, PINKI_SHROOM );
+    //The Dank forest --hehe
+    public static final Block GHOSTRAM_SHROOM = new GhostramShroom("ghostram_shroom", Material.GOURD);
+    public static final Block DARKRUM_SHROOM = new DarkrumShroom("darkrum_shroom", Material.GOURD);
+    public static final Block DARK_BROWN_MUSHROOM_BLOCK = new DarkShroomBase("ghostram_shroom_big", MapColor.BROWN, GHOSTRAM_SHROOM);
+	public static final Block DARK_RED_MUSHROOM_BLOCK = new DarkShroomBase("darkrum_shroom_big", MapColor.RED, DARKRUM_SHROOM );
+	
+	
 
     //Containers
     public static final Block MAGIC_LANTERN = new BlockLantern("lantern", Material.FIRE);

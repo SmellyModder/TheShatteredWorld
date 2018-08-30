@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "side": "swm:plants/ghostram_stem",
+        "end": "swm:plants/ghostram_inside"
+    }
+}

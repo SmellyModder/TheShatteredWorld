@@ -13,9 +13,9 @@ import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 
-public class DarkRedMushroomBlock extends BlockHugeMushroom implements IHasModel{
+public class DarkShroomBase extends BlockHugeMushroom implements IHasModel{
 
-	public DarkRedMushroomBlock(String name, MapColor colour, Block drop) {
+	public DarkShroomBase(String name, MapColor colour, Block drop) {
 		super(Material.WOOD, colour, drop);
 		setHardness(0.2F);
 		setCreativeTab(Main.shatteredworldplants);

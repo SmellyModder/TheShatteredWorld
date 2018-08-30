@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "particle": "swm:plants/darkrum_inside",
+        "down": "swm:plants/darkrum_inside",
+        "up": "swm:plants/darkrum_shroom_block",
+        "north": "swm:plants/darkrum_inside",
+        "east": "swm:plants/darkrum_shroom_block",
+        "south": "swm:plants/darkrum_shroom_block",
+        "west": "swm:plants/darkrum_inside"
+    }
+}

@@ -55,6 +55,7 @@ public class EyeTreeSaplingDefault extends BlockBush implements IHasModel, IGrow
 		setSoundType(SoundType.PLANT);
 		setCreativeTab(Main.shatteredworldplants);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(STAGE, Integer.valueOf(0)));
+		this.setTickRandomly(true);
 		
 		ModBlocks.BLOCKS.add(this);
 		ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));

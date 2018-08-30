@@ -12,6 +12,7 @@ import com.smellysox345.TheShatteredWorld.blocks.magic.ForceFieldShroom;
 import com.smellysox345.TheShatteredWorld.blocks.mobutil.BlockSpiderSack;
 import com.smellysox345.TheShatteredWorld.blocks.mobutil.SpiderQueenEgg;
 import com.smellysox345.TheShatteredWorld.blocks.plants.*;
+import com.smellysox345.TheShatteredWorld.blocks.plants.flowers.BlockSWDoublePlant;
 import com.smellysox345.TheShatteredWorld.blocks.plants.flowers.SWFlowers;
 import com.smellysox345.TheShatteredWorld.blocks.plants.mushroom.DarkShroomBase;
 import com.smellysox345.TheShatteredWorld.blocks.plants.mushroom.DarkrumShroom;
@@ -20,6 +21,7 @@ import com.smellysox345.TheShatteredWorld.blocks.plants.tree.BlockRefractedDarkO
 import com.smellysox345.TheShatteredWorld.blocks.plants.tree.BlockSpookyLog;
 import com.smellysox345.TheShatteredWorld.blocks.variant.*;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockBush;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
@@ -88,6 +90,7 @@ public class ModBlocks {
     public static final Block DARKRUM_SHROOM = new DarkrumShroom("darkrum_shroom", Material.GOURD);
     public static final Block DARK_BROWN_MUSHROOM_BLOCK = new DarkShroomBase("ghostram_shroom_big", MapColor.BROWN, GHOSTRAM_SHROOM);
 	public static final Block DARK_RED_MUSHROOM_BLOCK = new DarkShroomBase("darkrum_shroom_big", MapColor.RED, DARKRUM_SHROOM );
+	public static final Block R_DOUBLE_ROSE = new BlockSWDoublePlant("sw_d_p");
 	
 	
 

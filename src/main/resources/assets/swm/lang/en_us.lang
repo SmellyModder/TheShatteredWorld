@@ -120,6 +120,11 @@ tile.watcher_planks_default.name=Watcher Planks
 
 # Plants
 tile.eye_sapling_default.name=Watcher Sapling
+tile.darkrum_shroom.name=Darkrum Shroom
+tile.ghostram_shroom.name=Ghostram Shroom
+tile.ghostram_shroom_big.name=Big Ghostram Shroom
+tile.darkrum_shroom_big.name=Big Darkrum Shroom
+tile.r_double_rose.name=Refracted Rose Bush
 
 # Summoner
 tile.spider_egg.name=§bArachno Queen Egg§r

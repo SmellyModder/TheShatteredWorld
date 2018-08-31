@@ -1,0 +1,143 @@
+//WIP Spanish translation courtesy of SteveBeeblebrox
+//This is still being developed. I am not used to # in lang so I did it like I usually do. Let me know if this needs to be changed.
+//Traducción al Español (Perdón por cualquier error)
+//# Artículo
+item.crystal.name=Crystal
+item.crystallizationcore.name=Crystallization core
+item.prism.name=Prism
+tile.saplings_oakr.name=Refracted Oak Sapling
+tile.saplings_birchr.name=Refracted Birch Sapling
+item.r_string.name=Shroom String
+item.watcher_stick.name=Watcher Stick
+
+//# Dinero
+item.shroom_currency.name=Shroom Emerald
+
+//# Comida
+item.corruptedbeef.name=Corrupted Beef
+item.corruptedpigbeef.name=Corrupted Pig Beef
+item.corruptedcookedbeef.name=Corrupted Steak
+item.corruptedcookedpork.name=Corrupted Cooked Porkchop
+item.refractedcactusbud.name=Refracti
+item.r_bowl.name=Refracted Bowl
+item.shroom_soup.name=Shroom Soup
+item.refractisoup.name=Refracti Soup
+
+
+//# Armadura
+item.crystal_helmet.name=Crystal Helmet
+item.crystal_chestplate.name=Crystal Chestplate
+item.crystal_leggings.name=Crystal Leggings
+item.crystal_boots.name=Crystal Boots
+item.refracti_helmet.name=Refracti Helmet
+item.refracti_chestplate.name=Refracti Chestplate
+item.refracti_leggings.name=Refracti Leggings
+item.refracti_boots.name=Refracti Boots
+item.crystalshield.name=Crystal Shield
+
+
+
+
+//# Arma
+item.crystal_sword.name=Crystal Sword
+item.refracti_sword.name=Refracti Sword
+item.watcher_sword.name=Watcher Sword
+item.watcher_bow.name=Watcher Bow
+item.refracted_oak_bow.name=Refracted Oak Bow
+item.refracted_ice_bow.name=Refracted Ice Bow
+
+
+//# Herramienta
+item.crystal_shovel.name=Crystal Shovel
+item.crystal_axe.name=Crystal Axe
+item.crystal_pickaxe.name=Crystal Pickaxe
+item.refracti_pickaxe.name=Refracti Pickaxe
+item.refracti_axe.name=Refracti axe
+item.refracti_shovel.name=Refracti Shovel
+item.watcher_pickaxe.name=Watcher Pickaxe
+item.watcher_axe.name=Watcher Axe
+item.watcher_shovel.name=Watcher Shovel
+
+//# Modelo
+item.crystalgun.name=Crystal Gun
+
+//# Entidad
+entity.slimewolf.name=Slime Wolf
+entity.slimewolfbaby.name=Slime Wolf Baby
+entity.shroomzombie.name=Shroom Zombie
+entity.nightshroom.name=Night Shroom
+entity.shroomite.name=Shroomite
+entity.arachnoshroom.name=Arachno Shroom
+entity.flying_eye.name=Cy-bat
+
+//# El que lleva los pantalones
+entity.arachnoshroomqueen.name=§bArachno Shroom Queen§r
+
+//# Sonido
+entity.slimewolf.death=SlimeWolf death
+
+//# Lista
+itemGroup.refracteditems=Refracted Items
+itemGroup.refractedblocks=Refracted Blocks
+itemGroup.refractedweapons=Refracted Weapons
+itemGroup.refractedtools=Refracted Tools
+itemGroup.refractedarmors=Refracted Armors
+itemGroup.refractedfoods=Refracted Foods
+itemGroup.refractedplants=Refracted Plants
+
+//# Trozo
+tile.crystal_block.name=Crystal Block
+tile.refractedsand_block.name=Refracted sand
+tile.refractedstone_block.name=Refracted Stone
+tile.refractedcobblestone_block.name=Refracted Cobblestone
+tile.shroom_web.name=Shroom Web
+tile.r_mycelium.name=Refracted Mycelium
+tile.rd_mycelium.name=Refracted Silt
+tile.nightcrawlershroomstem_block.name=Night Shroom Stem
+tile.refractistem_block.name=Refracta Shroom Stem
+tile.refractishroom_block.name=Refracta Shroom Block
+tile.r_shroom.name=Refracta Shroom
+tile.night_shroom.name=Night Shroom
+tile.g_shroom.name=Grass Shroom
+tile.p_shroom.name=Pinki Shroom
+tile.pinkshroom_block.name=Pinki Shroom Block
+tile.pinkshroomstem_block.name=Pinki Shroom Stem
+tile.grassshroom_block.name=Grass Shroom Block
+tile.grassshroomstem_block.name=Grass Shroom Stem
+tile.nightcrawlershroom_block.name=Night Shroom Block
+tile.bouncyshroom_block.name=Bouncy Shroom
+tile.bouncyshroomstem_block.name=Bouncy Shroom Stem
+tile.leaves_oakr.name=Refracted Oak Leaves
+tile.leaves_birchr.name=Refracted Birch Leaves
+tile.planks_oakr.name=Refracted Oak Planks
+tile.planks_birchr.name=Refracted Birch Planks
+tile.log_oakr.name=Refracted Oak Log
+tile.log_birchr.name=Refracted Birch Log
+tile.refractedcactus_block.name=Refracti Cactus
+tile.eye_tree.name=Cursed Watcher Log
+tile.eye_tree_default.name=Watcher Log
+tile.force_field_s.name=Magic Shroom Field
+tile.eye_tree_leaves_default.name=Watcher Leaves
+tile.watcher_planks.name=Cursed Watcher Planks 
+tile.watcher_planks_default.name=Watcher Planks
+
+//# Planta
+tile.eye_sapling_default.name=Watcher Sapling
+tile.darkrum_shroom.name=Darkrum Shroom
+tile.ghostram_shroom.name=Ghostram Shroom
+tile.ghostram_shroom_big.name=Big Ghostram Shroom
+tile.darkrum_shroom_big.name=Big Darkrum Shroom
+tile.r_double_rose.name=Refracted Rose Bush
+
+//# Convocante
+tile.spider_egg.name=§bArachno Queen Egg§r
+tile.spider_eggsack.name=Spider Eggsack
+
+//# Interfaz visual
+theshatteredworld.gui.home=Home
+theshatteredworld.gui.done=Done
+theshatteredworld.gui.quest1=§bSpider Queen§r
+theshatteredworld.gui.quest2=WIP
+theshatteredworld.gui.quest3=WIP
+theshatteredworld.gui.quest4=WIP
+entity.Villager.nitwit=Wizard Shop

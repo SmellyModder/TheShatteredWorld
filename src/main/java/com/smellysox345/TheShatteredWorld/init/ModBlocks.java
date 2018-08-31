@@ -1,9 +1,11 @@
 package com.smellysox345.TheShatteredWorld.init;
 
 import com.smellysox345.TheShatteredWorld.blocks.CrystalBlock;
+import com.smellysox345.TheShatteredWorld.blocks.CustomBlockDoor;
 import com.smellysox345.TheShatteredWorld.blocks.RefractedCactus;
 import com.smellysox345.TheShatteredWorld.blocks.RefractedSandBlock;
 import com.smellysox345.TheShatteredWorld.blocks.RefractedStone;
+import com.smellysox345.TheShatteredWorld.blocks.Item.ItemBlockDoor;
 import com.smellysox345.TheShatteredWorld.blocks.magic.BlockLantern;
 import com.smellysox345.TheShatteredWorld.blocks.magic.BlockSpookyWood;
 import com.smellysox345.TheShatteredWorld.blocks.magic.BlockSummonerWood;
@@ -25,6 +27,7 @@ import net.minecraft.block.BlockBush;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
+import net.minecraft.item.ItemBlock;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -92,7 +95,9 @@ public class ModBlocks {
 	public static final Block DARK_RED_MUSHROOM_BLOCK = new DarkShroomBase("darkrum_shroom_big", MapColor.RED, DARKRUM_SHROOM );
 	public static final Block R_DOUBLE_ROSE = new BlockSWDoublePlant("sw_d_p");
 	
-	
+	//Doors
+	public static final Block EYE_DOOR = new CustomBlockDoor("eye_door");
+	public static final ItemBlockDoor EYE_DOOR_2 = new ItemBlockDoor(EYE_DOOR);
 
     //Containers
     public static final Block MAGIC_LANTERN = new BlockLantern("lantern", Material.FIRE);

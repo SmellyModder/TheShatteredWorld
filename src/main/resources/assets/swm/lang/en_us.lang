@@ -139,4 +139,5 @@ theshatteredworld.gui.quest3=WIP
 theshatteredworld.gui.quest4=WIP
 entity.Villager.nitwit=Wizard Shop
 
-
+# Doors
+tile.eye_door.name=Watcher Door

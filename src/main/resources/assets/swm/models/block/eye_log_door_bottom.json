@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_bottom",
+    "textures": {
+        "bottom": "swm:blocks/eye_log_door_bottom",
+        "top": "swm:animated/eye_log_door_top"
+    }
+}

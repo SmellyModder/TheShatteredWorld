@@ -8,6 +8,14 @@ import com.smellysox345.TheShatteredWorld.init.BiomeInit;
 
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.layer.GenLayer;
+import net.minecraft.world.gen.layer.GenLayerAddIsland;
+import net.minecraft.world.gen.layer.GenLayerAddMushroomIsland;
+import net.minecraft.world.gen.layer.GenLayerAddSnow;
+import net.minecraft.world.gen.layer.GenLayerDeepOcean;
+import net.minecraft.world.gen.layer.GenLayerEdge;
+import net.minecraft.world.gen.layer.GenLayerFuzzyZoom;
+import net.minecraft.world.gen.layer.GenLayerIsland;
+import net.minecraft.world.gen.layer.GenLayerRemoveTooMuchOcean;
 import net.minecraft.world.gen.layer.GenLayerVoronoiZoom;
 import net.minecraft.world.gen.layer.GenLayerZoom;
 import net.minecraft.world.gen.layer.IntCache;
@@ -29,7 +37,7 @@ public abstract class LayerGenSW extends GenLayer{
 		biomes = new GenLayerZoom(1004L, biomes);
 
 		GenLayer genlayervoronoizoom = new GenLayerVoronoiZoom(10L, biomes);
-
+		
 		biomes.initWorldGenSeed(seed);
 		genlayervoronoizoom.initWorldGenSeed(seed);
 

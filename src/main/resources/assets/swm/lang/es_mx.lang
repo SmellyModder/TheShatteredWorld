@@ -1,19 +1,19 @@
 //WIP Spanish translation courtesy of SteveBeeblebrox
 //This is still being developed. I am not used to # in lang so I did it like I usually do. Let me know if this needs to be changed.
 //Traducción al Español (Perdón por cualquier error)
-//# Artículo
-item.crystal.name=Crystal
-item.crystallizationcore.name=Crystallization core
-item.prism.name=Prism
+# Artículo
+item.crystal.name=Cristal
+item.crystallizationcore.name=Cristalización meollo
+item.prism.name=Prisma
 tile.saplings_oakr.name=Refracted Oak Sapling
 tile.saplings_birchr.name=Refracted Birch Sapling
-item.r_string.name=Shroom String
-item.watcher_stick.name=Watcher Stick
+item.r_string.name=Cuerda de Seta
+item.watcher_stick.name=El Vigilante Palo
 
-//# Dinero
+# Dinero
 item.shroom_currency.name=Shroom Emerald
 
-//# Comida
+# Comida
 item.corruptedbeef.name=Corrupted Beef
 item.corruptedpigbeef.name=Corrupted Pig Beef
 item.corruptedcookedbeef.name=Corrupted Steak
@@ -24,7 +24,7 @@ item.shroom_soup.name=Shroom Soup
 item.refractisoup.name=Refracti Soup
 
 
-//# Armadura
+# Armadura
 item.crystal_helmet.name=Crystal Helmet
 item.crystal_chestplate.name=Crystal Chestplate
 item.crystal_leggings.name=Crystal Leggings
@@ -36,9 +36,7 @@ item.refracti_boots.name=Refracti Boots
 item.crystalshield.name=Crystal Shield
 
 
-
-
-//# Arma
+# Arma
 item.crystal_sword.name=Crystal Sword
 item.refracti_sword.name=Refracti Sword
 item.watcher_sword.name=Watcher Sword
@@ -47,7 +45,7 @@ item.refracted_oak_bow.name=Refracted Oak Bow
 item.refracted_ice_bow.name=Refracted Ice Bow
 
 
-//# Herramienta
+# Herramienta
 item.crystal_shovel.name=Crystal Shovel
 item.crystal_axe.name=Crystal Axe
 item.crystal_pickaxe.name=Crystal Pickaxe
@@ -58,10 +56,10 @@ item.watcher_pickaxe.name=Watcher Pickaxe
 item.watcher_axe.name=Watcher Axe
 item.watcher_shovel.name=Watcher Shovel
 
-//# Modelo
+# Modelo
 item.crystalgun.name=Crystal Gun
 
-//# Entidad
+# Entidad
 entity.slimewolf.name=Slime Wolf
 entity.slimewolfbaby.name=Slime Wolf Baby
 entity.shroomzombie.name=Shroom Zombie
@@ -70,13 +68,13 @@ entity.shroomite.name=Shroomite
 entity.arachnoshroom.name=Arachno Shroom
 entity.flying_eye.name=Cy-bat
 
-//# El que lleva los pantalones
+# El-que-lleva-los-pantalones
 entity.arachnoshroomqueen.name=§bArachno Shroom Queen§r
 
-//# Sonido
+# Sonido
 entity.slimewolf.death=SlimeWolf death
 
-//# Lista
+# Lista
 itemGroup.refracteditems=Refracted Items
 itemGroup.refractedblocks=Refracted Blocks
 itemGroup.refractedweapons=Refracted Weapons
@@ -85,7 +83,7 @@ itemGroup.refractedarmors=Refracted Armors
 itemGroup.refractedfoods=Refracted Foods
 itemGroup.refractedplants=Refracted Plants
 
-//# Trozo
+# Trozo
 tile.crystal_block.name=Crystal Block
 tile.refractedsand_block.name=Refracted sand
 tile.refractedstone_block.name=Refracted Stone
@@ -121,7 +119,7 @@ tile.eye_tree_leaves_default.name=Watcher Leaves
 tile.watcher_planks.name=Cursed Watcher Planks 
 tile.watcher_planks_default.name=Watcher Planks
 
-//# Planta
+# Planta
 tile.eye_sapling_default.name=Watcher Sapling
 tile.darkrum_shroom.name=Darkrum Shroom
 tile.ghostram_shroom.name=Ghostram Shroom
@@ -129,11 +127,11 @@ tile.ghostram_shroom_big.name=Big Ghostram Shroom
 tile.darkrum_shroom_big.name=Big Darkrum Shroom
 tile.r_double_rose.name=Refracted Rose Bush
 
-//# Convocante
+# Convocante
 tile.spider_egg.name=§bArachno Queen Egg§r
 tile.spider_eggsack.name=Spider Eggsack
 
-//# Interfaz visual
+# Interfaz-visual
 theshatteredworld.gui.home=Home
 theshatteredworld.gui.done=Done
 theshatteredworld.gui.quest1=§bSpider Queen§r

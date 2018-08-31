@@ -4,7 +4,11 @@ item.crystallizationcore.name=Crystallization core
 item.prism.name=Prism
 tile.saplings_oakr.name=Refracted Oak Sapling
 tile.saplings_birchr.name=Refracted Birch Sapling
+item.r_string.name=Shroom String
+item.watcher_stick.name=Watcher Stick
 
+# Currency
+item.shroom_currency.name=Shroom Emerald
 
 # Foods
 item.corruptedbeef.name=Corrupted Beef
@@ -12,6 +16,9 @@ item.corruptedpigbeef.name=Corrupted Pig Beef
 item.corruptedcookedbeef.name=Corrupted Steak
 item.corruptedcookedpork.name=Corrupted Cooked Porkchop
 item.refractedcactusbud.name=Refracti
+item.r_bowl.name=Refracted Bowl
+item.shroom_soup.name=Shroom Soup
+item.refractisoup.name=Refracti Soup
 
 
 # Armors
@@ -31,6 +38,11 @@ item.crystalshield.name=Crystal Shield
 # Weapons
 item.crystal_sword.name=Crystal Sword
 item.refracti_sword.name=Refracti Sword
+item.watcher_sword.name=Watcher Sword
+item.watcher_bow.name=Watcher Bow
+item.refracted_oak_bow.name=Refracted Oak Bow
+item.refracted_ice_bow.name=Refracted Ice Bow
+
 
 # Tools
 item.crystal_shovel.name=Crystal Shovel
@@ -39,7 +51,9 @@ item.crystal_pickaxe.name=Crystal Pickaxe
 item.refracti_pickaxe.name=Refracti Pickaxe
 item.refracti_axe.name=Refracti axe
 item.refracti_shovel.name=Refracti Shovel
-
+item.watcher_pickaxe.name=Watcher Pickaxe
+item.watcher_axe.name=Watcher Axe
+item.watcher_shovel.name=Watcher Shovel
 
 # ItemsCustomModels
 item.crystalgun.name=Crystal Gun
@@ -51,6 +65,7 @@ entity.shroomzombie.name=Shroom Zombie
 entity.nightshroom.name=Night Shroom
 entity.shroomite.name=Shroomite
 entity.arachnoshroom.name=Arachno Shroom
+entity.flying_eye.name=Cy-bat
 
 # Boss
 entity.arachnoshroomqueen.name=§bArachno Shroom Queen§r
@@ -96,10 +111,33 @@ tile.planks_birchr.name=Refracted Birch Planks
 tile.log_oakr.name=Refracted Oak Log
 tile.log_birchr.name=Refracted Birch Log
 tile.refractedcactus_block.name=Refracti Cactus
+tile.eye_tree.name=Cursed Watcher Log
+tile.eye_tree_default.name=Watcher Log
+tile.force_field_s.name=Magic Shroom Field
+tile.eye_tree_leaves_default.name=Watcher Leaves
+tile.watcher_planks.name=Cursed Watcher Planks 
+tile.watcher_planks_default.name=Watcher Planks
 
+# Plants
+tile.eye_sapling_default.name=Watcher Sapling
+tile.darkrum_shroom.name=Darkrum Shroom
+tile.ghostram_shroom.name=Ghostram Shroom
+tile.ghostram_shroom_big.name=Big Ghostram Shroom
+tile.darkrum_shroom_big.name=Big Darkrum Shroom
+tile.r_double_rose.name=Refracted Rose Bush
 
 # Summoner
 tile.spider_egg.name=§bArachno Queen Egg§r
 tile.spider_eggsack.name=Spider Eggsack
 
+# Gui
+theshatteredworld.gui.home=Home
+theshatteredworld.gui.done=Done
+theshatteredworld.gui.quest1=§bSpider Queen§r
+theshatteredworld.gui.quest2=WIP
+theshatteredworld.gui.quest3=WIP
+theshatteredworld.gui.quest4=WIP
+entity.Villager.nitwit=Wizard Shop
 
+# Doors
+tile.eye_door.name=Watcher Door

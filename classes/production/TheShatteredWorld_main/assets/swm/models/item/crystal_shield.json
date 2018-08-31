@@ -368,5 +368,13 @@
 			"translation":  [ 0, 0, -9.043 ],
 			"scale":  [ 0.8347, 1, 1 ]
 		}
-	}
+	},
+    "overrides": [
+        {
+            "predicate": {
+                "blocking": 1
+            },
+            "model": "swm:item/crystal_shield_blocking"
+        }
+    ]
 }

@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "item": "swm:nagrot_shield"
+    },
+    "title": {
+      "translate": "swm.advancements.boss_killed.nagrot.title"
+    },
+    "description": {
+      "translate": "swm.advancements.boss_killed.nagrot.description"
+    },
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png"
+  },
+  "criteria": {
+    "boss_killed":
+    {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions":
+      {
+        "entity":
+        {
+          "type": "swm:nagrot"
+        }
+      }
+    }
+  }
+}

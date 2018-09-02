@@ -141,3 +141,7 @@ entity.Villager.nitwit=Wizard Shop
 
 # Doors
 tile.eye_door.name=Watcher Door
+
+# Advancements
+swm.advancements.boss_killed.nagrot.title=Nagrot Killer
+swm.advancements.boss_killed.nagrot.description=You killed the Nagrot!

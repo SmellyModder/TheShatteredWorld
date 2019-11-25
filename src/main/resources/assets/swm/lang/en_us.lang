@@ -145,6 +145,3 @@ tile.eye_door.name=Watcher Door
 # Advancements
 swm.advancements.boss_killed.nagrot.title=Nagrot Killer
 swm.advancements.boss_killed.nagrot.description=You killed the Nagrot!
-
-swm.advancements.boss_killed.shadow_spider.title=Spider Killer
-swm.advancements.boss_killed.shadow_spider.description=You have killed the Shadow Spider!
